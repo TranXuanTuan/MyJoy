@@ -17,6 +17,10 @@
             {{ Form::label('body', 'Post Body') }}
             {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
 
+            {{ Form::label('description', 'Description') }}
+            {{ Form::textarea('description', null, array('class' => 'form-control')) }}
+            <br>
+
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
             {{ Form::close() }}

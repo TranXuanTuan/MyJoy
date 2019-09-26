@@ -11,23 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/', 'PostController@index')->name('home');
-
-/*Route::resource('users', 'UserController');*/
-
-/*Route::resource('roles', 'RoleController');
-
-Route::resource('permissions', 'PermissionController');*/
 
 Route::resource('posts', 'PostController');
 
@@ -36,10 +28,13 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 Route::namespace('Admin')
     ->prefix('admin')
-    /*->name('admin.')*/
     ->group(function () {
     	Route::resource('admin_posts', 'AdminPostController');
         Route::resource('users', 'UserController');
         Route::resource('roles', 'RoleController');
 		Route::resource('permissions', 'PermissionController');
+		Route::resource('menus', 'MenuController');
+		Route::resource('submenus','SubMenuController');
     });
+
+

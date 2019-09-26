@@ -47,13 +47,26 @@
                 </div>
 
                 <div class="navbar navbar-expand-sm bg-light" id="navbar navbar-expand-sm bg-light">
+
                     <!-- Left Side Of Navbar -->
+                    
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        @if (!Auth::guest())
-                            <li><a href="{{ route('posts.index') }}">Posts</a></li>
-                         @endif
+                        @foreach($menus as $menu)
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">{{$menu -> MenuName}}
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">submenu</a>
+                                    </li>
+                                </ul>
+
+                        </li>
+                        @endforeach 
                     </ul>
+                    
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

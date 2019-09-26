@@ -48,12 +48,14 @@ class AdminPostController extends Controller
         $this->validate($request, [
             'title'=>'required|max:100',
             'body' =>'required',
+            'description' =>'required',
             ]);
 
         $title = $request['title'];
         $body = $request['body'];
+        $description = $request['description'];
 
-        $post = Post::create($request->only('title', 'body'));
+        $post = Post::create($request->only('title', 'body','description'));
 
         return redirect()->route('admin_posts.index')
             ->with('flash_message', 'Article,
@@ -98,11 +100,13 @@ class AdminPostController extends Controller
         $this->validate($request, [
             'title'=>'required|max:100',
             'body'=>'required',
+            'description' =>'required',
         ]);
 
         $post = Post::findOrFail($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $description = $request->input('description');
         $post->save();
 
         return redirect()->route('admin_posts.show', 

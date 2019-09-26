@@ -20,6 +20,10 @@
             {{ Form::textarea('body', null, array('class' => 'form-control')) }}
             <br>
 
+            {{ Form::label('description', 'Description') }}
+            {{ Form::textarea('description', null, array('class' => 'form-control')) }}
+            <br>
+
             {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>

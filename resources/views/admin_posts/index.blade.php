@@ -13,6 +13,9 @@
                                     <p class="teaser">
                                        {{  str_limit($post->body, 100) }} {{-- Limit teaser to 100 characters --}}
                                     </p>
+                                    <p class="teaser">
+                                       {{  str_limit($post->description, 50) }} {{-- Limit teaser to 100 characters --}}
+                                    </p>
                                 </a>
                             </li>
                         </div>
