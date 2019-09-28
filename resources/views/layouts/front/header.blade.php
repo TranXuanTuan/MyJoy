@@ -82,16 +82,19 @@
                                             </div>
                                         </li>
                                         <li>
+                                            @role('Admin') {{-- Laravel-permission blade helper --}}
+                                            <a href="{{ url('admin\users') }}"><i class="icon-padlock" ></i>ADMIN</a>
+                                            @endrole
+                                        </li>
+                                        <li >
                                             <a class="icon-power-button" href="{{ route('logout') }}" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
-                                            
                                             </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"style="display: none;">
                                             {{ csrf_field() }}
-                                            </form>
-                                           
+                                            </form>     
                                         </li>
+                                        
                                     </ul>
                                     <!-- Cart Button -->
                                     
