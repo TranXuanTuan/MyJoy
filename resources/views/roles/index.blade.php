@@ -1,5 +1,5 @@
 {{-- \resources\views\roles\index.blade.php --}}
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| Roles')
 
@@ -17,7 +17,7 @@
                 <tr>
                     <th>Role</th>
                     <th>Permissions</th>
-                    <th>Operation</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
 
@@ -31,10 +31,13 @@
                     <td>
                     <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
 
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
+                    
+
+                    </td>
+                    <td>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
-
                     </td>
                 </tr>
                 @endforeach

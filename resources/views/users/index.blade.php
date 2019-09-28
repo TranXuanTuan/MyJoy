@@ -1,5 +1,5 @@
 {{-- \resources\views\users\index.blade.php --}}
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| Users')
 
@@ -19,7 +19,7 @@
                     <th>Email</th>
                     <th>Date/Time Added</th>
                     <th>User Roles</th>
-                    <th>Operations</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
 
@@ -32,12 +32,12 @@
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
                     <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
-
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    </td>
+                    <td>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
                     </td>
                 </tr>
                 @endforeach

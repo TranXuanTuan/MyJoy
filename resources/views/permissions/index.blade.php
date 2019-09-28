@@ -1,5 +1,5 @@
 {{-- \resources\views\permissions\index.blade.php --}}
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| Permissions')
 
@@ -17,7 +17,7 @@
             <thead>
                 <tr>
                     <th>Permissions</th>
-                    <th>Operation</th>
+                     <th colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,10 +27,13 @@
                     <td>
                     <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
 
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
+                    
+
+                    </td>
+                    <td>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
-
                     </td>
                 </tr>
                 @endforeach
