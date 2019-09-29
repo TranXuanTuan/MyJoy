@@ -29,6 +29,7 @@ Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::namespace('Admin')
     ->prefix('admin')
     ->group(function () {
+    	Route::resource('dashboards', 'HomeController');
     	Route::resource('admin_posts', 'AdminPostController');
         Route::resource('users', 'UserController');
         Route::resource('roles', 'RoleController');

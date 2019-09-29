@@ -25,10 +25,7 @@
                 <tr>
                     <td>{{ $permission->name }}</td> 
                     <td>
-                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-
-                    
-
+                    <a href="{{ URL::to('admin/permissions/'.$permission->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
                     </td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
@@ -41,7 +38,7 @@
         </table>
     </div>
 
-    <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">Add Permission</a>
+    <a href="{{ URL::to('admin/permissions/create') }}" class="btn btn-success">Add Permission</a>
 
 </div>
 

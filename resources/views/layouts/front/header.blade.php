@@ -83,7 +83,7 @@
                                         </li>
                                         <li>
                                             @role('Admin') {{-- Laravel-permission blade helper --}}
-                                            <a href="{{ url('admin\users') }}"><i class="icon-padlock" ></i>ADMIN</a>
+                                            <a href="{{ url('admin\dashboards') }}"><i class="icon-padlock" ></i>ADMIN</a>
                                             @endrole
                                         </li>
                                         <li >

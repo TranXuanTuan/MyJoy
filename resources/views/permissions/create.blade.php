@@ -10,13 +10,13 @@
     <h1><i class='fa fa-key'></i> Add Permission</h1>
     <br>
 
-    {{ Form::open(array('url' => 'permissions')) }}
+    {{ Form::open(array('url' => 'admin/permissions')) }}
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', '', array('class' => 'form-control')) }}
     </div><br>
-    @if(!$roles->isEmpty()) //If no roles exist yet
+    @if(!$roles->isEmpty()) 
         <h4>Assign Permission to Roles</h4>
 
         @foreach ($roles as $role) 

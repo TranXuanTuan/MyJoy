@@ -14,15 +14,18 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-            <li class="nav-item">
+            <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-file"></i>
-                    <p>Dashboard</p>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <p>
+                        Dashboard
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
+                        <a href="{{ route ('home')}}" class="nav-link">
+                            <i class="fas fa-home"></i>
                             <p>Visit Page</p>
                         </a>
                     </li>
@@ -31,7 +34,31 @@
             </li>
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
+                    <i class="fas fa-users"></i>
+                    <p>
+                        User Manage
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/users')}}" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>User List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/users/create')}}" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <p>User Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-music"></i>
                     <p>
                         User Manage
                         <i class="fas fa-angle-left right"></i>
@@ -40,7 +67,7 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
+                            <i class="fas fa-list"></i>
                             <p>User List</p>
                         </a>
                     </li>
@@ -52,68 +79,55 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                 <a href="#">List User</a>
-                            </li>
-                        </ul>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="" class="">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Category List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Category Add</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="">
+
+            <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-copy"></i>
                     <p>
-                        Book Manage
+                        User Manage
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Book List</p>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>User List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="">
+                        <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Book Add</p>
+                            <p>User Add</p>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="">
+
+            <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-copy"></i>
                     <p>
-                        Receipt Manage
+                        User Manage
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="" class="">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>User List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Receipt List</p>
+                            <p>User Add</p>
                         </a>
                     </li>
                 </ul>
             </li>
+            
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

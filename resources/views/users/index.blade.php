@@ -44,6 +44,7 @@
             </tbody>
 
         </table>
+        {{ $users->links() }}
     </div>
 
     <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
