@@ -24,7 +24,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(5); 
-        return view('users.index')->with('users', $users);
+        return view('admin.users.index')->with('users', $users);
  
     }
 
@@ -36,7 +36,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        return view('users.create', ['roles'=>$roles]);
+        return view('admin.users.create', ['roles'=>$roles]);
     }
 
     /**
@@ -92,7 +92,7 @@ class UserController extends Controller
         $user = User::findOrFail($id); 
         $roles = Role::get(); 
 
-        return view('users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**

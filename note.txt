@@ -1,0 +1,4 @@
+To install the laravel-permission package run
+
+composer require spatie/laravel-permission
+

@@ -5,7 +5,7 @@
             <img src="/plugins/lte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
     </div>
 
@@ -24,9 +24,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route ('home')}}" class="nav-link">
+                         <a href="{{url('admin\dashboards')}}" class="nav-link">
                             <i class="fas fa-home"></i>
-                            <p>Visit Page</p>
+                            <p>Home</p>
                         </a>
                     </li>
                     

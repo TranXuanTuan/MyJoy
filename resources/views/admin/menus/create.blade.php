@@ -13,7 +13,7 @@
         {{ csrf_field() }}
         <div class="form-group">
             {{ Form::label('MenuName', 'MenuName') }}
-            {{ Form::text('MenuName', null, array('class' => 'form-control')) }}
+            {{ Form::text('menu_name', null, array('class' => 'form-control')) }}
             <br>       
 
             {{ Form::submit('Create Menu', array('class' => 'btn btn-success btn-lg btn-block')) }}

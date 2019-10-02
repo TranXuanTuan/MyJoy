@@ -22,82 +22,21 @@
                         <div class="col-12">
                             <div class="albums-slideshow owl-carousel">
                                 <!-- Single Album -->
+                                @foreach($posts as $post)
                                 <div class="single-album">
                                     <img src="img/bg-img/a1.jpg" alt="">
                                     <div class="album-info">
                                         <a href="#">
-                                            <h5>The Cure</h5>
+                                            <h5>{{$post->title}}</h5>
                                         </a>
                                         <p>Second Song</p>
                                     </div>
                                 </div>
-
+                                 @endforeach
                                 <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a2.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>Sam Smith</h5>
-                                        </a>
-                                        <p>Underground</p>
-                                    </div>
-                                </div>
-
-                                <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a3.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>Will I am</h5>
-                                        </a>
-                                        <p>First</p>
-                                    </div>
-                                </div>
-
-                                <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a4.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>The Cure</h5>
-                                        </a>
-                                        <p>Second Song</p>
-                                    </div>
-                                </div>
-
-                                <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a5.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>DJ SMITH</h5>
-                                        </a>
-                                        <p>The Album</p>
-                                    </div>
-                                </div>
-
-                                <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a6.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>The Ustopable</h5>
-                                        </a>
-                                        <p>Unplugged</p>
-                                    </div>
-                                </div>
-
-                                <!-- Single Album -->
-                                <div class="single-album">
-                                    <img src="img/bg-img/a7.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="#">
-                                            <h5>Beyonce</h5>
-                                        </a>
-                                        <p>Songs</p>
-                                    </div>
-                                </div>
+                                
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -355,7 +294,7 @@
                                         <p>01. Main Hit Song</p>
                                     </div>
                                         <audio preload="auto" controls>
-                                            <source src="audio/dummy-audio.mp3">
+                                            <source src="/audio/dummy-audio.mp3">
                                         </audio>
                                     </div>
                                 </div>

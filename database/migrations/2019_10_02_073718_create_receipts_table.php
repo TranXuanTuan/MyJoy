@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration
+class CreateReceiptsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,15 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('receipts', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            
+           
+            $table->unsignedBigInteger('beat_id');
+            
+         
+
+            $table->dateTime('date_buy');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('receipts');
     }
 }

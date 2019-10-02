@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Model\Post;
 use Auth;
 use Session;
 
@@ -20,9 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        /*\Auth::user()->id;*/
         $posts = Post::orderby('id', 'desc')->paginate(5);
-
         return view('posts.index', compact('posts'));
     }
 

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\VerifyMail;
 use Illuminate\Support\Facades\Mail;
-use App\VerifyUser;
+use App\Model\VerifyUser;
 
 class RegisterController extends Controller
 {

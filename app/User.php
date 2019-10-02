@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,7 +47,17 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function verifyUser()
     {
-        return $this->hasOne('App\VerifyUser');
+        return $this->hasOne('App\Model\VerifyUser');
     }
+
+    public function playlists()
+    {
+        return $this->hasMany('App\Model\Playlist');
+    }
+
     
+    public function receipts()
+    {
+        return $this->hasMany('App\Model\Receipt');
+    }
 }

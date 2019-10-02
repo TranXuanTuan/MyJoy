@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Menu;
+use App\Model\Menu;
 use Auth;
 use Session;
 
@@ -22,7 +22,7 @@ class MenuController extends Controller
     public function index()
     {   
         $menus = Menu::all();
-        return view('menus.index', compact('menus'));
+        return view('admin.menus.index', compact('menus'));
     }
 
     /**
@@ -32,7 +32,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        return view('admin.menus.create');
     }
 
     
@@ -45,10 +45,10 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'MenuName'=>'required|max:50',
+            'menu_name'=>'required|max:50',
             ]);
-        $MenuName = $request['MenuName'];
-        $menu = Menu::create($request->only('MenuName'));
+        $MenuName = $request['menu_name'];
+        $menu = Menu::create($request->only('menu_name'));
 
         return redirect()->route('menus.index') 
             ->with('flash_message', 'Article,

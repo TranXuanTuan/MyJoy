@@ -20,7 +20,7 @@
 					@foreach($menus as $menu)
 					<tr>
 						<td>{{$menu->id}}</td>
-						<td>{{$menu->MenuName}}</td>
+						<td>{{$menu->menu_name}}</td>
 						<td>
 							<a href="#" class="btn btn-sm btn-primary">Edit</a>
 							<a href="#" class="btn btn-sm btn-danger">Delete</a>

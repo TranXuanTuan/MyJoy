@@ -298,7 +298,7 @@ img {
 #scrollUp {
   background-color: #000000;
   border-radius: 0;
-  bottom: 50px;
+  bottom: 65px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 24px;
@@ -1673,6 +1673,17 @@ img {
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
 
+.media-container {
+  background-color: #1d1924;
+  padding: 22px;
+  color: #FFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

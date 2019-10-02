@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
      
-       return view('dashboards.index');
+       return view('admin.dashboards.index');
     }
 
     /**

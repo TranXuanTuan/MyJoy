@@ -13,12 +13,12 @@
         {{ csrf_field() }}
         <div class="form-group">
             {{ Form::label('SubMenuName', 'SubMenuName') }}
-            {{ Form::text('SubMenuName', null, array('class' => 'form-control')) }}
+            {{ Form::text('sub_menu_name', null, array('class' => 'form-control')) }}
             <br>       
             <select class="form-control" name="Menu_id">
                         <option value="">----------Select Menu----------</option>
                         @foreach($menus as $menu)
-                        <option value="{{$menu->id}}">{{$menu-> MenuName}}</option>
+                        <option value="{{$menu->id}}">{{$menu-> menu_name}}</option>
                         @endforeach
             </select>
             {{ Form::submit('Create SubMenu', array('class' => 'btn btn-success btn-lg btn-block')) }}

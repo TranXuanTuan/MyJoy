@@ -20,7 +20,7 @@
 					@foreach($submenus as $submenu)
 					<tr>
 						<td>{{$submenu->id}}</td>
-						<td>{{$submenu->SubMenuName}}</td>
+						<td>{{$submenu->sub_menu_name}}</td>
 						<td>
 							<a href="#" class="btn btn-sm btn-primary">Edit</a>
 							<a href="#" class="btn btn-sm btn-danger">Delete</a>

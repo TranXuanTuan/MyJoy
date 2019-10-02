@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Menu extends Model
 
     public function subCategories()
     {
-    	return $this->hasMany('App\SubCategory');
+    	return $this->hasMany('App\Model\SubCategory');
     }
 }

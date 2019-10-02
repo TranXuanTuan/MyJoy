@@ -13,7 +13,7 @@
             <div class="form-group">
 
             {{ Form::label('MenuName', 'Menu Name') }}
-            {{ Form::textarea('MenuName', null, array('class' => 'form-control')) }}<br>
+            {{ Form::textarea('menu_name', null, array('class' => 'form-control')) }}<br>
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Post;
+use App\Model\Post;
 use Auth;
 use Session;
 
@@ -24,7 +24,7 @@ class AdminPostController extends Controller
         /*\Auth::user()->id;*/
         $posts = Post::orderby('id', 'desc')->paginate(5);
 
-        return view('admin_posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -34,7 +34,7 @@ class AdminPostController extends Controller
      */
     public function create()
     {
-        return view('admin_posts.create');
+        return view('admin.posts.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class AdminPostController extends Controller
 
         $post = Post::create($request->only('title', 'body','description'));
 
-        return redirect()->route('admin_posts.index')
+        return redirect()->route('admin.posts.index')
             ->with('flash_message', 'Article,
              '. $post->title.' created');
     }
@@ -72,7 +72,7 @@ class AdminPostController extends Controller
     {
         $post = Post::findOrFail($id); 
 
-        return view ('admin_posts.show', compact('post'));
+        return view ('admin.posts.show', compact('post'));
     }
 
     /**
@@ -85,7 +85,7 @@ class AdminPostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('admin_posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -109,7 +109,7 @@ class AdminPostController extends Controller
         $description = $request->input('description');
         $post->save();
 
-        return redirect()->route('admin_posts.show', 
+        return redirect()->route('admin.posts.show', 
             $post->id)->with('flash_message', 
             'Article, '. $post->title.' updated');
     }
@@ -122,10 +122,10 @@ class AdminPostController extends Controller
      */
     public function destroy($id)
     {
-         $post = Post::findOrFail($id);
+        $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('admin_posts.index')
+        return redirect()->route('admin.posts.index')
             ->with('flash_message',
              'Article successfully deleted');
     }
