@@ -58,23 +58,47 @@
 
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="fas fa-music"></i>
+                    <i class="fas fa-compass"></i>
                     <p>
-                        User Manage
+                        Menu Manage
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{url('admin/menus')}}" class="nav-link">
                             <i class="fas fa-list"></i>
-                            <p>User List</p>
+                            <p>Menu List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>User Add</p>
+                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square"></i>
+                            <p>Menu Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="far fa-compass"></i>
+                    <p>
+                        SubMenu Manage
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/submenus')}}" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>SubMenu List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/submenus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square"></i>
+                            <p>SubMenu Add</p>
                         </a>
                     </li>
                 </ul>
@@ -97,31 +121,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>User Add</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                        User Manage
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-list"></i>
-                            <p>User List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
+                            <i class="fas fa-plus-square"></i>
                             <p>User Add</p>
                         </a>
                     </li>

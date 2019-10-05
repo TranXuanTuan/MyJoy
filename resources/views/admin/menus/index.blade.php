@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| List Menu')
 
@@ -13,7 +13,7 @@
 					<tr>
 						<th>ID</th>
 						<th>Menu Name</th>
-						<th>Action</th>
+						<th colspan="2">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -22,8 +22,12 @@
 						<td>{{$menu->id}}</td>
 						<td>{{$menu->menu_name}}</td>
 						<td>
-							<a href="#" class="btn btn-sm btn-primary">Edit</a>
-							<a href="#" class="btn btn-sm btn-danger">Delete</a>
+							<a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-sm btn-primary">Edit</a>
+						</td>
+						<td>
+							{!! Form::open(['method' => 'DELETE', 'route' => ['menus.destroy', $menu->id] ]) !!}
+                    		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    		{!! Form::close() !!}
 						</td>
 					</tr>
 					@endforeach

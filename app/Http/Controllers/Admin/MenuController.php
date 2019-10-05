@@ -47,12 +47,14 @@ class MenuController extends Controller
         $this->validate($request, [
             'menu_name'=>'required|max:50',
             ]);
-        $MenuName = $request['menu_name'];
-        $menu = Menu::create($request->only('menu_name'));
+
+        $menu_name = $request['menu_name'];
+
+        $menus = Menu::create($request->only('menu_name'));
 
         return redirect()->route('menus.index') 
             ->with('flash_message', 'Article,
-             '. $menu->MenuName.' created');;
+             '. $menus->menu_name.' created');;
     }
 
     /**
@@ -74,12 +76,12 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*public function edit($id)
+    public function edit($id)
     {
-        $post = Post::findOrFail($id);
+        $menu = Menu::findOrFail($id);
 
-        return view('admin_posts.edit', compact('post'));
-    }*/
+        return view('admin.menus.edit', compact('menu'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -88,24 +90,21 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title'=>'required|max:100',
-            'body'=>'required',
-            'description' =>'required',
+            'menu_name'=>'required|max:100',
+            
         ]);
 
-        $post = Post::findOrFail($id);
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $description = $request->input('description');
-        $post->save();
+        $menu = Menu::findOrFail($id);
+        $menu->menu_name = $request->input('menu_name');
+        $menu->save();
 
-        return redirect()->route('admin_posts.show', 
-            $post->id)->with('flash_message', 
-            'Article, '. $post->title.' updated');
-    }*/
+        return redirect()->route('menus.index', 
+            $menu->id)->with('flash_message', 
+            'Article, '. $menu->menu_name.' updated');
+    }
 
     /**
      * Remove the specified resource from storage.

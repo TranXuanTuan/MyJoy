@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| Create New Menu')
 
@@ -12,7 +12,7 @@
         {{ Form::open(array('route' => 'menus.store')) }}
         {{ csrf_field() }}
         <div class="form-group">
-            {{ Form::label('MenuName', 'MenuName') }}
+            {{ Form::label('menu_name', 'MenuName') }}
             {{ Form::text('menu_name', null, array('class' => 'form-control')) }}
             <br>       
 

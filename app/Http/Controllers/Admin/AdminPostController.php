@@ -48,16 +48,14 @@ class AdminPostController extends Controller
         $this->validate($request, [
             'title'=>'required|max:100',
             'body' =>'required',
-            'description' =>'required',
             ]);
 
         $title = $request['title'];
         $body = $request['body'];
-        $description = $request['description'];
 
-        $post = Post::create($request->only('title', 'body','description'));
+        $post = Post::create($request->only('title', 'body'));
 
-        return redirect()->route('admin.posts.index')
+        return redirect()->route('admin_posts.index')
             ->with('flash_message', 'Article,
              '. $post->title.' created');
     }
@@ -109,7 +107,7 @@ class AdminPostController extends Controller
         $description = $request->input('description');
         $post->save();
 
-        return redirect()->route('admin.posts.show', 
+        return redirect()->route('admin_posts.show', 
             $post->id)->with('flash_message', 
             'Article, '. $post->title.' updated');
     }
@@ -125,7 +123,7 @@ class AdminPostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('admin.posts.index')
+        return redirect()->route('admin_posts.index')
             ->with('flash_message',
              'Article successfully deleted');
     }

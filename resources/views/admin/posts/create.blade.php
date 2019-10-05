@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| Create New Post')
 
@@ -18,10 +18,6 @@
 
             {{ Form::label('body', 'Post Body') }}
             {{ Form::textarea('body', null, array('class' => 'form-control')) }}
-            <br>
-
-            {{ Form::label('description', 'Description') }}
-            {{ Form::textarea('description', null, array('class' => 'form-control')) }}
             <br>
 
             {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block')) }}

@@ -18,24 +18,65 @@ class SubMenuController extends Controller
 
 	public function index()
     {
+        $menus = Menu::all();
         $submenus = SubCategory::all();
         return view('admin.submenus.index', compact('submenus'));
     }
 
     public function create()
     {
-        $submenus = SubCategory::all();
-        return view('admin.submenus.create',compact('submenus'));
+        $menus = Menu::all();
+        return view('admin.submenus.create',compact('menus'));
     }
 
     public function store(Request $request)
     {
-        $subMenu = new SubCategory();
-        $subMenu ->sub_menu_name = $request->sub_menu_name;
-        $subMenu ->menu_id = $request->menu_id;
-        $subMenu->save();
+        $submenus = new SubCategory();
+        $submenus ->sub_menu_name = $request->sub_menu_name;
+        $submenus ->menu_id = $request->menu_id;
+        $submenus->save();
         return redirect()->route('submenus.index') 
             ->with('flash_message', 'Article,
-             '. $subMenu->sub_menu_name.' created');;;
+             '. $submenus->sub_menu_name.' created');;;
+    }
+
+    public function edit($id)
+    {
+        $submenu = SubCategory::findOrFail($id);
+
+        return view('admin.submenus.edit', compact('submenu'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'sub_menu_name'=>'required|max:100',
+            
+        ]);
+
+        $submenu = SubCategory::findOrFail($id);
+        $submenu->sub_menu_name = $request->input('sub_menu_name');
+        $submenu->save();
+
+        return redirect()->route('submenus.index', 
+            $submenu->id)->with('flash_message', 
+            'Article, '. $submenu->sub_menu_name.' updated');
+    }
+
+    public function destroy($id)
+    {
+        $submenu = SubCategory::findOrFail($id);
+        $submenu->delete();
+
+        return redirect()->route('submenus.index')
+            ->with('flash_message',
+             'Article successfully deleted');
     }
 }

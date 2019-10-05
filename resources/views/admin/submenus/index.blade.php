@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.admin.content')
 
 @section('title', '| List SubMenu')
 
@@ -12,8 +12,9 @@
 				<thead>
 					<tr>
 						<th>ID</th>
+
 						<th>SubMenu Name</th>
-						<th>Action</th>
+						<th colspan="2">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -22,8 +23,12 @@
 						<td>{{$submenu->id}}</td>
 						<td>{{$submenu->sub_menu_name}}</td>
 						<td>
-							<a href="#" class="btn btn-sm btn-primary">Edit</a>
-							<a href="#" class="btn btn-sm btn-danger">Delete</a>
+							<a href="{{ route('submenus.edit', $submenu->id) }}" class="btn btn-sm btn-primary">Edit</a>
+						</td>
+						<td>
+							{!! Form::open(['method' => 'DELETE', 'route' => ['submenus.destroy', $submenu->id] ]) !!}
+                    		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    		{!! Form::close() !!}
 						</td>
 					</tr>
 					@endforeach
