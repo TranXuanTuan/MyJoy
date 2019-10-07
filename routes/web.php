@@ -16,13 +16,10 @@
 Auth::routes();
 
 Auth::routes(['verify' => true]);
-
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('/', 'PostController@index')->name('home');
-
 Route::resource('posts', 'PostController');
-
+Route::resource('albums', 'AlbumController');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 

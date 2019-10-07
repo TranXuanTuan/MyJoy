@@ -27,8 +27,91 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="#">Albums</a>
-                                        <ul class="dropdown">
+                                    <li><a href="#">Album</a>
+                                       <ul class="dropdown">
+                                            
+                                            <div class="column">
+                                                <li >
+                                                <a href="#">VIETNAM</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                            
+                                            <div class="column">
+                                                <li >
+                                                <a href="#" >US-UK</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                     
+                                            <div class="column">
+                                                <li >
+                                                <a href="#" >ASIAN</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                        
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subject</a>
+                                       <ul class="dropdown">
+                                            
+                                            <div class="column">
+                                                <li >
+                                                <a href="#">Offer</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                            
+                                            <div class="column">
+                                                <li >
+                                                <a href="#" >Category</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                     
+                                            <div class="column">
+                                                <li >
+                                                <a href="#" >Mood</a>
+                                                </li>
+                                                <li><a href="#">Albums</a></li>
+                                                <li><a href="event.html">Events</a></li>
+                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                            </div>
+                                        
+                                        
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Artist</a>
+                                       <ul class="dropdown">
                                             
                                             <div class="column">
                                                 <li >
@@ -69,69 +152,12 @@
                                         
                                         </ul>
                                     </li>
-                                    <li><a href="#">Subjects</a>
-                                        <ul class="dropdown">
-                                            
-                                            <div class="column">
-                                                <li>
-                                                <a href="#">OFFERS</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="#">Login</a></li>
-                                            </div>
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#">TOPIC</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="#">Login</a></li>
-                                            </div>
-                                            <div class="column">
-                                                <li >
-                                                <a href="#">MOOD</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="#">Login</a></li>
-                                            </div>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Artists</a>
-                                        <ul class="dropdown">    
-                                            <div class="column">
-                                                <li><a href="#">VIETNAM</a></li>
-                                                <li><a href="#">US-UK</a></li>
-                                            </div>
-                                            <div class="column">
-                                                <li><a href="event.html">KOREA</a></li>
-                                            <li><a href="blog.html">JAPAN</a></li>
-                                            </div> 
-                                            <div class="column">
-                                                <li><a href="contact.html">CHINA</a></li>
-                                                <li><a href="elements.html">CONCERT</a></li>
-                                            </div>                                      
-                                        </ul>
-
-                                    </li>
                                     <li><a href="#">News</a></li>
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
                                     <li><a href="#">Contact</a></li>
                                 </ul>
-
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
@@ -168,18 +194,11 @@
                                         </li>
 
                                     </ul>
-                                    <!-- Cart Button -->
-
-
-                                    <div>
-
-
-                                    </div>
 
                                 </div>
 
 
-                                    @endif
+                                @endif
                                 </div>
                             </div>
                             <!-- Nav End -->

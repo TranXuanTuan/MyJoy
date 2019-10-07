@@ -8,6 +8,11 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h2 class="text-left">List SubMenu</h2>
+			<div class="col-2">
+            	<p>
+            		<a href="{{ route('submenus.create') }}" class="btn btn-dark">Add SubMenu</a>
+            	</p>
+        	</div>
 			<table class="table table-hover">
 				<thead>
 					<tr>

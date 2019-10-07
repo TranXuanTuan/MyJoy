@@ -25,7 +25,7 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                          <a href="{{url('admin\dashboards')}}" class="nav-link">
-                            <i class="fas fa-home"></i>
+                            <i class="fas fa-home nav-icon"></i>
                             <p>Home</p>
                         </a>
                     </li>
@@ -43,13 +43,13 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{url('admin/users')}}" class="nav-link">
-                            <i class="fas fa-list"></i>
+                            <i class="fas fa-list nav-icon"></i>
                             <p>User List</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('admin/users/create')}}" class="nav-link">
-                            <i class="fas fa-user-plus"></i>
+                            <i class="fas fa-user-plus nav-icon"></i>
                             <p>User Add</p>
                         </a>
                     </li>
@@ -67,14 +67,26 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{url('admin/menus')}}" class="nav-link">
-                            <i class="fas fa-list"></i>
+                            <i class="fas fa-list nav-icon"></i>
                             <p>Menu List</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('admin/menus/create')}}" class="nav-link">
-                            <i class="fas fa-plus-square"></i>
+                            <i class="fas fa-plus-square nav-icon"></i>
                             <p>Menu Add</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/submenus')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>SubMenu List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/submenus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square nav-icon"></i>
+                            <p>SubMenu Add</p>
                         </a>
                     </li>
                 </ul>
@@ -89,18 +101,7 @@
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{url('admin/submenus')}}" class="nav-link">
-                            <i class="fas fa-list"></i>
-                            <p>SubMenu List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('admin/submenus/create')}}" class="nav-link">
-                            <i class="fas fa-plus-square"></i>
-                            <p>SubMenu Add</p>
-                        </a>
-                    </li>
+                    
                 </ul>
             </li>
 

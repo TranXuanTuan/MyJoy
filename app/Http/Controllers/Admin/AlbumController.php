@@ -1,28 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Subject;
-use Auth;
+use App\Http\Controllers\Controller;
 
-class SubjectController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware(['auth', 'clearance']);
-    }
-
     public function index()
     {
-        $subjects = Subject::all();
-        return view('layouts.front.header', compact('subjects'));
+        //
     }
 
     /**

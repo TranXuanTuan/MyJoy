@@ -57,10 +57,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="#">submenu</a>
-                                    </li>
-                                </ul>
+                                <li>
+                                    <a href="#">submenu</a>
+                                </li>
+                            </ul>
 
                         </li>
                         @endforeach 

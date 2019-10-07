@@ -12,9 +12,9 @@ class SubjectsTableSeeder extends Seeder
     public function run()
     {
         $dataInsert = [
-            ['subject_name' => 'HOT'],
-            ['subject_name' => 'HIT'],
-            ['subject_name' => 'K-Pop HIT'],
+            ['subject_name' => 'Hot'],
+            ['subject_name' => 'Hit'],
+            ['subject_name' => 'K-Pop Hit'],
             ['subject_name' => 'EDM'],
             ['subject_name' => 'Acoustic'],
             ['subject_name' => 'Indie'],
@@ -22,7 +22,8 @@ class SubjectsTableSeeder extends Seeder
             ['subject_name' => 'Love'],
             ['subject_name' => 'Party'],
             ['subject_name' => 'Travel'],
-            ['subject_name' => 'Vietnamese music']
+            ['subject_name' => 'Relax'],
+            ['subject_name' => 'V-Pop Hit']
         ];
 
         DB::table('subjects')->insert($dataInsert);

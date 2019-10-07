@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
-use App\Menu;
+use App\Model\Album;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,9 +28,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        View::composer('layouts.front.app', function($view) {
-            $menus = Menu::all();
-            $view->with('menus' , $menus);
+         View::composer('posts.index', function($view) {
+            $albums = Album::orderby('id', 'desc')->paginate(3);
+            $view->with('albums' , $albums);
         });
     }
 }

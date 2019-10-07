@@ -8,5 +8,5 @@
             <section class="content">
                 @yield('content')
             </section>
-           
+    @include('layouts.front.contact')       
 @include('layouts.front.footer')
