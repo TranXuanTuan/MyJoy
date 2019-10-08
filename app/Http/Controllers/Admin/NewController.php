@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Model\News;
+use App\Http\Controllers\Controller;
 
 class NewController extends Controller
 {
@@ -14,8 +14,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        $news = News::orderBy('id', 'desc')->paginate(2);
-        return view('news.index', compact('news'));
+        //
     }
 
     /**

@@ -101,7 +101,7 @@
                                                 </li>
                                                 <li><a href="#">Albums</a></li>
                                                 <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
+                                                <li><a href="#">News</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
                                                 <li><a href="elements.html">Elements</a></li>
                                                 <li><a href="{{ route('login') }}">Login</a></li>
@@ -152,7 +152,8 @@
                                         
                                         </ul>
                                     </li>
-                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Events</a></li>
+                                    <li><a href="{{route('news.index')}}">News</a></li>
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
