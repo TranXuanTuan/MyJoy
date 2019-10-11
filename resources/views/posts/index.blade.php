@@ -23,14 +23,15 @@
                             <div class="albums-slideshow owl-carousel">
                                 <!-- Single Album -->
                                 @foreach($albums as $album)
-                                <div class="single-album">
-                                    <img src="img/bg-img/a1.jpg" alt="">
-                                    <div class="album-info">
-                                        <a href="{{ route('albums.index') }}">
-                                            <h5>{{$album->album_name}}</h5>
-                                        </a>
-                                        <p>{{$album->description}}</p>
-                                    </div>
+                                <div class="single-album"> 
+                                    <a href="{{ route('albums.index') }}">
+                                        <img src="img/bg-img/a1.jpg" alt="">
+                                        <div class="album-info">
+                                                <h5>{{$album->album_name}}</h5>
+                                            
+                                            <p>{{$album->description}}</p>
+                                        </div>
+                                    </a>
                                 </div>
                                  @endforeach
                                 <!-- Single Album -->

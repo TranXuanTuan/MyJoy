@@ -27,130 +27,32 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="#">Album</a>
+                                    <li><a href="{{route('albums.index')}}">Album</a>
                                        <ul class="dropdown">
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#">VIETNAM</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >US-UK</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                     
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >ASIAN</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                        
+                                            @foreach($albumcategories as $albumcategory)
+                                            <li>
+                                                <a href="#">{{$albumcategory->category_name}}</a>
+                                            </li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">Subject</a>
+                                    <li><a href="{{route('albums.index')}}">Subject</a>
                                        <ul class="dropdown">
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#">Offer</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >Category</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                     
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >Mood</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="#">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                        
-                                        
+                                            @foreach($subjects as $subject)
+                                            <li><a href="#">{{$subject->subject_name}}</a>
+                                            </li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">Artist</a>
+                                    <li><a href="{{route('albums.index')}}">Artist</a>
                                        <ul class="dropdown">
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#">VIETNAM</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                            
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >US-UK</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                     
-                                            <div class="column">
-                                                <li >
-                                                <a href="#" >ASIAN</a>
-                                                </li>
-                                                <li><a href="#">Albums</a></li>
-                                                <li><a href="event.html">Events</a></li>
-                                                <li><a href="blog.html">News</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            </div>
-                                        
-                                        
+                                        @foreach($artist_categories as $artist_category)
+                                            <li>
+                                                <a href="index.html">{{$artist_category->category_name}}</a>
+                                            </li>
+                                        @endforeach    
                                         </ul>
+                                    </li>
                                     </li>
                                     <li><a href="#">Events</a></li>
                                     <li><a href="{{route('news.index')}}">News</a></li>
