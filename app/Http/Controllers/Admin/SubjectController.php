@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Model\Album;
-use App\Model\AlbumCategory;
-use Auth;
-use Session;
+use App\Http\Controllers\Controller;
 
-class AlbumController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +14,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::paginate(12);
-        $album_categories = AlbumCategory::paginate(4);
-        return view('albums.index', compact('albums','album_categories'));
+        //
     }
 
     /**

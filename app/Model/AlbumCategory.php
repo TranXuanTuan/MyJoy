@@ -8,6 +8,6 @@ class AlbumCategory extends Model
 {
     public function albums()
     {
-    	return $this->hasMany('App\Model\Album');
+    	return $this->hasMany('App\Model\Album','category_id');
     }
 }

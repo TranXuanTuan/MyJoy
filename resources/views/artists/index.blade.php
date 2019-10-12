@@ -5,7 +5,7 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
-            <h2>Latest Albums</h2>
+            <h2>ARTISTS</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -13,27 +13,30 @@
     <!-- ##### Album Catagory Area Start ##### -->
     <section class="album-catagory section-padding-100-0">
         <div class="container">
-            @foreach($album_categories as $album_category)
+             @foreach($artist_categories as $artist_category)
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
-                        <a href="#">{{$album_category->category_name}}</a>
+                        <a href="#">{{$artist_category->category_name}}</a>
             </div>
-            
+           
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($album_category->albums as $album)
+                
+                @foreach($artist_category->artists as $artist)      
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
+                        <a href="#">
                         <img src="img/bg-img/a1.jpg" alt="">
                         <div class="album-info">
-                            <a href="#">
-                                <h5>{{$album->album_name}}</h5>
-                            </a>
+                            <h5>{{$artist->artist_name}}</h5>
                         </div>
+                        </a>
                     </div>
+                    
                 </div>
                 @endforeach
+               
             </div>
-            
+
             <div class="oneMusic-buy-now-area mb-100">
                 <div class="container">
                     <div class="row">
@@ -46,11 +49,6 @@
                 </div>
             </div>
             @endforeach
-            
-            <div class="text-center">
-                {!! $albums->links() !!}
-            </div>
-            
         </div>
     </section>
 

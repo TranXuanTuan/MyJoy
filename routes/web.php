@@ -20,7 +20,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'PostController@index')->name('home');
 Route::resource('posts', 'PostController');
 Route::resource('albums', 'AlbumController');
+Route::resource('artists', 'ArtistController');
 Route::resource('news', 'NewController');
+Route::resource('subjects', 'SubjectController');
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 

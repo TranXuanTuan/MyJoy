@@ -36,7 +36,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('albums.index')}}">Subject</a>
+                                    <li><a href="{{route('subjects.index')}}">Subject</a>
                                        <ul class="dropdown">
                                             @foreach($subjects as $subject)
                                             <li><a href="#">{{$subject->subject_name}}</a>
@@ -44,11 +44,11 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('albums.index')}}">Artist</a>
+                                    <li><a href="{{route('artists.index')}}">Artist</a>
                                        <ul class="dropdown">
                                         @foreach($artist_categories as $artist_category)
                                             <li>
-                                                <a href="index.html">{{$artist_category->category_name}}</a>
+                                                <a href="#">{{$artist_category->category_name}}</a>
                                             </li>
                                         @endforeach    
                                         </ul>
