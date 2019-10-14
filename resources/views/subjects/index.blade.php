@@ -23,12 +23,14 @@
                 @foreach($subjects as $subject)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
+                         <a href="#">
                         <img src="img/bg-img/a1.jpg" alt="">
                         <div class="album-info">
-                            <a href="#">
+                           
                                 <h5>{{$subject->subject_name}}</h5>
-                            </a>
+                            
                         </div>
+                        </a>
                     </div>
                 </div>
                 @endforeach
@@ -45,8 +47,9 @@
                 </div>
             </div>
 
-             {!! $subjects->links() !!}
+             
         </div>
+        {!! $subjects->links() !!}
     </section>
 
     

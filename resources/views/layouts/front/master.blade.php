@@ -7,6 +7,5 @@
         <!-- Main content -->
             <section class="content">
                 @yield('content')
-            </section>
-    @include('layouts.front.contact')       
+            </section>       
 @include('layouts.front.footer')

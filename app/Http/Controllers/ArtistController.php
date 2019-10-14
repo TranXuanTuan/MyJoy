@@ -11,12 +11,19 @@ class ArtistController extends Controller
     public function index()
     {
     	$artist_categories = ArtistCategory::all();
-        $artists = Artist::all();
+        $artists = Artist::paginate(12);
         return view('artists.index', compact('artists','artist_categories'));
     }
 
-    public function show($id)
+    public function show($category_id)
     {
-        //
+        $artist_categories = Artist::where('category_id',$category_id)->get();
+        return view('artists.show', compact('artist_categories'));
+    }
+
+    public function detail($id)
+    {
+        $artist = Artist::findorfail($id);
+        return view('artists.detail', compact('artist'));
     }
 }

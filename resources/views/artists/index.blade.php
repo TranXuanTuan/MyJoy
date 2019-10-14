@@ -15,26 +15,23 @@
         <div class="container">
              @foreach($artist_categories as $artist_category)
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
-                        <a href="#">{{$artist_category->category_name}}</a>
+                <a href="#">{{$artist_category->category_name}}</a>
             </div>
-           
+
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                
-                @foreach($artist_category->artists as $artist)      
+                @foreach($artist_category->artists as $artist)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                        <a href="#">
-                        <img src="img/bg-img/a1.jpg" alt="">
+                        <a href="{{route('detail',$artist->id)}}">
+                        <img src="/upload/artists/{{$artist->thumb}}" alt="" height="200px">
                         <div class="album-info">
-                            <h5>{{$artist->artist_name}}</h5>
+                                <h5>{{$artist->artist_name}}</h5>
                         </div>
                         </a>
                     </div>
-                    
                 </div>
                 @endforeach
-               
             </div>
 
             <div class="oneMusic-buy-now-area mb-100">
@@ -42,7 +39,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="load-more-btn text-center">
-                                <a href="#" class="btn oneMusic-btn">See All<i class="fa fa-angle-double-right"></i></a>
+                                <a href="{{ route('artists.show',$artist->category_id)}}" class="btn oneMusic-btn">See All<i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -51,8 +48,4 @@
             @endforeach
         </div>
     </section>
-
-    
-
-
 @endsection

@@ -10,8 +10,6 @@
     <hr>
     <p class="lead">{{ $post->body }} </p>
     <hr>
-    <p class="lead">{{ $post->description }} </p>
-    {!! Form::open(['method' => 'DELETE', 'route' => ['admin_posts.destroy', $post->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
     @can('Edit Post')
     <a href="{{ route('admin_posts.edit', $post->id) }}" class="btn btn-info" role="button">Edit</a>

@@ -5,7 +5,7 @@
 	            <p>01. Main Hit Song</p>
 	        </div>
 	        <audio preload="auto" controls>
-	            <source src="audio/dummy-audio.mp3">
+	            <source src="/audio/dummy-audio.mp3">
 	        </audio>
         </div>
 	</div>

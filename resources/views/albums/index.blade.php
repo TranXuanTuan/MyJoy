@@ -23,12 +23,12 @@
                 @foreach($album_category->albums as $album)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
+                        <a href="#">
                         <img src="img/bg-img/a1.jpg" alt="">
                         <div class="album-info">
-                            <a href="#">
                                 <h5>{{$album->album_name}}</h5>
-                            </a>
                         </div>
+                        </a>
                     </div>
                 </div>
                 @endforeach
@@ -46,15 +46,7 @@
                 </div>
             </div>
             @endforeach
-            
-            <div class="text-center">
-                {!! $albums->links() !!}
-            </div>
-            
         </div>
+        {!! $albums->links() !!}
     </section>
-
-    
-
-
 @endsection

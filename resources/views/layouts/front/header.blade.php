@@ -7,7 +7,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="{{ url('/') }}" class="nav-brand"><img src="{{ asset('img/core-img/logo.png')}}" alt=""></a>
+                        <a href="{{ url('/') }}" class="nav-brand"><img src="{{ asset('/img/core-img/logo.png')}}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -48,7 +48,7 @@
                                        <ul class="dropdown">
                                         @foreach($artist_categories as $artist_category)
                                             <li>
-                                                <a href="#">{{$artist_category->category_name}}</a>
+                                                <a href="{{route('artists.show',$artist_category->id)}}">{{$artist_category->category_name}}</a>
                                             </li>
                                         @endforeach    
                                         </ul>
