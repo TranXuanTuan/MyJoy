@@ -15,11 +15,11 @@
                 <div class="col-12 col-lg-9">
 
                     <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="30ms">
+                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
-                         @foreach($news as $new)
+                        
                         <div class="blog-post-thumb mt-30">
-                            <a href="{{route('news.show', $new -> id)}}"><img src="img/bg-img/blog1.jpg" alt=""></a>
+                            <a href="#"><img src="img/bg-img/blog1.jpg" alt=""></a>
                             <!-- Post Date -->
                             <div class="post-date">
                                 <span>15</span>
@@ -31,7 +31,7 @@
                        
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <a href="{{route('news.show', $new -> id)}}" class="post-title">{{$new -> title}}</a>
+                            <a href="#" class="post-title">{{$new -> title}}</a>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p class="post-author">By<a href="#"> Admin</a></p>
@@ -40,23 +40,11 @@
                             </div>
                             <!-- Post Excerpt -->
                             <h4>{{$new -> description}}</h4>
+                            <p>{{$new -> content}}</p>
                         </div>
-                        @endforeach
                     </div>
 
 
-
-                    <!-- Pagination -->
-                    <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
 
                 <div class="col-12 col-lg-3">
                     <div class="blog-sidebar-area">
@@ -106,7 +94,8 @@
                                     <li><a href="#">press</a></li>
                                     <li><a href="#">mp3</a></li>
                                     <li><a href="#">videos</a></li>
-                                    
+                                    <li><a href="#">concerts</a></li>
+                                    <li><a href="#">performers</a></li>
                                 </ul>
                             </div>
                         </div>

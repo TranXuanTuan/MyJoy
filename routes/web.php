@@ -37,6 +37,8 @@ Route::group(['prefix' => 'artists'], function () {
 
 Route::resource('news', 'NewController');
 
+Route::resource('contacts', 'ContactController');
+
 Route::resource('subjects', 'SubjectController');
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
