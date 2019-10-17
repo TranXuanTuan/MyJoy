@@ -31,7 +31,7 @@
                                        <ul class="dropdown">
                                             @foreach($albumcategories as $albumcategory)
                                             <li>
-                                                <a href="#">{{$albumcategory->category_name}}</a>
+                                                <a href="{{ route('albums.show',$albumcategory->id)}}">{{$albumcategory->category_name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -39,7 +39,7 @@
                                     <li><a href="{{route('subjects.index')}}">Subject</a>
                                        <ul class="dropdown">
                                             @foreach($subjects as $subject)
-                                            <li><a href="#">{{$subject->subject_name}}</a>
+                                            <li><a href="{{ route('subjects.show',$subject->id)}}">{{$subject->subject_name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

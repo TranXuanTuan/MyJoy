@@ -23,7 +23,7 @@
                 @foreach($artist_category->artists as $artist)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                        <a href="{{route('detail',$artist->id)}}">
+                        <a href="{{route('artistdetail',$artist->id)}}">
                         <img src="/upload/artists/{{$artist->thumb}}" alt="" height="200px">
                         <div class="album-info">
                                 <h5>{{$artist->artist_name}}</h5>

@@ -22,19 +22,24 @@ Route::get('/', 'PostController@index')->name('home');
 Route::resource('posts', 'PostController');
 
 Route::resource('albums', 'AlbumController');
+Route::group(['prefix' => 'albums'], function () {
+    Route::get('detail/{id}','AlbumController@detail')->name('albumdetail');
+});
 
 Route::resource('artists', 'ArtistController');
-
 Route::group(['prefix' => 'artists'], function () {
-    Route::get('detail/{id}','ArtistController@detail')->name('detail');
+    Route::get('detail/{id}','ArtistController@detail')->name('artistdetail');
 });
+
+// Route::group(['middleware' => 'auth'],function(){
+//     Route::resource('orders', 'OrderController');
+// });
 
 Route::resource('news', 'NewController');
 
 Route::resource('subjects', 'SubjectController');
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
 
 Route::namespace('Admin')
     ->prefix('admin')

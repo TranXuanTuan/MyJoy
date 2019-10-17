@@ -23,7 +23,7 @@
                 @foreach($album_category->albums as $album)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                        <a href="#">
+                        <a href="{{route('albumdetail',$album_category->id)}}">
                         <img src="img/bg-img/a1.jpg" alt="">
                         <div class="album-info">
                                 <h5>{{$album->album_name}}</h5>
@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="load-more-btn text-center">
-                                <a href="#" class="btn oneMusic-btn">See All<i class="fa fa-angle-double-right"></i></a>
+                                <a href="{{ route('albums.show',$album->category_id)}}" class="btn oneMusic-btn">See All<i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>

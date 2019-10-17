@@ -5,7 +5,7 @@
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
-            <h2>ARTISTS</h2>
+            <h2>ALBUMS</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -18,14 +18,14 @@
             </div>
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($artist_categories as $artist_category)  
+                @foreach($album_categories as $album_category)  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     
                     <div class="single-album">
-                        <a href="{{route('artistdetail',$artist_category->id)}}">
-                        <img src="/upload/artists/{{$artist_category->thumb}}" alt="" height="200px">
+                        <a href="{{route('albumdetail',$album_category->id)}}">
+                        <img src="/img/bg-img/a1.jpg" alt="">
                         <div class="album-info">
-                            <h5>{{$artist_category->artist_name}}</h5>
+                            <h5>{{$album_category->album_name}}</h5>
                         </div>
                         </a>
                     </div>
