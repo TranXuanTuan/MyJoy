@@ -9,6 +9,7 @@ use App\Model\Album;
 use App\Model\AlbumCategory;
 use App\Model\Subject;
 use App\Model\ArtistCategory;
+use App\Model\BeatCategory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer('posts.index', function($view) {
             $albums = Album::orderby('id', 'desc')->paginate(3);
             $view->with('albums' , $albums);
+            $beat_categories = BeatCategory::paginate(12);
+            $view->with('beat_categories' , $beat_categories);
         });
 
         View::composer('layouts.front.header', function($view) {
@@ -43,6 +46,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('subjects' , $subjects);
             $artist_categories = ArtistCategory::all();
             $view->with('artist_categories' , $artist_categories);
+            
         });
 
 

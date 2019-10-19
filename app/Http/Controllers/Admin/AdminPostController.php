@@ -23,7 +23,6 @@ class AdminPostController extends Controller
     {
         /*\Auth::user()->id;*/
         $posts = Post::orderby('id', 'desc')->paginate(5);
-
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -82,7 +81,6 @@ class AdminPostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-
         return view('admin.posts.edit', compact('post'));
     }
 

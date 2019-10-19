@@ -13,6 +13,12 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-5 col-lg-8">
+                            <div class="featured-artist-content">
+                                <!-- Section Heading -->
+                                <div class="section-heading white text-left mb-30">
+                                    <h2>ALBUM:{{$album->album_name}}</h2>
+                                </div>
+                            </div>
                             <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                                 <div class="song-play-area">
                                     <div class="song-name">
