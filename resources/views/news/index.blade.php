@@ -1,6 +1,6 @@
 @extends('layouts.front.master')
 @section('content')
-		<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+		<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
             <h2>News</h2>
@@ -43,11 +43,11 @@
                         </div>
                         @endforeach
                     </div>
-
+                    {!! $news->links() !!}
 
 
                     <!-- Pagination -->
-                    <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
+                    <!-- <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
                         <nav>
                             <ul class="pagination">
                                 <li class="page-item active"><a class="page-link" href="#">01</a></li>
@@ -55,7 +55,7 @@
                                 <li class="page-item"><a class="page-link" href="#">03</a></li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-12 col-lg-3">

@@ -36,7 +36,7 @@
                 <a href="#" class="nav-link">
                     <i class="fas fa-users"></i>
                     <p>
-                        User Manage
+                        User 
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -55,12 +55,57 @@
                     </li>
                 </ul>
             </li>
-
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="fas fa-compass"></i>
+                    <i class="fas fa-music"></i>
                     <p>
-                        Menu Manage
+                        Song 
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('songs.index')}}" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>Songs List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('news.create')}}" class="nav-link">
+                            <i class="fas fa-plus-square"></i>
+                            <p>Songs Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="far fa-newspaper"></i>
+                    <p>
+                        News 
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('news.index')}}" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>News List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('news.create')}}" class="nav-link">
+                            <i class="fas fa-plus-square"></i>
+                            <p>News Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-bars"></i>
+                    <p>
+                        Menu 
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -80,29 +125,7 @@
                 </ul>
             </li>
 
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
-                    <p>
-                        User Manage
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-list"></i>
-                            <p>User List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-plus-square"></i>
-                            <p>User Add</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+
             
         </ul>
     </nav>

@@ -1,6 +1,6 @@
 @extends('layouts.front.master')
 @section('content')
-		<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+	<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
             <h2>News</h2>
@@ -18,34 +18,28 @@
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
                         
-                        <div class="blog-post-thumb mt-30">
-                            <a href="#"><img src="img/bg-img/blog1.jpg" alt=""></a>
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
+                        
                         <!-- Blog Content -->
                        
                         <div class="blog-content">
                             <!-- Post Title -->
                             <a href="#" class="post-title">{{$new -> title}}</a>
+                            <div class="blog-post-thumb mt-30">
+                                 <a><img src="/img/bg-img/blog1.jpg" alt=""></a>
+                            
+                            </div>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p class="post-author">By<a href="#"> Admin</a></p>
                                 <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
+                                
                             </div>
                             <!-- Post Excerpt -->
                             <h4>{{$new -> description}}</h4>
                             <p>{{$new -> content}}</p>
                         </div>
                     </div>
-
-
-
+                </div>
                 <div class="col-12 col-lg-3">
                     <div class="blog-sidebar-area">
 
@@ -94,25 +88,23 @@
                                     <li><a href="#">press</a></li>
                                     <li><a href="#">mp3</a></li>
                                     <li><a href="#">videos</a></li>
-                                    <li><a href="#">concerts</a></li>
-                                    <li><a href="#">performers</a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
-                            <a href="#"><img src="img/bg-img/add.gif" alt=""></a>
+                            <a href="#"><img src="/img/bg-img/add.gif" alt=""></a>
                         </div>
 
                         <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
-                            <a href="#"><img src="img/bg-img/add2.gif" alt=""></a>
+                            <a href="#"><img src="/img/bg-img/add2.gif" alt=""></a>
                         </div>
 
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 @endsection
