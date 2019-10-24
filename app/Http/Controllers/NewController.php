@@ -48,7 +48,6 @@ class NewController extends Controller
     public function show($id)
     {
         $new = News::findOrFail($id);
-
         return view('news.show', compact('new'));
     }
 

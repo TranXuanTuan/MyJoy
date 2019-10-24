@@ -88,19 +88,65 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('news.index')}}" class="nav-link">
+                        <a href="{{route('admin_news.index')}}" class="nav-link">
                             <i class="fas fa-list"></i>
                             <p>News List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('news.create')}}" class="nav-link">
+                        <a href="{{route('admin_news.create')}}" class="nav-link">
                             <i class="fas fa-plus-square"></i>
                             <p>News Add</p>
                         </a>
                     </li>
                 </ul>
             </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                <i class="fas fa-microphone-alt"></i>
+                    <p>
+                        Artists 
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Menu List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square nav-icon"></i>
+                            <p>Menu Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                <i class="fas fa-compact-disc"></i>
+                    <p>
+                        Albums 
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Menu List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square nav-icon"></i>
+                            <p>Menu Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                     <i class="fas fa-bars"></i>
@@ -123,10 +169,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
-
-
-            
+            </li>            
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -51,19 +51,7 @@
                     <!-- Left Side Of Navbar -->
                     
                     <ul class="nav navbar-nav">
-                        @foreach($menus as $menu)
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown">{{$menu -> MenuName}}
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="#">submenu</a>
-                                </li>
-                            </ul>
-
-                        </li>
-                        @endforeach 
+                        
                     </ul>
                     
 

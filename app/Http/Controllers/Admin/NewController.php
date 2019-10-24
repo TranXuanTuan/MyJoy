@@ -20,7 +20,7 @@ class NewController extends Controller
     public function index()
     {
         $news = News::orderby('id', 'desc')->paginate(2);
-        return view('admin.news.index',compact('news'));
+        return view('admin.admin_news.index',compact('news'));
     }
 
     /**
@@ -30,7 +30,7 @@ class NewController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.admin_news.create');
     }
 
     /**
@@ -51,7 +51,7 @@ class NewController extends Controller
         $content = $request['content'];
 
         $new = News::create($request->only('title', 'description', 'content'));
-        return redirect()->route('news.index')
+        return redirect()->route('admin_news.index')
                 ->with('flash_message', 'Article,'. $new->title.'created');
 
 
@@ -68,7 +68,7 @@ class NewController extends Controller
     public function edit($id)
     {
         $new = News::findOrFail($id);
-        return view('admin.news.edit', compact('new'));
+        return view('admin.admin_news.edit', compact('new'));
     }
 
     /**
@@ -92,7 +92,7 @@ class NewController extends Controller
         $new->content = $request->input('content');
         $new->save();
 
-        return redirect()->route('news.edit', 
+        return redirect()->route('admin_news.edit', 
             $new->id)->with('flash_message', 
             'Article, '. $new->title.' updated');
     }
@@ -108,7 +108,7 @@ class NewController extends Controller
         $new = News::findOrFail($id);
         $new->delete();
 
-        return redirect()->route('news.index')
+        return redirect()->route('admin_news.index')
             ->with('flash_message',
              'Article successfully deleted');
     }

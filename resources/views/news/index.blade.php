@@ -44,18 +44,6 @@
                         @endforeach
                     </div>
                     {!! $news->links() !!}
-
-
-                    <!-- Pagination -->
-                    <!-- <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                            </ul>
-                        </nav>
-                    </div> -->
                 </div>
 
                 <div class="col-12 col-lg-3">
