@@ -36,10 +36,10 @@
                     <td>{{ $new->content}}</td>
                     
                     <td>
-                    <a href="{{ route('news.edit', $new->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('admin_news.edit', $new->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>
                     <td>
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['news.destroy', $new->id] ]) !!}
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_news.destroy', $new->id] ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -51,7 +51,7 @@
         {{ $news->links() }}
     </div>
 
-    <a href="{{ route('news.create') }}" class="btn btn-success">Add News</a>
+    <a href="{{ route('admin_news.create') }}" class="btn btn-success">Add News</a>
 
 </div>
 

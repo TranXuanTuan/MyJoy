@@ -9,7 +9,7 @@
         <h1>Create New </h1>
         <hr>
 
-        {{ Form::open(array('route' => 'news.store')) }}
+        {{ Form::open(array('route' => 'admin_news.store')) }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}

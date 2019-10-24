@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('news.create')}}" class="nav-link">
+                        <a href="{{route('songs.create')}}" class="nav-link">
                             <i class="fas fa-plus-square"></i>
                             <p>Songs Add</p>
                         </a>

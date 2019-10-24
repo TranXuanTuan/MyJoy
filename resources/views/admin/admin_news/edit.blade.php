@@ -14,7 +14,7 @@
         </div>
     @endif
         <hr>
-            {{ Form::model($new, array('route' => array('news.update', $new->id), 'method' => 'PUT')) }}
+            {{ Form::model($new, array('route' => array('admin_news.update', $new->id), 'method' => 'PUT')) }}
             <div class="form-group">
             {{ Form::label('title', ' New Title') }}
             {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
