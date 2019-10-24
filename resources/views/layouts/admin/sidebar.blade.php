@@ -77,31 +77,6 @@
                             <p>Menu Add</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{url('admin/submenus')}}" class="nav-link">
-                            <i class="fas fa-list nav-icon"></i>
-                            <p>SubMenu List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('admin/submenus/create')}}" class="nav-link">
-                            <i class="fas fa-plus-square nav-icon"></i>
-                            <p>SubMenu Add</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="far fa-compass"></i>
-                    <p>
-                        SubMenu Manage
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    
                 </ul>
             </li>
 

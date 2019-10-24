@@ -15,12 +15,7 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            
-           
             $table->unsignedBigInteger('beat_id');
-            
-         
-
             $table->dateTime('date_buy');
             $table->timestamps();
         });

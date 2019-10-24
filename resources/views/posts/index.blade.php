@@ -59,12 +59,12 @@
                         <div class="col-12 col-sm-6 col-md-4 col-lg-2">                           
                             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
                                 <div class="album-thumb">
-                                    <a href="#">
+                                    <a href="{{route('beats.show',$beat_category->id)}}">
                                     <img src="img/bg-img/b1.jpg" alt="">
                                     <!-- Album Price -->
-                                    <div class="album-price">
+                                    <!-- <div class="album-price">
                                         <p>$0.90</p>
-                                    </div>
+                                    </div> -->
                                     <!-- Play Icon -->
                                     <!-- <div class="play-icon">
                                         <a href="#" class="video--play--btn"><span class="icon-play-button"></span></a>
@@ -81,7 +81,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                                <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                                <a href="{{route('beats.index')}}" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>

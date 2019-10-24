@@ -10,7 +10,6 @@
 @import url(css/font-awesome.min.css);
 @import url(css/audioplayer.css);
 @import url(css/one-music-icon.css);
-
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
@@ -299,7 +298,7 @@ img {
 #scrollUp {
   background-color: #000000;
   border-radius: 0;
-  bottom: 110px;
+  bottom: 50px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 24px;
@@ -993,7 +992,7 @@ img {
   z-index: 1;
   width: 100%;
   background-color: #262626;
-  padding:  0px 30px 20px;
+  padding: 15px 30px 20px;
   border: 1px solid #363636; }
   .song-play-area .song-name p {
     color: #b8b8b8;
@@ -1674,19 +1673,208 @@ img {
   .single-web-icon:hover {
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15); }
 
-.media-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    /* :: 8.0 Upcoming Shows Area CSS */
+.upcoming-shows-area {
+  position: relative;
+  z-index: 1;
+  background-color: #a1a7ac; }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 250px;
+.single-upcoming-shows {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #49445d;
+  padding: 30px 0; }
+  .single-upcoming-shows:first-child {
+    padding-top: 0; }
+  .single-upcoming-shows:last-child {
+    padding-bottom: 0;
+    border-bottom: none; }
+  .single-upcoming-shows .shows-date {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 10%;
+    flex: 0 0 10%;
+    max-width: 10%;
+    width: 10%; }
+    @media only screen and (max-width: 767px) {
+      .single-upcoming-shows .shows-date {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 30px; } }
+    .single-upcoming-shows .shows-date h2 {
+      font-size: 48px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1; }
+      .single-upcoming-shows .shows-date h2 span {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 500;
+        display: block;
+        line-height: 1.3; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .single-upcoming-shows .shows-date h2 {
+          font-size: 36px; } }
+  .single-upcoming-shows .shows-desc {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 27%;
+    width: 40%; }
+    @media only screen and (max-width: 767px) {
+      .single-upcoming-shows .shows-desc {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 30px; } }
+    .single-upcoming-shows .shows-desc .shows-img {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 84px;
+      flex: 0 0 84px;
+      max-width: 84px;
+      width: 84px;
+      margin-right: 15px; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .single-upcoming-shows .shows-desc .shows-img {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 60px;
+          flex: 0 0 60px;
+          max-width: 60px;
+          width: 60px; } }
+    .single-upcoming-shows .shows-desc .shows-name h6 {
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0; }
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .single-upcoming-shows .shows-desc .shows-name h6 {
+          font-size: 13px; } }
+    .single-upcoming-shows .shows-desc .shows-name p {
+      margin-bottom: 0;
+      color: #ffffff; }
+  .single-upcoming-shows .shows-location {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+    width: 20%; }
+    @media only screen and (max-width: 767px) {
+      .single-upcoming-shows .shows-location {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center; } }
+    .single-upcoming-shows .shows-location p {
+      margin-bottom: 0;
+      color: #ffffff; }
+  .single-upcoming-shows .shows-time {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 10%;
+    flex: 0 0 10%;
+    max-width: 10%;
+    width: 10%; }
+    @media only screen and (max-width: 767px) {
+      .single-upcoming-shows .shows-time {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center; } }
+    .single-upcoming-shows .shows-time p {
+      margin-bottom: 0;
+      color: #ffffff; }
+  .single-upcoming-shows .buy-tickets {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+    width: 20%; }
+    @media only screen and (max-width: 767px) {
+      .single-upcoming-shows .buy-tickets {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%; } }
+    .single-upcoming-shows .buy-tickets p {
+      margin-bottom: 0;
+      color: #ffffff; }
+    .single-upcoming-shows .buy-tickets a {
+      display: block; }
+      .single-upcoming-shows .buy-tickets a:hover, .single-upcoming-shows .buy-tickets a:focus {
+        box-shadow: 0 0 60px rgba(255, 255, 255, 0.5); }
+
+
+    /* :: 3.8.0 Musica Button */
+.musica-btn {
+  background: #cc1573;
+  background: -webkit-linear-gradient(to right, #cc1573, #5722a9);
+  background: linear-gradient(to right, #cc1573, #5722a9);
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 133px;
+  height: 42px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 20px;
+  font-size: 12px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .musica-btn:hover, .musica-btn:focus {
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff; }
+
+.try-btn {
+  background: #cc1573;
+  background: -webkit-linear-gradient(to right, #cc1573, #5722a9);
+  background: linear-gradient(to right, #cc1573, #5722a9);
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 133px;
+  height: 42px;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0 20px;
+  font-size: 12px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .try-btn:hover, .try-btn:focus {
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+    color: #ffffff; }
+
+.animation-fly{
+  position:absolute;
+  z-index:99;
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:100%;
+  transition: all 1s ease;
+  animation: zoom 1.5s;    /* <=> animation-name: zoom; animation-duration: 1.5s */
 }
 /* ====== The End ====== */
 

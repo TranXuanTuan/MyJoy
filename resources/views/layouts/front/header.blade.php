@@ -23,7 +23,6 @@
                             </div>
 
                             <!-- Nav Start -->
-
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{ url('/') }}">Home</a></li>
@@ -54,13 +53,15 @@
                                         </ul>
                                     </li>
                                     </li>
-                                    <li><a href="#">Events</a></li>
+                                    <li><a href="{{route('beats.index')}}">Beat</a></li>
+                                    <li><a href="{{route('events.index')}}">Events</a></li>
                                     <li><a href="{{route('news.index')}}">News</a></li>
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
                                     <li><a href="{{ route('contacts.index') }}">Contact</a></li>
                                 </ul>
+                                
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
@@ -78,9 +79,12 @@
                                     @else
                                     <ul>
                                         <li>
+                                            <a href="{{ route('cart-index') }}">
                                             <div class="cart-btn">
-                                                <p><span class="icon-shopping-cart"></span></p>
+                                                <p><span class="icon-shopping-cart" ></span>
+                                                </p>
                                             </div>
+                                            </a>
                                         </li>
                                         <li>
                                             @role('Admin') {{-- Laravel-permission blade helper --}}

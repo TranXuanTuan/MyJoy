@@ -18,8 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('artist_id');    
             $table->string('album_name');
-            $table->string('description');
-            $table->integer('num');
+            $table->string('thumb')->nullable();
             $table->timestamps();
         });
     }

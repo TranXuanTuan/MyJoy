@@ -19,24 +19,18 @@
                                     <h2>ALBUM:{{$album->album_name}}</h2>
                                 </div>
                             </div>
+                            @foreach($album->songs as $song)
                             <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                                 <div class="song-play-area">
                                     <div class="song-name">
-                                        <p>01. Main Hit Song</p>
+                                        <p>{{$song->song_name}}</p>
                                     </div>
                                     <audio preload="auto" controls>
-                                        <source src="/audio/dummy-audio.mp3">
-                                    </audio>
-                                </div>
-                                <div class="song-play-area">
-                                    <div class="song-name">
-                                        <p>01. Main Hit Song</p>
-                                    </div>
-                                    <audio preload="auto" controls>
-                                        <source src="/audio/dummy-audio.mp3">
+                                        <source src="/audio/{{$song->link}}">
                                     </audio>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

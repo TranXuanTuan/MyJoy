@@ -25,10 +25,8 @@
                     <div class="single-album">
                          <a href="{{ route('subjects.show',$subject->id)}}">
                         <img src="img/bg-img/a1.jpg" alt="">
-                        <div class="album-info">
-                           
-                                <h5>{{$subject->subject_name}}</h5>
-                            
+                        <div class="album-info">                          
+                            <h5>{{$subject->subject_name}}</h5>                           
                         </div>
                         </a>
                     </div>

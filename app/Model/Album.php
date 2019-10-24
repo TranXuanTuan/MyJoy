@@ -15,4 +15,11 @@ class Album extends Model
     {
     	return $this->belongsTo('App\Model\AlbumCategory');
     }
+
+    public function songs()
+    {
+        return $this->hasManyThrough(
+            'App\Model\Song','App\Model\Artist','id' ,'artist_id','id'
+        );
+    }
 }

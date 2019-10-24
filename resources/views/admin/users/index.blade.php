@@ -11,6 +11,11 @@
         <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a>
     </h1>
     <div class="table-responsive">
+    @if(session('flash_message'))
+        <div class="alert alert-success">
+            {{session('flash_message')}}
+        </div>
+    @endif
         <table class="table table-bordered table-striped">
 
             <thead>

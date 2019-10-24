@@ -16,11 +16,11 @@ class CreateSongsTable extends Migration
         Schema::create('songs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('song_name');
-            $table->string('picture');
+            $table->string('picture')->nullable();
             $table->unsignedBigInteger('artist_id');
             $table->unsignedBigInteger('category_id');
             $table->string('artist_name');
-            $table->integer('like');
+            $table->integer('like')->nullable();
             $table->string('mv')->nullable();
             $table->timestamps();
         });

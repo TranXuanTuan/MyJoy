@@ -346,8 +346,7 @@ img {
   transition-duration: 300ms;
   opacity: 0;
   visibility: hidden;
-  padding: 10px 0;
-  }
+  padding: 10px 0; }
   .breakpoint-off .classynav ul li .dropdown li .dropdown {
     top: 10px;
     left: 180px;
@@ -585,7 +584,6 @@ img {
 .dropdown-rtl.breakpoint-on .classynav ul li ul.dropdown li ul li {
   margin-left: 0;
   margin-right: 15px; }
-
 
 /* Fallback Responsive CSS */
 

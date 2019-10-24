@@ -16,10 +16,8 @@ class CreateBeatsTable extends Migration
         Schema::create('beats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
-            
-
             $table->string('author');
-            $table->string('picture');
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }

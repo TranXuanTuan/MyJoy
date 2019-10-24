@@ -10,4 +10,11 @@ class Subject extends Model
     {
     	return $this->hasMany('App\Model\SongCategory');
     }
+
+    public function songs()
+    {
+        return $this->hasManyThrough(
+            'App\Model\Song','App\Model\SongCategory','subject_id' ,'category_id','id'
+        );
+    }
 }

@@ -31,9 +31,19 @@ Route::group(['prefix' => 'artists'], function () {
     Route::get('detail/{id}','ArtistController@detail')->name('artistdetail');
 });
 
-// Route::group(['middleware' => 'auth'],function(){
-//     Route::resource('orders', 'OrderController');
-// });
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/order/{beat_id}', 'OrderController@index')->name('order');
+    // Route::get('/profile', 'UserController@profile')->name('profile');
+    Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
+        Route::get('/', 'OrderController@cart')->name('index');
+        Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
+        Route::get('complete', 'OrderController@complete')->name('complete');
+    });
+});
+
+Route::resource('beats', 'BeatController');
+
+Route::resource('events', 'EventController');
 
 Route::resource('news', 'NewController');
 

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\BeatCategory;
-use App\Model\Beat;
 use Illuminate\Http\Request;
 
-class BeatController extends Controller
+class LibaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class BeatController extends Controller
      */
     public function index()
     {
-        $beatcategories = BeatCategory::paginate(12);     
-        return view('beats.index', compact('beatcategories'));
+        //
     }
 
     /**
@@ -48,8 +45,7 @@ class BeatController extends Controller
      */
     public function show($id)
     {
-        $beat = Beat::findorfail($id);
-        return view('beats.show', compact('beat'));
+        //
     }
 
     /**
