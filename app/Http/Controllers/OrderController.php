@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Model\Receipt;
 use App\Model\Beat;
 use Illuminate\Http\Request;
 
@@ -74,12 +76,27 @@ class OrderController extends Controller
         return redirect()->back()->with('success', 'Remove this order leave cart successful.');
     }
 
-    public function complete(Request $request)
+    public function complete(Request $request, $id)
     {
         $data = [];
         $orders = [];
         if ($request->session()->has('orders') == true) {
             $orders = session('orders');
         }
+        if (!empty($orders)) {
+            // delete $id in $orders
+            $key = array_search ($id, $orders);
+            unset($orders[$key]);
+
+            // update session
+            session(['orders' => $orders]);
+            $beats = $this->beat->whereIn('id', $orders)->get();
+            $data['beats'] = $beats;
+        }
+        $receipt = new Receipt;
+        $receipt->beat_id= $request->id;
+        $receipt->user_id= $request->id;
+        $receipt->save();
+        return redirect()->back()->with('success', 'Pay successful.');
     }
 }

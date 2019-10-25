@@ -37,7 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
         Route::get('/', 'OrderController@cart')->name('index');
         Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
-        Route::get('complete', 'OrderController@complete')->name('complete');
+        Route::get('complete/{id}', 'OrderController@complete')->name('complete');
+        Route::post('complete/{id}', 'OrderController@postComplete');
     });
 });
 

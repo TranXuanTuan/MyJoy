@@ -298,7 +298,7 @@ img {
 #scrollUp {
   background-color: #000000;
   border-radius: 0;
-  bottom: 50px;
+  bottom: 138px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 24px;
@@ -992,7 +992,7 @@ img {
   z-index: 1;
   width: 100%;
   background-color: #262626;
-  padding: 15px 30px 20px;
+  padding: 0px 30px 20px;
   border: 1px solid #363636; }
   .song-play-area .song-name p {
     color: #b8b8b8;
@@ -1865,17 +1865,14 @@ img {
     font-weight: 700;
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
     color: #ffffff; }
+    .media-container {	   
+      position: fixed;
+      bottom: 32px;
+      left: 0;	  
+      right: 0;	   
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+    }
 
-.animation-fly{
-  position:absolute;
-  z-index:99;
-  width:100px;
-  height:100px;
-  object-fit:cover;
-  border-radius:100%;
-  transition: all 1s ease;
-  animation: zoom 1.5s;    /* <=> animation-name: zoom; animation-duration: 1.5s */
-}
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

@@ -23,7 +23,12 @@
                     
                     <div class="single-album">
                         <a href="{{route('artistdetail',$artist_category->id)}}">
+                        @if(!empty($beat->picture) && Storage::disk('local')->exists($beat->picture))
                         <img src="/upload/artists/{{$artist_category->thumb}}" alt="" height="200px">
+                        @else
+                            <img src="/img/images/no-image.png" alt="no image">
+                        @endif
+                        
                         <div class="album-info">
                             <h5>{{$artist_category->artist_name}}</h5>
                         </div>
