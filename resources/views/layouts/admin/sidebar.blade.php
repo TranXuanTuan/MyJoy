@@ -113,13 +113,13 @@
                     <li class="nav-item">
                         <a href="{{url('admin/menus')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
-                            <p>Menu List</p>
+                            <p>Artist List</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('admin/menus/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
-                            <p>Menu Add</p>
+                            <p>Artist Add</p>
                         </a>
                     </li>
                 </ul>
@@ -136,13 +136,13 @@
                     <li class="nav-item">
                         <a href="{{url('admin/menus')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
-                            <p>Menu List</p>
+                            <p>Album List</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('admin/menus/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
-                            <p>Menu Add</p>
+                            <p>Albums Add</p>
                         </a>
                     </li>
                 </ul>

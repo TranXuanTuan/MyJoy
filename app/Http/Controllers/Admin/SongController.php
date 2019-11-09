@@ -63,7 +63,7 @@ class SongController extends Controller
         
         $songs->save();
         return redirect()->route('songs.index') 
-            ->with('flash_message', 'Article,
+            ->with('flash_message', 'Song
              '. $songs->song_name.' created');
     }
 
@@ -98,26 +98,27 @@ class SongController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'song_name'=>'required|max:100',
-            'picture'=>'required',
-            'artist_id'=>'required',
-            'category_id'=>'required',
-            'artist_name'=>'required',
+        // $this->validate($request, [
+        //     'song_name'=>'required|max:100',
+        //     'picture'=>'required',
+        //     'artist_id'=>'required',
+        //     'category_id'=>'required',
+        //     'artist_name'=>'required',
           
-        ]);
+        // ]);
 
-        $song = song::findOrFail($id);
+        $song = Song::findOrFail($id);
         $song->song_name = $request->song_name;
-        $song ->picture = $request->picture;
-        $song ->artist_id = $request->artist_id;
-        $song ->category_id = $request->category_id;
-        $song ->artist_name = $request->artist_name;
+        $song->picture = $request->picture;
+        $song->artist_id = $request->artist_id;
+        $song->category_id = $request->category_id;
+        $song->artist_name = $request->artist_name;
+        $song->link = $request->link;
         $song->save();
 
         return redirect()->route('songs.index', 
             $song->id)->with('flash_message', 
-            'Article, '. $song->song_name.' updated');
+            'Song '. $song->song_name.' updated');
     }
 
     /**
@@ -133,6 +134,6 @@ class SongController extends Controller
 
         return redirect()->route('songs.index')
             ->with('flash_message',
-             'Article successfully deleted');
+             'Song successfully deleted');
     }
 }
