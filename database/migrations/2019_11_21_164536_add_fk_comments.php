@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkSongComment extends Migration
+class AddFkComments extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +17,9 @@ class AddFkSongComment extends Migration
             $table->foreign('song_id')
                 ->references('id')->on('songs')
                 ->onDelete('cascade');
+            $table->foreign('blog_id')
+            ->references('id')->on('blogs')
+            ->onDelete('cascade');
         });
     }
 
@@ -27,6 +30,8 @@ class AddFkSongComment extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropForeign(['song_id'],['blog_id']);
+        });
     }
 }

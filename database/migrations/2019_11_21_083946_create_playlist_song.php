@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkArtistsAlbums extends Migration
+class CreatePlaylistSong extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddFkArtistsAlbums extends Migration
      */
     public function up()
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->foreign('artist_id')
-                ->references('id')->on('artists')
-                ->onDelete('cascade');
+        Schema::create('playlist_song', function (Blueprint $table) {
+            $table->unsignedBigInteger('playlist_id');
+            $table->unsignedBigInteger('song_id');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class AddFkArtistsAlbums extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('playlist_song');
     }
 }

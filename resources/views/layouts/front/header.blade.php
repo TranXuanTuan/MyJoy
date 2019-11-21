@@ -35,10 +35,10 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('subjects.index')}}">Subject</a>
+                                    <li><a href="{{route('subjects.index')}}">Topic</a>
                                        <ul class="dropdown">
-                                            @foreach($subjects as $subject)
-                                            <li><a href="{{ route('subjects.show',$subject->id)}}">{{$subject->subject_name}}</a>
+                                            @foreach($topics as $topic)
+                                            <li><a href="{{ route('subjects.show',$subject->id)}}">{{$topic->topic_name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

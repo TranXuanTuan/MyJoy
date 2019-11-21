@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubCategoriesTable extends Migration
+class CreateReceiptDetail extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSubCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('sub_menu_name');
-            $table->string('menu_id');
+        Schema::create('receipt_detail', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('receipt_id');
+            $table->unsignedBigInteger('beat_id');
+            $table->integer('quantity');
+            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSubCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('receipt_detail');
     }
 }

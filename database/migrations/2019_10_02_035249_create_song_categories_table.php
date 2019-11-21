@@ -15,7 +15,7 @@ class CreateSongCategoriesTable extends Migration
     {
         Schema::create('song_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('topic_id');
             $table->string('category_name');
             $table->timestamps();
         });

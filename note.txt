@@ -1,4 +1,16 @@
-To install the laravel-permission package run
+//To install the laravel-permission package run
 
 composer require spatie/laravel-permission
 
+composer dump-autoload
+
+php artisan db:seed
+
+php artisan db:seed --class=UsersTableSeeder
+
+//Drop All Tables & Migrate
+php artisan migrate:fresh
+
+//Generating Migrations
+php artisan make:migration create_users_table --create=users
+php artisan make:migration add_votes_to_users_table --table=users

@@ -18,7 +18,7 @@ class CreateArtistsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('artist_name');
             $table->string('intro');
-            $table->string('thumb')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

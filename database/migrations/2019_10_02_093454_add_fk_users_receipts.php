@@ -27,6 +27,8 @@ class AddFkUsersReceipts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receipts');
+        Schema::table('receipts', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
     }
 }

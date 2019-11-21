@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+//Importing laravel-permission models
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
+//Enables us to output flash messaging
 use Session;
 
 class UserController extends Controller
 {
     public function __construct()
     {
+        //isAdmin middleware lets only users with a 
+        //specific permission permission to access these resources
         $this->middleware(['auth', 'isAdmin']);
     }
     /**
@@ -35,6 +40,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        //Get all roles and pass it to the view
         $roles = Role::get();
         return view('admin.users.create', ['roles'=>$roles]);
     }

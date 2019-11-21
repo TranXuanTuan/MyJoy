@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\News;
+use App\Model\Blog;
 
-class NewController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        $news = News::orderBy('id', 'desc')->paginate(2);
+        $news = Blog::orderBy('id', 'desc')->paginate(2);
         return view('news.index', compact('news'));
     }
 
@@ -47,7 +47,7 @@ class NewController extends Controller
      */
     public function show($id)
     {
-        $new = News::findOrFail($id);
+        $new = Blog::findOrFail($id);
         return view('news.show', compact('new'));
     }
 

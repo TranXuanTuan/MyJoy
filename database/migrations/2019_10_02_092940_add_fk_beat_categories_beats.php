@@ -27,6 +27,8 @@ class AddFkBeatCategoriesBeats extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beats');
+        Schema::table('beats', function (Blueprint $table) {
+            $table->dropForeign(['category_id']);
+        });
     }
 }

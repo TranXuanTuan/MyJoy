@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Model\News;
+use App\Model\Blog;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class NewController extends Controller
+class BlogController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class NewController extends Controller
      */
     public function index()
     {
-        $news = News::orderby('id', 'desc')->paginate(2);
+        $news = Blog::orderby('id', 'desc')->paginate(2);
         return view('admin.admin_news.index',compact('news'));
     }
 
@@ -50,7 +50,7 @@ class NewController extends Controller
         $description = $request['description'];
         $content = $request['content'];
 
-        $new = News::create($request->only('title', 'description', 'content'));
+        $new = Blog::create($request->only('title', 'description', 'content'));
         return redirect()->route('admin_news.index')
                 ->with('flash_message', 'Article,'. $new->title.'created');
 
@@ -67,7 +67,7 @@ class NewController extends Controller
      */
     public function edit($id)
     {
-        $new = News::findOrFail($id);
+        $new = Blog::findOrFail($id);
         return view('admin.admin_news.edit', compact('new'));
     }
 
@@ -86,7 +86,7 @@ class NewController extends Controller
             'content' =>'required',
         ]);
 
-        $new = News::findOrFail($id);
+        $new = Blog::findOrFail($id);
         $new->title = $request->input('title');
         $new->description = $request->input('description');
         $new->content = $request->input('content');
@@ -105,7 +105,7 @@ class NewController extends Controller
      */
     public function destroy($id)
     {
-        $new = News::findOrFail($id);
+        $new = Blog::findOrFail($id);
         $new->delete();
 
         return redirect()->route('admin_news.index')

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkBeatReceipts extends Migration
+class AddFkBeatReceiptDetail extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class AddFkBeatReceipts extends Migration
      */
     public function up()
     {
-        Schema::table('receipts', function (Blueprint $table) {
+        Schema::table('receipt_detail', function (Blueprint $table) {
             $table->foreign('beat_id')
                 ->references('id')->on('beats')
                 ->onDelete('cascade');
+            $table->foreign('receipt_id')
+            ->references('id')->on('receipts')
+            ->onDelete('cascade');
         });
     }
 
@@ -27,6 +30,8 @@ class AddFkBeatReceipts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receipts');
+        Schema::table('receipt_detail', function (Blueprint $table) {
+            $table->dropForeign(['beat_id'],['receipt_id']);
+        });
     }
 }

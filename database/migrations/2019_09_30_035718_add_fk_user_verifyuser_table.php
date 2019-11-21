@@ -28,7 +28,7 @@ class AddFkUserVerifyuserTable extends Migration
     public function down()
     {
         Schema::table('verify_users', function (Blueprint $table) {
-            //
+            $table->dropForeign(['user_id']);
         });
     }
 }

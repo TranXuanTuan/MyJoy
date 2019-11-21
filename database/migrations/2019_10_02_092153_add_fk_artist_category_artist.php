@@ -27,6 +27,8 @@ class AddFkArtistCategoryArtist extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists');
+        Schema::table('artists', function (Blueprint $table) {
+            $table->dropForeign(['category_id']);
+        });
     }
 }

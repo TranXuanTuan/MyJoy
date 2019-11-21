@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnPriceContentIntoBeatsTable extends Migration
+class AddFkTopicSongCategory extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddColumnPriceContentIntoBeatsTable extends Migration
      */
     public function up()
     {
-        Schema::table('beats', function (Blueprint $table) {
-            $table->string('content');
-            $table->integer('price');        
+        Schema::table('song_categories', function (Blueprint $table) {
+            $table->foreign('topic_id')
+                ->references('id')->on('topics')
+                ->onDelete('cascade');
         });
     }
 
@@ -26,7 +27,7 @@ class AddColumnPriceContentIntoBeatsTable extends Migration
      */
     public function down()
     {
-        $table->dropColumn('content');
-        $table->dropColumn('price');
+        
+        Schema::dropIfExists('song_categories');
     }
 }

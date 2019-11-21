@@ -18,6 +18,8 @@ class CreateBeatsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('author');
             $table->string('picture')->nullable();
+            $table->string('content');
+            $table->integer('price');  
             $table->timestamps();
         });
     }

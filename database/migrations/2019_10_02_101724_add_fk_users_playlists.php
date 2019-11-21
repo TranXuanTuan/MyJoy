@@ -27,6 +27,8 @@ class AddFkUsersPlaylists extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playlists');
+        Schema::table('playlists', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
     }
 }

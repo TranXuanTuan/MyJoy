@@ -16,6 +16,7 @@ class CreateBeatCategoriesTable extends Migration
         Schema::create('beat_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('beat_name');
+            $table->string('thumb')->nullable();      
             $table->timestamps();
         });
     }

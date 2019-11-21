@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Model\Album;
 use App\Model\AlbumCategory;
-use App\Model\Subject;
+use App\Model\Topic;
 use App\Model\ArtistCategory;
 use App\Model\BeatCategory;
 
@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        View::composer('posts.index', function($view) {
+        View::composer('home', function($view) {
             $albums = Album::orderby('id', 'desc')->paginate(3);
             $view->with('albums' , $albums);
             $beat_categories = BeatCategory::paginate(12);
@@ -42,8 +42,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.front.header', function($view) {
             $albumcategories = AlbumCategory::paginate(7);
             $view->with('albumcategories' , $albumcategories);
-            $subjects = Subject::paginate(7);
-            $view->with('subjects' , $subjects);
+            $topics = Topic::paginate(7);
+            $view->with('topics' , $topics);
             $artist_categories = ArtistCategory::all();
             $view->with('artist_categories' , $artist_categories);
             
