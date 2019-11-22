@@ -18,8 +18,6 @@ class Album extends Model
 
     public function songs()
     {
-        return $this->hasManyThrough(
-            'App\Model\Song','App\Model\Artist','id' ,'artist_id','id'
-        );
+        return $this->hasMany('App\Model\Song');
     }
 }

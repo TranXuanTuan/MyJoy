@@ -11,8 +11,8 @@ class Beat extends Model
     	return $this->belongsTo('App\Model\BeatCategory');
     }
 
-    public function receipt()
+    public function receiptdetails()
     {
-    	return $this->hasOne('App\Model\Receipt');
+    	return $this->hasOne('App\Model\ReceiptDetail');
     }
 }

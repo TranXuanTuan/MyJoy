@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Playlist extends Model
 {
-    public function songs()
+    public function playlistsongs()
     {
-    	return $this->hasMany('App\Model\Song');
+    	return $this->belongsTo('App\Model\PlaylistSong');
     }
 
     public function user()

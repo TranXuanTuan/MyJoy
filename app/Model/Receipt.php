@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Receipt extends Model
 {
-    public function beat()
+    public function receiptdetails()
     {
-    	return $this->belongsTo('App\Model\Beat');
+    	return $this->hasMany('App\Model\ReceiptDetail');
     }
 
     public function user()

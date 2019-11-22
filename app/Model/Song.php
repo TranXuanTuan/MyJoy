@@ -21,8 +21,18 @@ class Song extends Model
     	return $this->belongsTo('App\Model\Artist');
     }
 
-    public function playlist()
+    public function album()
     {
-    	return $this->belongsTo('App\Model\Playlist');
+    	return $this->belongsTo('App\Model\Album');
+    }
+
+    public function playlist_songs()
+    {
+    	return $this->hasMany('App\Model\PlaylistSong');
+    }
+
+    public function user()
+    {
+    	return $this->belongsTo('App\User');
     }
 }
