@@ -1,9 +1,9 @@
 @extends('layouts.front.master')
 @section('content')
-		<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
+	<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
-            <p>See what’s new</p>
-            <h2>News</h2>
+            <p>See what’s blog</p>
+            <h2>Blogs</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -15,37 +15,31 @@
                 <div class="col-12 col-lg-9">
 
                     <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="30ms">
+                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
-                         @foreach($news as $new)
-                        <div class="blog-post-thumb mt-30">
-                            <a href="{{route('news.show', $new -> id)}}"><img src="img/bg-img/blog1.jpg" alt=""></a>
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
+                        
+                        
                         <!-- Blog Content -->
                        
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <a href="{{route('news.show', $new -> id)}}" class="post-title">{{$new -> title}}</a>
+                            <a href="#" class="post-title">{{$blog -> title}}</a>
+                            <div class="blog-post-thumb mt-30">
+                                 <a><img src="/img/bg-img/blog1.jpg" alt=""></a>
+                            
+                            </div>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p class="post-author">By<a href="#"> Admin</a></p>
                                 <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
+                                
                             </div>
                             <!-- Post Excerpt -->
-                            <h4>{{$new -> description}}</h4>
+                            <h4>{{$blog -> description}}</h4>
+                            <p>{{$blog -> content}}</p>
                         </div>
-                        @endforeach
                     </div>
-                    {!! $news->links() !!}
                 </div>
-
                 <div class="col-12 col-lg-3">
                     <div class="blog-sidebar-area">
 
@@ -101,17 +95,16 @@
 
                         <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
-                            <a href="#"><img src="img/bg-img/add.gif" alt=""></a>
+                            <a href="#"><img src="/img/bg-img/add.gif" alt=""></a>
                         </div>
 
                         <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
-                            <a href="#"><img src="img/bg-img/add2.gif" alt=""></a>
+                            <a href="#"><img src="/img/bg-img/add2.gif" alt=""></a>
                         </div>
 
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 @endsection

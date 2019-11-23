@@ -45,7 +45,7 @@ Route::resource('beats', 'BeatController');
 
 Route::resource('events', 'EventController');
 
-Route::resource('news', 'BlogController');
+Route::resource('blogs', 'BlogController');
 
 Route::resource('contacts', 'ContactController');
 

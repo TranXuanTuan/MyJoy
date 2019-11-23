@@ -14,8 +14,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $news = Blog::orderBy('id', 'desc')->paginate(2);
-        return view('news.index', compact('news'));
+        $blogs = Blog::orderBy('id', 'desc')->paginate(2);
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -47,8 +47,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $new = Blog::findOrFail($id);
-        return view('news.show', compact('new'));
+        $blog = Blog::findOrFail($id);
+        return view('blogs.show', compact('blog'));
     }
 
     /**
