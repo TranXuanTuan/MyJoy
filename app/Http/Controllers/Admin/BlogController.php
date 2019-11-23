@@ -5,6 +5,7 @@ use App\Model\Blog;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class BlogController extends Controller
 {
@@ -19,8 +20,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $news = Blog::orderby('id', 'desc')->paginate(2);
-        return view('admin.admin_news.index',compact('news'));
+        $blogs = Blog::orderby('id', 'desc')->paginate(2);
+        return view('admin.admin_blogs.index',compact('blogs'));
     }
 
     /**
@@ -30,7 +31,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.admin_news.create');
+        $users = User::all();
+        return view('admin.admin_blogs.create',compact('users'));
     }
 
     /**
@@ -41,6 +43,12 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('image')) {
+            $ext = $request->file('image')->getClientOriginalExtension();
+            $this->blog->image = $request->file('image')->storeAs(
+                'public/blog_images', time() . '.' . $ext
+            );
+        }
         $this->validate($request, [
             'title' => 'required|max:100',
             'description' => 'required|max:300',
@@ -49,10 +57,13 @@ class BlogController extends Controller
         $title = $request['title'];
         $description = $request['description'];
         $content = $request['content'];
+        $user_id = $request['user_id'];
+        $author = $request['author'];
+        $image = $request['image'];
 
-        $new = Blog::create($request->only('title', 'description', 'content'));
-        return redirect()->route('admin_news.index')
-                ->with('flash_message', 'Article,'. $new->title.'created');
+        $blog = Blog::create($request->only('title', 'description', 'content','user_id','author','image'));
+        return redirect()->route('admin_blogs.index')
+                ->with('flash_message','Blog successfully added.');
 
 
     }
@@ -67,8 +78,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $new = Blog::findOrFail($id);
-        return view('admin.admin_news.edit', compact('new'));
+        $blog = Blog::findOrFail($id);
+        $users = User::all();
+        return view('admin.admin_blogs.edit', compact('blog','users'));
     }
 
     /**
@@ -80,21 +92,17 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'title'=>'required|max:100',
-            'description'=>'required|max:300',
-            'content' =>'required',
-        ]);
+        $blog = Blog::findOrFail($id);
+        $blog->title = $request['title'];
+        $blog->description = $request['description'];
+        $blog->content = $request['content'];
+        $blog->user_id = $request['user_id'];
+        $blog->author = $request['author'];
+        $blog->image = $request['image'];
+        $blog->save();
 
-        $new = Blog::findOrFail($id);
-        $new->title = $request->input('title');
-        $new->description = $request->input('description');
-        $new->content = $request->input('content');
-        $new->save();
-
-        return redirect()->route('admin_news.edit', 
-            $new->id)->with('flash_message', 
-            'Article, '. $new->title.' updated');
+        return redirect()->route('admin_blogs.index', 
+            $blog->id)->with('flash_message','Blog successfully edited.');
     }
 
     /**
@@ -105,10 +113,10 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $new = Blog::findOrFail($id);
-        $new->delete();
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
 
-        return redirect()->route('admin_news.index')
+        return redirect()->route('admin_blogs.index')
             ->with('flash_message',
              'Article successfully deleted');
     }

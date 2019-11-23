@@ -82,21 +82,21 @@
                 <a href="#" class="nav-link">
                     <i class="far fa-newspaper"></i>
                     <p>
-                        News 
+                        Blogs
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('admin_news.index')}}" class="nav-link">
+                        <a href="{{route('admin_blogs.index')}}" class="nav-link">
                             <i class="fas fa-list"></i>
-                            <p>News List</p>
+                            <p>Blogs List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin_news.create')}}" class="nav-link">
+                        <a href="{{route('admin_blogs.create')}}" class="nav-link">
                             <i class="fas fa-plus-square"></i>
-                            <p>News Add</p>
+                            <p>Blogs Add</p>
                         </a>
                     </li>
                 </ul>
