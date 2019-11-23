@@ -16,7 +16,7 @@ class CreateReceiptDetail extends Migration
         Schema::create('receipt_detail', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('receipt_id');
-            $table->unsignedBigInteger('beat_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->integer('price');
             $table->timestamps();

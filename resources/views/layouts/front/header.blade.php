@@ -53,7 +53,7 @@
                                         </ul>
                                     </li>
                                     </li>
-                                    <li><a href="{{route('beats.index')}}">Beat</a></li>
+                                    <li><a href="{{route('beats.index')}}">Product</a></li>
                                     <li><a href="{{route('events.index')}}">Events</a></li>
                                     <li><a href="{{route('news.index')}}">News</a></li>
                                     @if (Auth::user())

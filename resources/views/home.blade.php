@@ -55,7 +55,7 @@
                     <div class="row">
 
                         <!-- Single Album Area -->
-                        @foreach($beat_categories as $beat_category) 
+                        @foreach($product_categories as $product_category) 
                         <div class="col-12 col-sm-6 col-md-4 col-lg-2">                           
                             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
                                 <div class="album-thumb">
@@ -71,7 +71,7 @@
                                     </div> -->
                                 </div>
                                 <div class="album-info">                                    
-                                    <h5>{{$beat_category->beat_name}}</h5>                                  
+                                    <h5>{{$product_category->product_name}}</h5>                                  
                                 </div>  
                                     </a>                            
                             </div>                           

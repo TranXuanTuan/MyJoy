@@ -4,11 +4,11 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BeatCategory extends Model
+class ProductCategory extends Model
 {
     public function beats()
     {
-    	return $this->hasMany('App\Model\Beat');
+    	return $this->hasMany('App\Model\Product');
     }
 
     

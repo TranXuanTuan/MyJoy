@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBeatCategoriesTable extends Migration
+class CreateProductCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateBeatCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('beat_categories', function (Blueprint $table) {
+        Schema::create('product_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('beat_name');
+            $table->string('product_name');
             $table->string('thumb')->nullable();      
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateBeatCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beat_categories');
+        Schema::dropIfExists('product_categories');
     }
 }
