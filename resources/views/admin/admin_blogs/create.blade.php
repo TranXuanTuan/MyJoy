@@ -3,14 +3,13 @@
 @section('title', '| Create Blogs ')
 
 @section('content')
+<form action="{{route('admin_blogs.index')}}" method="post" >
+        @csrf
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
         <h1>Create Blog </h1>
         <hr>
-
-        {{ Form::open(array('route' => 'admin_blogs.store')) }}
-
         <div class="form-group">
             <div class="row">
             <div class="col-12">
@@ -31,7 +30,7 @@
 
                         <div class="form-group">
                             <label>Content</label>
-                            <input type="text" name="content" class="form-control" value="{{ old('content') }}">
+                            <textarea rows="4" name="content" class="form-control" value="{{ old('content') }}"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -64,12 +63,12 @@
             </div>
             <div class="form-group text-center">
                 <a href="{{ route('admin_blogs.index') }}" class="btn btn-secondary">Blog List</a>
-                {{ Form::submit('Create Blog', array('class' => 'btn btn-success')) }}
-                {{ Form::close() }}
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <button type="submit" class="btn btn-success">Add</button>            
             </div>
         </div>
         </div>
         </div>
     </div>
-
+    </form>
 @endsection

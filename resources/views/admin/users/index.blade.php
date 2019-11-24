@@ -23,7 +23,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Date/Time Added</th>
-                    <th>User Roles</th>
+                    <th>Roles</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>

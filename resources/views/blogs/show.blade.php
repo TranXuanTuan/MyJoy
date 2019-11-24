@@ -25,14 +25,12 @@
                             <!-- Post Title -->
                             <a href="#" class="post-title">{{$blog -> title}}</a>
                             <div class="blog-post-thumb mt-30">
-                                 <a><img src="/img/bg-img/blog1.jpg" alt=""></a>
+                                 <a><img src="/upload/blogs/{{$blog->image}}" alt=""></a>
                             
                             </div>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                
+                                <p class="post-author">By<a href="#"> {{$blog->author}}</a></p>                                
                             </div>
                             <!-- Post Excerpt -->
                             <h4>{{$blog -> description}}</h4>

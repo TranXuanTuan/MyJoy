@@ -67,7 +67,10 @@ class BlogController extends Controller
 
 
     }
-
+    public function show($id)
+    {
+        return redirect('admin/admin_blogs'); 
+    }
     
 
     /**

@@ -22,7 +22,6 @@
             </div>
         </div>
 
-    @include('layouts.front.footermedia')
     </footer>
 
     <!-- ##### Footer Area Start ##### -->

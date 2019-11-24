@@ -19,11 +19,18 @@
                         <!-- Post Thumb -->
                          @foreach($blogs as $blog)
                         <div class="blog-post-thumb mt-30">
-                            <a href="{{route('blogs.show', $blog -> id)}}"><img src="img/bg-img/blog1.jpg" alt=""></a>
+                            <a href="{{route('blogs.show', $blog -> id)}}">
+                                @if(!empty($blog->image))
+                                    <img src="/upload/blogs/{{$blog->image}}" alt="">
+                                @else
+                                    <img src="/img/images/no-image.png" alt="no image">
+                                @endif
+                                    
+                            </a>
                             <!-- Post Date -->
                             <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
+                                <span>{{ $blog->created_at->format('d') }}</span>
+                                <span>{{ $blog->created_at->format('F,y ') }}</span>
                             </div>
                         </div>
 
@@ -34,8 +41,7 @@
                             <a href="{{route('blogs.show', $blog -> id)}}" class="post-title">{{$blog -> title}}</a>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
+                                <p class="post-author">By<a href="#"> {{$blog->author}}</a></p>
                                 <p class="tags"><a href="#">2 Comments</a></p>
                             </div>
                             <!-- Post Excerpt -->

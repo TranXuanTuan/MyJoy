@@ -54,8 +54,8 @@
                                     </li>
                                     </li>
                                     <li><a href="{{route('beats.index')}}">Product</a></li>
-                                    <li><a href="{{route('events.index')}}">Events</a></li>
-                                    <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+                                    <li><a href="{{route('events.index')}}">Event</a></li>
+                                    <li><a href="{{route('blogs.index')}}">Blog</a></li>
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif

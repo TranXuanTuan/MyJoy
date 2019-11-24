@@ -18,9 +18,6 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 Route::get('/', 'HomeController@index')->name('home');
 
-
-Route::resource('posts', 'PostController');
-
 Route::resource('albums', 'AlbumController');
 Route::group(['prefix' => 'albums'], function () {
     Route::get('detail/{id}','AlbumController@detail')->name('albumdetail');
