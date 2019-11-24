@@ -18,7 +18,7 @@ class CreateBlogsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('description');
-            $table->string('content');
+            $table->text('content');
             $table->string('image')->nullable();
             $table->string('author');
             $table->timestamps();

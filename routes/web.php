@@ -63,7 +63,7 @@ Route::namespace('Admin')
 		Route::resource('permissions', 'PermissionController');
 		Route::resource('menus', 'MenuController');
 		Route::resource('submenus','SubMenuController');
-        Route::resource('admin_news','BlogController');
+        Route::resource('admin_blogs','BlogController');
         Route::resource('songs','SongController');
 
     });
