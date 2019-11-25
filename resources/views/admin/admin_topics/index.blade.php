@@ -1,9 +1,8 @@
 @extends('layouts.admin.content')
 
 @section('content')
-
 <div class="col-lg-12">
-    <h1><i class="far fa-newspaper"></i> BLOGS 
+    <h1><i class="fa fa-file"></i> BLOGS 
        
     </h1>
     <div class="table-responsive">
@@ -17,37 +16,31 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Content</th>
-                    <th>Image</th>
-
-
+                    <th>Topic Name</th>
+                    <th>Picture</th>
+                    <th>Created_at</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach ($blogs as $blog)
+                @foreach ($topics as $topic)
                 <tr>
-                    <td>{{ $blog->id}}</td>
-                    <td>{{ $blog->author}}</td>
-                    <td>{{ $blog->title }}</td>
-                    <td>{{ $blog->description }}</td>
-                    <td>{{ $blog->content}}</td>
+                    <td>{{ $topic->id}}</td>
+                    <td>{{ $topic->topic_name}}</td>
                     <td>
-                        @if(!empty($blog->image))
-                            <img src="/upload/blogs/{{$blog->image}}" class="img-fluid">
+                        @if(!empty($topic->picture))
+                            <img src="/upload/topics/{{$topic->picture}}" class="img-fluid">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
                     </td>
+                    <td>{{ $topic->created_at }}</td>
                     <td>
-                    <a href="{{ route('admin_blogs.edit', $blog->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('admin_topics.edit', $topic->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>
                     <td>
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_blogs.destroy', $blog->id] ]) !!}
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_topics.destroy', $topic->id] ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -56,10 +49,9 @@
             </tbody>
 
         </table>
-        {{ $blogs->links() }}
     </div>
 
-    <a href="{{ route('admin_blogs.create') }}" class="btn btn-success">Add Blogs</a>
+    <a href="{{ route('admin_topics.create') }}" class="btn btn-success">Add Topic</a>
 
 </div>
 

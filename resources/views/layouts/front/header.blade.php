@@ -38,7 +38,7 @@
                                     <li><a href="{{route('subjects.index')}}">Topic</a>
                                        <ul class="dropdown">
                                             @foreach($topics as $topic)
-                                            <li><a href="{{ route('subjects.show',$subject->id)}}">{{$topic->topic_name}}</a>
+                                            <li><a href="{{ route('subjects.show',$topic->id)}}">{{$topic->topic_name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -59,11 +59,15 @@
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
-                                    <li><a href="{{ route('contacts.index') }}">Contact</a></li>
                                 </ul>
                                 
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
+                                <div class="search-container">
+                                    <form action="/action_page.php">
+                                    <input type="text" placeholder="Search.." name="search">
+                                    </form>
+                                </div>
                                     <!-- Login/Register -->
                                     @if (Auth::guest())
                                     <div class="login-register-btn mr-50">
@@ -78,6 +82,23 @@
                                     </div>
                                     @else
                                     <ul>
+                                        <li><a href="#"><i class="icon-user-1"></i></a>
+                                        <ul >
+                                            <li class="dropdown">
+                                                @role('Admin')
+                                                <a class="dropdown-item" href="{{ url('admin/dashboards') }}">Access Admin</a>
+                                                @endrole
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
+                                        </li>
                                         <li>
                                             <a href="{{ route('cart-index') }}">
                                             <div class="cart-btn">
@@ -86,25 +107,9 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li>
-                                            @role('Admin') {{-- Laravel-permission blade helper --}}
-                                            <a href="{{ url('admin\dashboards') }}"><i class="icon-padlock" ></i>ADMIN</a>
-                                            @endrole
-                                        </li>
-                                        <li >
-                                            <a class="icon-power-button" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"style="display: none;">
-                                            {{ csrf_field() }}
-                                            </form>
-                                        </li>
-
+                                        
                                     </ul>
-
                                 </div>
-
-
                                 @endif
                                 </div>
                             </div>

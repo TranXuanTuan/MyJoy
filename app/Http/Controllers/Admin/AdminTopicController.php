@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Menu;
+use App\Http\Controllers\Controller;
+use App\Model\Topic;
 use Auth;
 use Session;
 
-class MenuController extends Controller
+class AdminTopicController extends Controller
 {
     public function __construct()
     {
@@ -20,9 +20,9 @@ class MenuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $menus = Menu::all();
-        return view('admin.menus.index', compact('menus'));
+    {
+        $topics = Topic::all();
+        return view('admin.admin_topics.index', compact('topics'));
     }
 
     /**
@@ -32,10 +32,9 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.menus.create');
+        return view('admin.admin_topics.create');
     }
 
-    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,17 +43,21 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('picture')) {
+            $ext = $request->file('picture')->getClientOriginalExtension();
+            $this->topic->picture = $request->file('picture')->storeAs(
+                'public/topic_images', time() . '.' . $ext
+            );
+        }
         $this->validate($request, [
-            'menu_name'=>'required|max:50',
+            'topic_name' => 'required|max:100',
             ]);
+        $topic_name = $request['topic_name'];
+        $picture = $request['picture'];
 
-        $menu_name = $request['menu_name'];
-
-        $menus = Menu::create($request->only('menu_name'));
-
-        return redirect()->route('menus.index') 
-            ->with('flash_message', 'Article,
-             '. $menus->menu_name.' created');;
+        $topic = Topic::create($request->only('topic_name', 'picture'));
+        return redirect()->route('admin_topics.index')
+                ->with('flash_message','Topic successfully added.');
     }
 
     /**
@@ -63,13 +66,12 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /*public function show($id)
+    public function show($id)
     {
-        $post = Post::findOrFail($id); 
+        return redirect('admin/admin_topics'); 
 
-        return view ('admin_posts.show', compact('post'));
     }
-*/
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,9 +80,8 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $menu = Menu::findOrFail($id);
-
-        return view('admin.menus.edit', compact('menu'));
+        $topic = Topic::findOrFail($id);
+        return view('admin.admin_topics.edit', compact('topic'));
     }
 
     /**
@@ -92,18 +93,13 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'menu_name'=>'required|max:100',
-            
-        ]);
+        $topic = Topic::findOrFail($id);
+        $topic->topic_name = $request['topic_name'];
+        $topic->picture = $request['picture'];
+        $topic->save();
 
-        $menu = Menu::findOrFail($id);
-        $menu->menu_name = $request->input('menu_name');
-        $menu->save();
-
-        return redirect()->route('menus.index', 
-            $menu->id)->with('flash_message', 
-            'Article, '. $menu->menu_name.' updated');
+        return redirect()->route('admin_topics.index', 
+            $topic->id)->with('flash_message','Topic successfully edited.');
     }
 
     /**
@@ -114,10 +110,10 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-         $menu = Menu::findOrFail($id);
-        $menu->delete();
+        $topic = Topic::findOrFail($id);
+        $topic->delete();
 
-        return redirect()->route('menus.index')
+        return redirect()->route('admin_topics.index')
             ->with('flash_message',
              'Article successfully deleted');
     }

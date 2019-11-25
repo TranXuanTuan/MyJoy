@@ -31,7 +31,7 @@ Route::group(['prefix' => 'artists'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/order/{beat_id}', 'OrderController@index')->name('order');
     Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
-        Route::get('/', 'OrderController@cart')->name('index');
+        Route::get('/', ' @cart')->name('index');
         Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
         Route::get('complete/{id}', 'OrderController@complete')->name('complete');
         Route::post('complete/{id}', 'OrderController@postComplete');
@@ -58,11 +58,9 @@ Route::namespace('Admin')
         Route::resource('users', 'UserController');
         Route::resource('roles', 'RoleController');
 		Route::resource('permissions', 'PermissionController');
-		Route::resource('menus', 'MenuController');
-		Route::resource('submenus','SubMenuController');
+		Route::resource('admin_topics', 'AdminTopicController');
         Route::resource('admin_blogs','BlogController');
         Route::resource('songs','SongController');
-
     });
 
 

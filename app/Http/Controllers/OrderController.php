@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Model\Receipt;
-use App\Model\Beat;
+use App\Model\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    protected $beat;
+    protected $product;
 
-    public function __construct(Beat $beat)
+    public function __construct(Product $product)
     {
-        $this->beat = $beat;
+        $this->product = $product;
     }
     /**
      * Display a listing of the resource.
@@ -48,8 +48,8 @@ class OrderController extends Controller
         }
 
         if (!empty($orders)) {
-            $beats = $this->beat->whereIn('id', $orders)->get();
-            $data['beats'] = $beats;
+            $products = $this->product->whereIn('id', $orders)->get();
+            $data['products'] = $products;
         }
         return view('orders.cart', $data);
     }
