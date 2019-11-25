@@ -103,6 +103,29 @@
             </li>
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
+                    <i class="fas fa-bars"></i>
+                    <p>
+                        Topic 
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/admin_topics')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Topic List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/admin_topics/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square nav-icon"></i>
+                            <p>Topic Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                 <i class="fas fa-microphone-alt"></i>
                     <p>
                         Artists 
@@ -147,29 +170,7 @@
                     </li>
                 </ul>
             </li> 
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-bars"></i>
-                    <p>
-                        Menu 
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{url('admin/menus')}}" class="nav-link">
-                            <i class="fas fa-list nav-icon"></i>
-                            <p>Menu List</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('admin/menus/create')}}" class="nav-link">
-                            <i class="fas fa-plus-square nav-icon"></i>
-                            <p>Menu Add</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>            
+                        
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
