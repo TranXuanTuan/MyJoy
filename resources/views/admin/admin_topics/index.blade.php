@@ -2,9 +2,7 @@
 
 @section('content')
 <div class="col-lg-12">
-    <h1><i class="fa fa-file"></i> BLOGS 
-       
-    </h1>
+    <h1><i class="fa fa-file"></i> TOPICS </h1>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">
@@ -18,7 +16,7 @@
                     <th>Id</th>
                     <th>Topic Name</th>
                     <th>Picture</th>
-                    <th>Created_at</th>
+                    <th>Created at</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>

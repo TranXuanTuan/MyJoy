@@ -1872,7 +1872,11 @@ img {
       right: 0;	   
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
     }
-
+img.navbar-user-avatar-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

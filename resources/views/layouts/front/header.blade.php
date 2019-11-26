@@ -82,20 +82,19 @@
                                     </div>
                                     @else
                                     <ul>
-                                        <li><a href="#"><i class="icon-user-1"></i></a>
+                                        <li>
+                                        <a href="#"><img src="/upload/avatar_user/anonymous.jpeg" alt="Avatar" class="navbar-user-avatar-img"></a>
                                         <ul >
                                             <li class="dropdown">
                                                 @role('Admin')
                                                 <a class="dropdown-item" href="{{ url('admin/dashboards') }}">Access Admin</a>
                                                 @endrole
+                                                <a class="dropdown-item" href="#">Profile</a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
                                                     Logout
                                                 </a>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                </form>
                                             </li>
                                         </ul>
                                         </li>
@@ -114,7 +113,9 @@
                                 </div>
                             </div>
                             <!-- Nav End -->
-
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                            </form>
                         </div>
                     </nav>
                 </div>
