@@ -63,11 +63,13 @@
                                 
                                 <!-- Login/Register & Cart Button -->
                                 <div class="login-register-cart-button d-flex align-items-center">
-                                <div class="search-container">
-                                    <form action="/action_page.php">
-                                    <input type="text" placeholder="Search.." name="search">
-                                    </form>
-                                </div>
+                                <ul>
+                                    <li class="header-search-box divider-style-border" >
+                                    <a href="#header-search" title="search">
+                                    <i class="icon-loupe"></i>
+                                    </a>
+                                    </li>
+                                </ul>
                                     <!-- Login/Register -->
                                     @if (Auth::guest())
                                     <div class="login-register-btn mr-50">
@@ -95,6 +97,9 @@
                                                                     document.getElementById('logout-form').submit();">
                                                     Logout
                                                 </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
                                             </li>
                                         </ul>
                                         </li>
@@ -113,9 +118,7 @@
                                 </div>
                             </div>
                             <!-- Nav End -->
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    @csrf
-                                            </form>
+                            
                         </div>
                     </nav>
                 </div>
