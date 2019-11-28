@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h1>Create Album </h1>
+        <h1>Create Album Category</h1>
         <hr>
         <div class="form-group">
             <div class="row">

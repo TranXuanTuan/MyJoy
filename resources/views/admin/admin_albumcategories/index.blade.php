@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-lg-12">
-    <h1><i class="fa fa-file"></i> ALBUMS </h1>
+    <h1><i class="fa fa-file"></i> ALBUM CATEGORY</h1>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">
@@ -41,7 +41,7 @@
         </table>
     </div>
 
-    <a href="{{ route('admin_albumcategories.create') }}" class="btn btn-success">Add Album</a>
+    <a href="{{ route('admin_albumcategories.create') }}" class="btn btn-success">Add Album Category</a>
 
 </div>
 

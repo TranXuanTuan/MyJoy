@@ -52,7 +52,7 @@ class AdminAlbumController extends Controller
 
         $albumCategory = AlbumCategory::create($request->only('category_name'));
         return redirect()->route('admin_albumcategories.index')
-                ->with('flash_message','Topic successfully added.');
+                ->with('flash_message','Album Cateogory successfully added.');
     }
 
     /**

@@ -6,7 +6,7 @@
 @csrf
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>Edit album</h1>
+        <h1>Edit Album Category</h1>
         @if(session('flash_message'))
         <div class="alert alert-success">
             {{session('flash_message')}}

@@ -158,6 +158,12 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
+                            <i class="fas fa-copy"></i>
+                            <p>Album Category</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Album List</p>
                         </a>
