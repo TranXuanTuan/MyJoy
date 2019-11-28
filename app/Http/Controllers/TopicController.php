@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Model\Topic;
+use App\Model\SongCategory;
 
-class BeatController extends Controller
+class TopicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class BeatController extends Controller
      */
     public function index()
     {
-        //
+        $topics = Topic::all();
+        return view('topics.index',compact('topics'));
     }
 
     /**
@@ -46,7 +48,9 @@ class BeatController extends Controller
      */
     public function show($id)
     {
-        //
+        $topic = Topic::findorfail($id);
+        $songcategories = SongCategory::all();
+        return view('topics.show', compact('topic','songcategories'));
     }
 
     /**

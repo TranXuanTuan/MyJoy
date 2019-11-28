@@ -2,10 +2,10 @@
 @section('content')
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
             <p>See what’s new</p>
-            <h2>Music By Topic</h2>
+            <h2>Song Category</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -15,18 +15,18 @@
         <div class="container">       
 
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
-                        <a href="#">SUBJECT</a>
+                        <a href="#">Song Category</a>
             </div>
 
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($subjects as $subject)
+                @foreach($songcategories as $songcategory)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                         <a href="{{ route('subjects.show',$subject->id)}}">
-                        <img src="img/bg-img/a1.jpg" alt="">
+                         <a href="#">
+                        <img src="/upload/song_category/t.jpg" alt="">
                         <div class="album-info">                          
-                            <h5>{{$subject->subject_name}}</h5>                           
+                            <h5>{{$songcategory->category_name}}</h5>                           
                         </div>
                         </a>
                     </div>
@@ -47,7 +47,6 @@
 
              
         </div>
-        {!! $subjects->links() !!}
     </section>
 
     

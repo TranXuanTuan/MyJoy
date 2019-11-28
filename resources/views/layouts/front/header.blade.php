@@ -35,10 +35,10 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('subjects.index')}}">Topic</a>
+                                    <li><a href="{{route('topics.index')}}">Topic</a>
                                        <ul class="dropdown">
                                             @foreach($topics as $topic)
-                                            <li><a href="{{ route('subjects.show',$topic->id)}}">{{$topic->topic_name}}</a>
+                                            <li><a href="{{ route('topics.show',$topic->id)}}">{{$topic->topic_name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -53,13 +53,13 @@
                                         </ul>
                                     </li>
                                     </li>
-                                    <li><a href="{{route('beats.index')}}">Product</a></li>
+                                    <li><a href="{{route('products.index')}}">Product</a></li>
                                     <li><a href="{{route('events.index')}}">Event</a></li>
                                     <li><a href="{{route('blogs.index')}}">Blog</a></li>
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
-                                    <li><a href="{{route('contacts.index')}}">Contact</a></li>
+                                    <li><a href="{{route('contact.index')}}">Contact</a></li>
                                 </ul>
                                 
                                 <!-- Login/Register & Cart Button -->

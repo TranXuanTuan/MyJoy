@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h2>Buy Beats</h2>
+                        <h2>Buy Products</h2>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
 
-                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                        <!-- <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                             <div class="shows-desc d-flex align-items-center">
                                 <div class="shows-img">
                                     <img src="/img/bg-img/s1.jpg" alt="">
@@ -63,7 +63,7 @@
                             <div class="buy-tickets">
                                 <a href="{{ route('order',$beat->id)}}" class="btn musica-btn" data-target="#cart">Add To Cart</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

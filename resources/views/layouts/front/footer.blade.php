@@ -11,11 +11,11 @@
                 <div class="col-12 col-md-6">
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Albums</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
+                            <li><a href="{{route('albums.index')}}">Albums</a></li>
+                            <li><a href="{{route('events.index')}}">Events</a></li>
+                            <li><a href="{{route('blogs.index')}}">Blogs</a></li>
+                            <li><a href="{{route('contact.index')}}">Contact</a></li>
                         </ul>
                     </div>
                 </div>

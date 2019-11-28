@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Model\ProductCategory;
 use App\Model\Product;
-use Illuminate\Http\Request;
 
-class BeatController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class BeatController extends Controller
      */
     public function index()
     {
-        $beatcategories = ProductCategory::paginate(12);     
-        return view('beats.index', compact('beatcategories'));
+        $productcategories = ProductCategory::paginate(12);     
+        return view('products.index', compact('productcategories'));
     }
 
     /**
@@ -48,8 +48,8 @@ class BeatController extends Controller
      */
     public function show($id)
     {
-        $beat = Product::findorfail($id);
-        return view('beats.show', compact('beat'));
+        $product = Product::findorfail($id);
+        return view('products.show', compact('product'));
     }
 
     /**

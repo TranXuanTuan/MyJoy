@@ -1963,6 +1963,120 @@ img.navbar-user-avatar-img {
   opacity: 1;
   visibility: visible;
 }
+ .blog-comment {
+  background-color: #f8f8f8;
+  margin-bottom: 4.3rem;
+  padding: 54px 30px 60px;
+}
+@media only screen and (max-width: 575px) {
+   .blog-comment {
+    padding: 20px;
+  }
+}
+ .blog-comment .media {
+  margin-bottom: 3px;
+  background-color: #ffffff;
+  padding: 30px 35px 24px;
+}
+@media only screen and (max-width: 575px) {
+   .blog-comment .media {
+    text-align: center;
+    padding: 30px 20px 24px;
+  }
+}
+ .blog-comment .media:last-child {
+  margin-bottom: 0;
+}
+ .blog-comment .media img {
+  border-radius: 50%;
+}
+ .blog-comment .media .media-body {
+  position: relative;
+}
+ .blog-comment .media .media-body .item-title {
+  color: #111111;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+ .blog-comment .media .media-body .item-subtitle {
+  font-size: 14px;
+  color: #a5a5a5;
+  display: block;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+ .blog-comment .media .media-body .item-btn {
+  display: inline-block;
+  font-size: 12px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  color: #646464;
+  font-weight: 500;
+  padding: 5px 20px;
+  position: absolute;
+  top: -11px;
+  right: 0;
+  transition: 0.3s ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+   .blog-comment .media .media-body .item-btn {
+    position: inherit;
+    margin-top: 10px;
+  }
+}
+ .blog-comment .media .media-body .item-btn:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.blog-form .contact-form-box .form-group {
+  margin-bottom: 20px;
+}
+.blog-form .contact-form-box .form-group:last-child {
+  margin-bottom: 0;
+}
+.blog-form .contact-form-box .form-group .form-control {
+  font-size: 14px;
+  padding: 15px 20px;
+  border: none;
+  border: 1px solid #e0d9d9;
+  color: #444444;
+  border-radius: 4px;
+}
+.blog-form .contact-form-box .form-group .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.blog-form .contact-form-box .form-group input {
+  height: 50px;
+}
+.blog-form .contact-form-box .form-group .item-btn {
+  margin-top: 1.5rem;
+  display: block;
+  border: 1px solid #111111;
+  background-color: #111111;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.blog-form .contact-form-box .form-group .item-btn:hover {
+  color: #111111;
+  background-color: transparent;
+  border: 1px solid #111111;
+}
+
+
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

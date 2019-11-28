@@ -31,22 +31,22 @@ Route::group(['prefix' => 'artists'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/order/{beat_id}', 'OrderController@index')->name('order');
     Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
-        Route::get('/', ' @cart')->name('index');
+        Route::get('/', ' OrderController@cart')->name('index');
         Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
         Route::get('complete/{id}', 'OrderController@complete')->name('complete');
         Route::post('complete/{id}', 'OrderController@postComplete');
     });
 });
 
-Route::resource('beats', 'BeatController');
+Route::resource('products', 'ProductController');
 
 Route::resource('events', 'EventController');
 
 Route::resource('blogs', 'BlogController');
 
-Route::resource('contacts', 'ContactController');
+Route::resource('contact', 'ContactController');
 
-Route::resource('subjects', 'SubjectController');
+Route::resource('topics', 'TopicController');
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
