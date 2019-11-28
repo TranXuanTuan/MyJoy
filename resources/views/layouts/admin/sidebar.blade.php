@@ -157,15 +157,39 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{url('admin/menus')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Album List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albumcategories/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
                             <p>Albums Add</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                <i class="fab fa-product-hunt"></i>
+                    <p>
+                        Products
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Products List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                            <i class="fas fa-plus-square nav-icon"></i>
+                            <p>Products Add</p>
                         </a>
                     </li>
                 </ul>

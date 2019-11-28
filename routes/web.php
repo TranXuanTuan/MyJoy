@@ -61,6 +61,7 @@ Route::namespace('Admin')
 		Route::resource('admin_topics', 'AdminTopicController');
         Route::resource('admin_blogs','BlogController');
         Route::resource('songs','SongController');
+        Route::resource('admin_albumcategories','AdminAlbumController');
     });
 
 

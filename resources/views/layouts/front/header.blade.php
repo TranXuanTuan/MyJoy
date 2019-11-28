@@ -59,6 +59,7 @@
                                     @if (Auth::user())
                                     <li><a href="#">Libary</a></li>
                                     @endif
+                                    <li><a href="{{route('contacts.index')}}">Contact</a></li>
                                 </ul>
                                 
                                 <!-- Login/Register & Cart Button -->

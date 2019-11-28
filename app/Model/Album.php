@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
+    protected $fillable = [
+        'category_name',
+    ];
     public function artist()
     {
     	return $this->belongsTo('App\Model\Artist');
