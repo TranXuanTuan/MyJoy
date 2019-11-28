@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-lg-12">
-    <h1>ALBUM CATEGORY</h1>
+    <h1><i class="fa fa-file"></i> ARTIST CATEGORY</h1>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">
@@ -21,16 +21,16 @@
             </thead>
 
             <tbody>
-                @foreach ($albumcategories as $albumcategory)
+                @foreach ($artistcategories as $artistcategory)
                 <tr>
-                    <td>{{ $albumcategory->id}}</td>
-                    <td>{{ $albumcategory->category_name}}</td>
-                    <td>{{ $albumcategory->created_at }}</td>
+                    <td>{{ $artistcategory->id}}</td>
+                    <td>{{ $artistcategory->category_name}}</td>
+                    <td>{{ $artistcategory->created_at }}</td>
                     <td>
-                    <a href="{{ route('admin_albumcategories.edit', $albumcategory->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('admin_artistcategories.edit', $artistcategory->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>
                     <td>
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_albumcategories.destroy', $albumcategory->id] ]) !!}
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_artistcategories.destroy', $artistcategory->id] ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -41,7 +41,7 @@
         </table>
     </div>
 
-    <a href="{{ route('admin_albumcategories.create') }}" class="btn btn-success">Add Album Category</a>
+    <a href="{{ route('admin_artistcategories.create') }}" class="btn btn-success">Add Artist Category</a>
 
 </div>
 

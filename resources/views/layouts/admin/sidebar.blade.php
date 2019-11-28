@@ -128,25 +128,31 @@
                 <a href="#" class="nav-link">
                 <i class="fas fa-microphone-alt"></i>
                     <p>
-                        Artists 
+                        Artists
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{url('admin/menus')}}" class="nav-link">
+                        <a href="{{url('admin/admin_artistcategories')}}" class="nav-link">
+                            <i class="fas fa-copy"></i>
+                            <p>Artist Category</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/admin_artistcategories')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Artist List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_artistcategories/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
                             <p>Artist Add</p>
                         </a>
                     </li>
                 </ul>
-            </li> 
+            </li>
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                 <i class="fas fa-compact-disc"></i>
