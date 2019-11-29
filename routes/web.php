@@ -63,6 +63,7 @@ Route::namespace('Admin')
         Route::resource('songs','SongController');
         Route::resource('admin_albumcategories','AdminAlbumController');
         Route::resource('admin_artistcategories','AdminArtistController');
+        Route::resource('admin_productcategories','AdminProductController');
     });
 
 

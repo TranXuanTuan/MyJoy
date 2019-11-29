@@ -183,29 +183,35 @@
                 </ul>
             </li>
 
-            <li class="nav-item has-treeview">
+             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                <i class="fab fa-product-hunt"></i>
+                <i class="fas fa-compact-disc"></i>
                     <p>
-                        Products
+                        Products 
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{url('admin/menus')}}" class="nav-link">
-                            <i class="fas fa-list nav-icon"></i>
-                            <p>Products List</p>
+                        <a href="{{url('admin/admin_productcategories')}}" class="nav-link">
+                            <i class="fas fa-copy"></i>
+                            <p>Product Category</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/menus/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_productcategories')}}" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <p>Product List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('admin/admin_productcategories/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
-                            <p>Products Add</p>
+                            <p>Product Add</p>
                         </a>
                     </li>
                 </ul>
-            </li> 
+            </li>
                         
         </ul>
     </nav>
