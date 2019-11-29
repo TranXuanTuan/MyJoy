@@ -57,7 +57,7 @@
                                     <li><a href="{{route('events.index')}}">Event</a></li>
                                     <li><a href="{{route('blogs.index')}}">Blog</a></li>
                                     @if (Auth::user())
-                                    <li><a href="#">Libary</a></li>
+                                    <li><a href="#">Gallery</a></li>
                                     @endif
                                     <li><a href="{{route('contact.index')}}">Contact</a></li>
                                 </ul>
@@ -104,15 +104,73 @@
                                             </li>
                                         </ul>
                                         </li>
-                                        <li>
-                                            <a href="{{ route('cart-index') }}">
-                                            <div class="cart-btn">
-                                                <p><span class="icon-shopping-cart" ></span>
-                                                </p>
+                                        <li class="cart-wrap divider-style-border">
+                                        <a href="#" class="cart-info">
+                                            <i class="icon-shopping-cart"></i>
+                                        </a>
+                                        <div class="cart-items">
+                                            <div class="cart-item">
+                                                <div class="cart-img">
+                                                    <a href="#">
+                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="cart-title">
+                                                    <a href="#">Pressure</a>
+                                                    <span>Code: STPT601</span>
+                                                </div>
+                                                <div class="cart-quantity">X 1</div>
+                                                <div class="cart-price">$249</div>
+                                                <div class="cart-trash">
+                                                    <a href="#">
+                                                        <i class="icon-trash"></i>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            </a>
-                                        </li>
-                                        
+                                            <div class="cart-item">
+                                                <div class="cart-img">
+                                                    <a href="#">
+                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="cart-title">
+                                                    <a href="#">Pressure</a>
+                                                    <span>Code: STPT602</span>
+                                                </div>
+                                                <div class="cart-quantity">X 1</div>
+                                                <div class="cart-price">$189</div>
+                                                <div class="cart-trash">
+                                                    <a href="#">
+                                                        <i class="icon-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="cart-item">
+                                                <div class="cart-img">
+                                                    <a href="#">
+                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="cart-title">
+                                                    <a href="#">Pressure</a>
+                                                    <span>Code: STPT603</span>
+                                                </div>
+                                                <div class="cart-quantity">X 2</div>
+                                                <div class="cart-price">$379</div>
+                                                <div class="cart-trash">
+                                                    <a href="#">
+                                                        <i class="icon-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="cart-item">
+                                                <div class="cart-btn">
+                                                    <a href="#" class="item-btn">View Cart</a>
+                                                    <a href="#" class="item-btn">Checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                     </ul>
                                 </div>
                                 @endif
