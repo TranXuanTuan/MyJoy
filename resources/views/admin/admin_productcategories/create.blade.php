@@ -1,12 +1,12 @@
 @extends('layouts.admin.content')
 
 @section('content')
-<form action="{{route('admin_artistcategories.index')}}" method="post" >
+<form action="{{route('admin_productcategories.index')}}" method="post" >
         @csrf
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h1>Create Artist Category</h1>
+        <h1>Create Product </h1>
         <hr>
         <div class="form-group">
             <div class="row">
@@ -17,16 +17,23 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Category Name</label>
-                            <input type="text" name="category_name" class="form-control" value="{{ old('category_name') }}">
+                            <label>Product Name</label>
+                            <input type="text" name="product_name" class="form-control" value="{{ old('product_name') }}">
                         </div>
-                        
+
+                        <div class="form-group">
+                            <label for="customFile">Picture</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" name="picture">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
             </div>
             <div class="form-group text-center">
-                <a href="{{ route('admin_artistcategories.index') }}" class="btn btn-secondary">Artist List</a>
+                <a href="{{ route('admin_productcategories.index') }}" class="btn btn-secondary">Product List</a>
                 <button type="reset" class="btn btn-primary">Reset</button>
                 <button type="submit" class="btn btn-success">Add</button>            
             </div>
