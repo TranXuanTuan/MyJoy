@@ -25,14 +25,14 @@
                 <tr>
                     <td>{{ $artistcategory->id}}</td>
                     <td>{{ $artistcategory->category_name}}</td>
-<<<<<<< HEAD
+
                     <td>{{ $artistcategory->created_at->format('F d, Y ') }}</td>
-=======
+
                     <td>
                         <span>{{ $artistcategory->created_at->format('F d, Y') }}</span>
                                 
                     </td>  
->>>>>>> 83dd0a2ceaeb29f78da0357cc6490cde1052a827
+
                     <td>
                     <a href="{{ route('admin_artistcategories.edit', $artistcategory->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>
