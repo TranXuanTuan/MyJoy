@@ -67,7 +67,7 @@ Route::namespace('Admin')
         Route::resource('admin_albums','AdminAlbumController');
         Route::resource('admin_products','AdminProductController');
         Route::resource('admin_productcategories','ProductCategoryController');
-
+        Route::resource('admin_events','AdminEventController');
     });
 
 
