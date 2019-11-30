@@ -3,7 +3,7 @@
 @section('title', '| Edit Event ')
 
 @section('content')
-<form action="{{route('admin_events.index')}}" method="post" >
+<form action="{{route('admin_events.update', $event->id)}}" method="post" >
 <input type="hidden" name="_method" value="PUT">
         @csrf
     <div class="row">
@@ -58,9 +58,7 @@
                         <div class="form-group">
                             <label>Creator</label>
                             <select class="form-control" name="user_id">
-                                <option value="" selected>----------Select ID----------</option>
                             @foreach($users as $user)
-
                                 <option value="{{$user->id}}">{{$user->name}}</option>
                             @endforeach  
                             </select>
@@ -78,7 +76,7 @@
             <div class="form-group text-center">
                 <a href="{{ route('admin_events.index') }}" class="btn btn-secondary">Event List</a>
                 <button type="reset" class="btn btn-primary">Reset</button>
-                <button type="submit" class="btn btn-success">Add</button>            
+                <button type="submit" class="btn btn-success">Update</button>            
             </div>
         </div>
         </div>
