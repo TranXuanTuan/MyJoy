@@ -23,7 +23,7 @@
                 @foreach($productcategories as $productcategory)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                         <a href="{{route('beats.show',$beatcategory->id)}}">
+                         <a href="{{route('products.show',$productcategory->id)}}">
                         <img src="img/bg-img/a1.jpg" alt="">
                         <div class="album-info">                         
                                 <h5>{{$productcategory->product_name}}</h5>                           
