@@ -61,15 +61,13 @@ Route::namespace('Admin')
 		Route::resource('admin_topics', 'AdminTopicController');
         Route::resource('admin_blogs','BlogController');
         Route::resource('songs','SongController');
-<<<<<<< HEAD
         Route::resource('admin_albumcategories','AlbumCategoryController');
         Route::resource('admin_artistcategories','ArtistCategoryController');
         Route::resource('admin_artists','AdminArtistController');
-=======
-        Route::resource('admin_albumcategories','AdminAlbumController');
-        Route::resource('admin_artistcategories','AdminArtistController');
-        Route::resource('admin_productcategories','AdminProductController');
->>>>>>> 83dd0a2ceaeb29f78da0357cc6490cde1052a827
+        Route::resource('admin_albums','AdminAlbumController');
+        Route::resource('admin_products','AdminProductController');
+        Route::resource('admin_productcategories','ProductCategoryController');
+
     });
 
 
