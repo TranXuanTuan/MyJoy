@@ -20,7 +20,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($beat_id, Request $request)
+    public function index($product_id, Request $request)
     {
         $orders = [];
         if ($request->session()->has('orders') == true) {
@@ -28,15 +28,15 @@ class OrderController extends Controller
         }
 
         // check $id if exist then show error
-        if (in_array($beat_id, $orders))
+        if (in_array($product_id, $orders))
             return redirect()->back()->with('error', 'This Beat was exist in cart.');
 
         // OK then add data
-        $orders[] =  $beat_id;
+        $orders[] =  $product_id;
         // update session
         session(['orders' => $orders]);
 
-        return redirect()->back()->with('success', 'Add Beat to Cart successful.');
+        return redirect()->back()->with('success', 'Add Product to Cart successful.');
     }
 
     public function cart(Request $request)

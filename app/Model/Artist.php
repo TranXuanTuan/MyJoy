@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
+    protected $fillable = [
+        'category_id', 'artist_name','intro','avatar',
+    ];
+
     public function artistcategory()
     {
     	return $this->belongsTo('App\Model\ArtistCategory');

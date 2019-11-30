@@ -18,19 +18,19 @@
             </div>
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($artist_categories as $artist_category)  
+                @foreach($artist_bycates as $artist_bycate)  
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     
                     <div class="single-album">
-                        <a href="{{route('artistdetail',$artist_category->id)}}">
-                        @if(!empty($beat->picture) && Storage::disk('local')->exists($beat->picture))
-                        <img src="/upload/artists/{{$artist_category->thumb}}" alt="" height="200px">
+                        <a href="{{route('artistdetail',$artist_bycate->id)}}">
+                        @if(!empty($artist_bycate->avatar) && Storage::disk('local')
+                        ->exists($artist_bycate->avatar))
+                        <img src="/upload/artists/{{$artist_bycate->avatar}}" alt="" height="200px">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
-                        
                         <div class="album-info">
-                            <h5>{{$artist_category->artist_name}}</h5>
+                            <h5>{{$artist_bycate->artist_name}}</h5>
                         </div>
                         </a>
                     </div>

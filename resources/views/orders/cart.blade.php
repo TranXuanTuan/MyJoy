@@ -14,26 +14,26 @@
         </div>
     @endif
 
-    @if(empty($beats))
+    @if(empty($products))
         <h2 class="error">Data empty.</h2>
     @else
-        <!-- <div class="row">
-            @foreach($beats as $beat)
+        <div class="row">
+            @foreach($products as $product)
                 <div class="col-3">
                     <div class="book-info">
-                        <h3>{{ $beat->author }}</h3>
+                        <h3>{{ $product->name_product }}</h3>
                         <div class="book-picture">
-                            @if(!empty($beat->picture) && Storage::disk('local')->exists($beat->picture))
-                                <img src="{{ Storage::disk('local')->url($beat->picture) }}" alt="{{ $beat->picture }}" class="img-fluid">
+                            @if(!empty($product->picture) && Storage::disk('local')->exists($product->picture))
+                                <img src="{{ Storage::disk('local')->url($product->picture) }}" alt="{{ $product->picture }}" class="img-fluid">
                             @else
                                 <img src="/img/images/no-image.png" alt="no image">
                             @endif
                         </div>
-                        <a href="{{ route('cart-cancel', $beat->id) }}" class="btn btn-danger">Cancel</a>
+                        <a href="{{ route('cart-cancel', $product->id) }}" class="btn btn-danger">Cancel</a>
                     </div>
                 </div>
             @endforeach
-        </div> -->
+        </div>
         <div class="upcoming-shows-area section-padding-100" style="background-image: url(/img/bg-img/bg-2.jpg);">
             <div class="container">
             <div class="row">
@@ -60,28 +60,28 @@
                                 </div>
                             </div>
                         </div>
-                        @foreach($beats as $beat)
+                        @foreach($products as $product)
                         <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                             <div class="shows-desc d-flex align-items-center">
                                 <div class="shows-img">
-                                    @if(!empty($beat->picture) && Storage::disk('local')->exists($beat->picture))
-                                        <img src="{{ Storage::disk('local')->url($beat->picture) }}" alt="{{ $beat->picture }}" class="img-fluid">
+                                    @if(!empty($product->picture) && Storage::disk('local')->exists($product->picture))
+                                        <img src="{{ Storage::disk('local')->url($product->picture) }}" alt="{{ $product->picture }}" class="img-fluid">
                                     @else
                                         <img src="/img/images/no-image.png" alt="no image">
                                     @endif
                                 </div>
                                 <div class="shows-name">
-                                    <h6>{{$beat->author}}</h6>
+                                    <h6>{{$product->name_product}}</h6>
                                 </div>
                             </div>
                                 <div class="shows-location">
-                                    <p>{{$beat->price}}&#36;</p>
+                                    <p>{{$product->price}}&#36;</p>
                                 </div>
                             <div class="buy-tickets">
-                                <a href="{{ route('cart-cancel', $beat->id) }}" class="btn try-btn">Cancel</a>
+                                <a href="{{ route('cart-cancel', $product->id) }}" class="btn try-btn">Cancel</a>
                             </div>
                             <div class="buy-tickets">
-                                <a href="{{ route('cart-complete', $beat->id) }}" class="btn musica-btn" data-target="#cart">Pay</a>
+                                <a href="{{ route('cart-complete', $product->id) }}" class="btn musica-btn" data-target="#cart">Pay</a>
                             </div>
                         </div>
                         @endforeach

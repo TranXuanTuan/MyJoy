@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ArtistCategory;
-use App\Model\Artist;
 use Auth;
 use Session;
 
-class AdminArtistController extends Controller
+
+class ArtistCategoryController extends Controller
 {
     public function __construct()
     {
@@ -22,8 +22,8 @@ class AdminArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::all();
-        return view('admin.artists.index', compact('artists'));
+        $artistcategories = ArtistCategory::all();
+        return view('admin.admin_artistcategories.index', compact('artistcategories'));
     }
 
     /**
@@ -33,8 +33,7 @@ class AdminArtistController extends Controller
      */
     public function create()
     {
-        $artistcategories = ArtistCategory::all();
-        return view('admin.artists.create',compact('artistcategories'));
+        return view('admin.admin_artistcategories.create');
     }
 
     /**
@@ -45,25 +44,15 @@ class AdminArtistController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('avatar')) {
-            $ext = $request->file('avatar')->getClientOriginalExtension();
-            $this->artist->avatar = $request->file('avatar')->storeAs(
-                'public/artist_images', time() . '.' . $ext
-            );
-        }
         $this->validate($request, [
-            'category_id' => 'required',
-            'artist_name' => 'required|max:100',
-            'intro' => 'required|max:100',
+            'category_name' => 'required|max:100',
             ]);
-        $category_id = $request['category_id'];
-        $artist_name = $request['artist_name'];
-        $intro = $request['intro'];
-        $avatar = $request['avatar'];
+        $category_name = $request['category_name'];
+       
 
-        $artist = Artist::create($request->only('category_id','artist_name','intro','avatar'));
-        return redirect()->route('admin.artists.index')
-                ->with('flash_message','Artist successfully added.');
+        $artistCategory = ArtistCategory::create($request->only('category_name'));
+        return redirect()->route('admin_artistcategories.index')
+                ->with('flash_message','Artist Cateogory successfully added.');
     }
 
     /**
@@ -74,7 +63,7 @@ class AdminArtistController extends Controller
      */
     public function show($id)
     {
-        return redirect('admin/artists'); 
+        return redirect('admin/admin_artistcategories'); 
     }
 
     /**
@@ -86,7 +75,7 @@ class AdminArtistController extends Controller
     public function edit($id)
     {
         $artistCategory = ArtistCategory::findOrFail($id);
-        return view('admin.artists.edit', compact('artistCategory'));
+        return view('admin.admin_artistcategories.edit', compact('artistCategory'));
     }
 
     /**
@@ -103,7 +92,7 @@ class AdminArtistController extends Controller
         
         $artistCategory->save();
 
-        return redirect()->route('artists.index', 
+        return redirect()->route('admin_artistcategories.index', 
             $artistCategory->id)->with('flash_message','Artist successfully edited.');
     }
 
@@ -118,7 +107,7 @@ class AdminArtistController extends Controller
         $artistCategory = ArtistCategory::findOrFail($id);
         $artistCategory->delete();
 
-        return redirect()->route('artists.index')
+        return redirect()->route('admin_artistcategories.index')
             ->with('flash_message',
              'Artist successfully deleted');
     }

@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ $albumcategory->id}}</td>
                     <td>{{ $albumcategory->category_name}}</td>
-                    <td>{{ $albumcategory->created_at }}</td>
+                    <td>{{ $albumcategory->created_at->format('F d, Y ') }}</td>
                     <td>
                     <a href="{{ route('admin_albumcategories.edit', $albumcategory->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>

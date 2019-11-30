@@ -29,7 +29,7 @@ Route::group(['prefix' => 'artists'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/order/{beat_id}', 'OrderController@index')->name('order');
+    Route::get('/order/{product_id}', 'OrderController@index')->name('order');
     Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
         Route::get('/', ' OrderController@cart')->name('index');
         Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
@@ -61,8 +61,9 @@ Route::namespace('Admin')
 		Route::resource('admin_topics', 'AdminTopicController');
         Route::resource('admin_blogs','BlogController');
         Route::resource('songs','SongController');
-        Route::resource('admin_albumcategories','AdminAlbumController');
-        Route::resource('admin_artistcategories','AdminArtistController');
+        Route::resource('admin_albumcategories','AlbumCategoryController');
+        Route::resource('admin_artistcategories','ArtistCategoryController');
+        Route::resource('admin_artists','AdminArtistController');
     });
 
 

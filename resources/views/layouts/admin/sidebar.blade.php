@@ -140,7 +140,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_artistcategories')}}" class="nav-link">
+                        <a href="{{url('admin/admin_artists')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Artist List</p>
                         </a>

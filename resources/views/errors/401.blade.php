@@ -1,5 +1,4 @@
-{{-- \resources\views\errors\401.blade.php --}}
-@extends('layouts.front.app')
+@extends('layouts.front.master')
 
 @section('content')
     <div class='col-lg-4 col-lg-offset-4'>

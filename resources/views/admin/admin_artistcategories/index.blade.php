@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ $artistcategory->id}}</td>
                     <td>{{ $artistcategory->category_name}}</td>
-                    <td>{{ $artistcategory->created_at }}</td>
+                    <td>{{ $artistcategory->created_at->format('F d, Y ') }}</td>
                     <td>
                     <a href="{{ route('admin_artistcategories.edit', $artistcategory->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>

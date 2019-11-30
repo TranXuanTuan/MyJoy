@@ -14,7 +14,7 @@ class Album extends Model
     	return $this->belongsTo('App\Model\Artist');
     }
 
-    public function albumcategory()
+    public function category()
     {
     	return $this->belongsTo('App\Model\AlbumCategory');
     }

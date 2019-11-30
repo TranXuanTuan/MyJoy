@@ -1,6 +1,6 @@
 @extends('layouts.front.master')
-@section('content')
 
+@section('content')
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
         <div class="bradcumbContent">
@@ -24,7 +24,7 @@
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
                         <a href="{{route('artistdetail',$artist->id)}}">
-                        <img src="/upload/artists/{{$artist->thumb}}" alt="" height="200px">
+                        <img src="/upload/artists/{{$artist->avatar}}" alt="" height="200px">
                         <div class="album-info">
                                 <h5>{{$artist->artist_name}}</h5>
                         </div>
@@ -47,5 +47,6 @@
             </div>
             @endforeach
         </div>
+        {!! $artists->links() !!}
     </section>
 @endsection
