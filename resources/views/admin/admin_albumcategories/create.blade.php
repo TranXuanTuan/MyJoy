@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="form-group text-center">
-                <a href="{{ route('admin_albumcategories.index') }}" class="btn btn-secondary">Album List</a>
+                <a href="{{ route('admin_albumcategories.index') }}" class="btn btn-secondary">Category List</a>
                 <button type="reset" class="btn btn-primary">Reset</button>
                 <button type="submit" class="btn btn-success">Add</button>            
             </div>
