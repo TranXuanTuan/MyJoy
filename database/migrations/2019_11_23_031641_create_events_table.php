@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->string('event_place');
             $table->string('event_date');
-            $table->string('content');
+            $table->text('content');
             $table->string('image')->nullable();
             $table->string('author');
             $table->timestamps();
