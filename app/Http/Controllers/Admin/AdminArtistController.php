@@ -22,7 +22,7 @@ class AdminArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::all();
+        $artists = Artist::paginate(3);
         return view('admin.artists.index', compact('artists'));
     }
 

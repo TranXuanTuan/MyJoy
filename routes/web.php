@@ -50,6 +50,8 @@ Route::resource('topics', 'TopicController');
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
+Route::post('search', 'HomeController@search');
+
 Route::namespace('Admin')
     ->prefix('admin')
     ->group(function () {

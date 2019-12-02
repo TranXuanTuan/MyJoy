@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\AlbumCategory;
 use App\Model\Album;
+use App\Model\Artist;
 use Auth;
 use Session;
 
@@ -34,7 +35,8 @@ class AdminAlbumController extends Controller
     public function create()
     {
         $categories = AlbumCategory::all();
-        return view('admin.albums.create',compact('categories'));
+        $artists = Artist::all();
+        return view('admin.albums.create',compact('categories','artists'));
     }
 
     /**
@@ -54,17 +56,17 @@ class AdminAlbumController extends Controller
         }
         $this->validate($request, [
             'category_id' => 'required',
-            'artist_name' => 'required|max:100',
-            'intro' => 'required|max:100',
+            'artist_id' => 'required',
+            'album_name' => 'required|max:50',
             ]);
         $category_id = $request['category_id'];
-        $artist_name = $request['artist_name'];
-        $intro = $request['intro'];
-        $avatar = $request['avatar'];
+        $artist_id = $request['artist_id'];
+        $thumb = $request['thumb'];
+        $album_name = $request['album_name'];
 
-        $artist = Artist::create($request->only('category_id','artist_name','intro','avatar'));
-        return redirect()->route('admin_artists.index')
-                ->with('flash_message','Artist successfully added.');
+        $album = Album::create($request->only('category_id','artist_id','thumb','album_name'));
+        return redirect()->route('admin_albums.index')
+                ->with('flash_message','Album successfully added.');
     }
 
     /**
@@ -75,7 +77,7 @@ class AdminAlbumController extends Controller
      */
     public function show($id)
     {
-        return redirect('admin/admin_albumcategories'); 
+        return redirect('admin/albums'); 
 
     }
 
@@ -87,8 +89,10 @@ class AdminAlbumController extends Controller
      */
     public function edit($id)
     {
-        $albumCategory = AlbumCategory::findOrFail($id);
-        return view('admin.admin_albumcategories.edit', compact('albumCategory'));
+        $album = Album::findOrFail($id);
+        $artists = Artist::all();
+        $categories = AlbumCategory::all();
+        return view('admin.albums.edit', compact('album','categories','artists'));
     }
 
     /**
@@ -100,13 +104,15 @@ class AdminAlbumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $albumCategory = AlbumCategory::findOrFail($id);
-        $albumCategory->category_name = $request['category_name'];
-        
-        $albumCategory->save();
+        $album = Album::findOrFail($id);
+        $album->category_id = $request['category_id'];
+        $album->artist_id = $request['artist_id'];
+        $album->album_name = $request['album_name'];
+        $album->thumb = $request['thumb'];
+        $album->save();
 
-        return redirect()->route('admin_albumcategories.index', 
-            $albumCategory->id)->with('flash_message','Album successfully edited.');
+        return redirect()->route('admin_albums.index', 
+            $album->id)->with('flash_message','Album successfully edited.');
     }
 
     /**
@@ -117,10 +123,10 @@ class AdminAlbumController extends Controller
      */
     public function destroy($id)
     {
-        $albumCategory = AlbumCategory::findOrFail($id);
-        $albumCategory->delete();
+        $album = Album::findOrFail($id);
+        $album->delete();
 
-        return redirect()->route('admin_albumcategories.index')
+        return redirect()->route('admin_albums.index')
             ->with('flash_message',
              'Album successfully deleted');
     }

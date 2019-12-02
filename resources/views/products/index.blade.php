@@ -17,14 +17,18 @@
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
                         <a href="#">PRODUCT</a>
             </div>
-
+            
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
                 @foreach($productcategories as $productcategory)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                         <a href="{{route('products.show',$productcategory->id)}}">
-                        <img src="img/bg-img/a1.jpg" alt="">
+                        <a href="{{route('products.show',$productcategory->id)}}">
+                            @if(!empty($productcategory->picture))
+                                <img src="/upload/product_category/{{$productcategory->picture}}" alt="">
+                            @else
+                                <img src="/img/images/no-image.png" alt="no image">
+                            @endif
                         <div class="album-info">                         
                                 <h5>{{$productcategory->product_name}}</h5>                           
                         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ProductCategory;
+use App\Model\Product;
 use Auth;
 use Session;
 
@@ -21,8 +22,8 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $productcategories = ProductCategory::all();
-        return view('admin.admin_productcategories.index', compact('productcategories'));
+        $products = Product::paginate(3);
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -32,7 +33,8 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.admin_productcategories.create');
+        $categories = ProductCategory::all();
+        return view('admin.products.create',compact('categories'));
     }
 
     /**
@@ -45,18 +47,26 @@ class AdminProductController extends Controller
     {
         if ($request->hasFile('picture')) {
             $ext = $request->file('picture')->getClientOriginalExtension();
-            $this->productCategory->picture = $request->file('picture')->storeAs(
+            $this->product->picture = $request->file('picture')->storeAs(
                 'public/product_images', time() . '.' . $ext
             );
         }
         $this->validate($request, [
-            'product_name' => 'required|max:100',
+            'category_id' => 'required',
+            'unit' => 'required',
+            'description' => 'required|max:300',
+            'name_product' => 'required|max:100',
+            'price' => 'required',
             ]);
-        $product_name = $request['product_name'];
+        $category_id = $request['category_id'];
+        $unit = $request['unit'];
+        $description = $request['description'];
+        $name_product = $request['name_product'];
+        $price = $request['price'];
         $picture = $request['picture'];
 
-        $productCategory = ProductCategory::create($request->only('product_name', 'picture'));
-        return redirect()->route('admin_productcategories.index')
+        $product = Product::create($request->only('category_id', 'unit', 'description', 'name_product', 'price', 'picture'));
+        return redirect()->route('admin_products.index')
                 ->with('flash_message','Product successfully added.');
     }
 
@@ -68,7 +78,7 @@ class AdminProductController extends Controller
      */
     public function show($id)
     {
-        return redirect('admin/admin_productcategories.index'); 
+        return redirect('admin/products.index'); 
     }
 
     /**
@@ -79,8 +89,9 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-        $productCategory = ProductCategory::findOrFail($id);
-        return view('admin.admin_productcategories.edit', compact('productCategory'));
+        $product = Product::findOrFail($id);
+        $categories = ProductCategory::all();
+        return view('admin.products.edit', compact('product','categories'));
     }
 
     /**
@@ -92,13 +103,17 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productCategory = ProductCategory::findOrFail($id);
-        $productCategory->product_name = $request['product_name'];
-        $productCategory->picture = $request['picture'];
-        $productCategory->save();
+        $product = Product::findOrFail($id);
+        $product->category_id = $request['category_id'];
+        $product->unit = $request['unit'];
+        $product->description = $request['description'];
+        $product->price = $request['price'];
+        $product->name_product = $request['name_product'];
+        $product->picture = $request['picture'];
+        $product->save();
 
-        return redirect()->route('admin_productcategories.index', 
-            $productCategory->id)->with('flash_message','Product successfully edited.');
+        return redirect()->route('admin_products.index', 
+            $product->id)->with('flash_message','Product successfully edited.');
     }
 
     /**
@@ -109,10 +124,10 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        $productCategory = ProductCategory::findOrFail($id);
+        $product = Product::findOrFail($id);
         $productCategory->delete();
 
-        return redirect()->route('admin_productcategories.index')
+        return redirect()->route('admin_products.index')
             ->with('flash_message',
              'Product successfully deleted');
     }

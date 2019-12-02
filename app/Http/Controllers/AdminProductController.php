@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Contact;
 
-class ContactController extends Controller
+class AdminProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contact.index');
+        //
     }
 
     /**
@@ -35,20 +34,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|max:30',
-            'email' => 'required|email',
-            'subject' => 'required|max:50',
-            'message' => 'required|max:100',
-            ]);
-        $name = $request['name'];
-        $email = $request['email'];
-        $subject = $request['subject'];
-        $message = $request['message'];
-
-        $contact = Contact::create($request->only('name', 'email', 'subject','message'));
-        return redirect()->route('contact.index')
-                ->with('flash_message','Contact successfully send.');
+        //
     }
 
     /**

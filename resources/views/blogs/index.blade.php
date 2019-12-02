@@ -25,7 +25,6 @@
                                 @else
                                     <img src="/img/images/no-image.png" alt="no image">
                                 @endif
-                                    
                             </a>
                             <!-- Post Date -->
                             <div class="post-date">

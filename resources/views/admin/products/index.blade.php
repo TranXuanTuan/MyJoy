@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-lg-12">
-    <h1><i class="fas fa-microphone-alt"></i>ALBUMS
+    <h1><i class="fas fa-microphone-alt"></i>PRODUCTS
        
     </h1>
     <div class="table-responsive">
@@ -17,44 +17,46 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Ablum Name</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Unit</th>
+                    <th>Price</th>
                     <th>Category</th>
-                    <th>Artist </th>
-                    <th>Thumb</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach ($albums as $album)
+                @foreach ($products as $product)
                 <tr>
-                    <td>{{ $album->id}}</td>
-                    <td>{{ $album->album_name }}</td>
-                    <td>{{ $album->category->category_name}}</td>
-                    <td>{{ $album->artist->artist_name }}</td>
+                    <td>{{ $product->id}}</td>
+                    <td>{{ $product->name_product}}</td>
+                    <td>{{ $product->description }}</td>
+                    <td>{{ $product->unit }}</td>
+                    <td>{{ $product->price }}</td>
                     <td>
-                        @if(!empty($album->thumb))
-                            <img src="/upload/albums/{{$album->thumb}}" class="img-fluid">
+                        @if(!empty($product->picture))
+                            <img src="/upload/products/{{$product->picture}}" class="img-fluid">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
                     </td>
                     <td>
-                    <a href="{{ route('admin_albums.edit', $album->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('admin_products.edit', $product->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
                     </td>
                     <td>
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_albums.destroy', $album->id] ]) !!}
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin_products.destroy', $product->id] ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
                 </tr>
                 @endforeach
             </tbody>
-
+            {{ $products->links() }}
         </table>
     </div>
 
-    <a href="{{ route('admin_albums.create') }}" class="btn btn-success">Add album</a>
+    <a href="{{ route('admin_products.create') }}" class="btn btn-success">Add product</a>
 
 </div>
 

@@ -163,7 +163,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albums')}}" class="nav-link">
                             <i class="fas fa-copy"></i>
                             <p>Album Category</p>
                         </a>
@@ -199,13 +199,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_productcategories')}}" class="nav-link">
+                        <a href="{{url('admin/admin_products')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Product List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_productcategories/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_products/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
                             <p>Product Add</p>
                         </a>

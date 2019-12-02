@@ -17,10 +17,7 @@
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
-                        
-                        
                         <!-- Blog Content -->
-                       
                         <div class="blog-content">
                             <!-- Post Title -->
                             <a href="#" class="post-title">{{$blog -> title}}</a>

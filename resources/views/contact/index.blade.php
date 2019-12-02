@@ -82,27 +82,33 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Contact Form Area -->
+                    @if(session('flash_message'))
+                        <div class="alert alert-success">
+                            {{session('flash_message')}}
+                        </div>
+                    @endif
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+                        <form action="{{route('contact.index')}}" method="post">
+                        @csrf
                             <div class="row">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
+                                        <input type="text" class="form-control" name="name" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                        <input type="email" class="form-control" name="email" placeholder="E-mail">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" name="subject" placeholder="Subject">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                        <textarea name="message" class="form-control" name="message" cols="30" rows="10" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">

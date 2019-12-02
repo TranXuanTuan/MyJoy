@@ -53,6 +53,7 @@
             </tbody>
 
         </table>
+        {{ $artists->links() }}
     </div>
 
     <a href="{{ route('admin_artists.create') }}" class="btn btn-success">Add Artist</a>

@@ -41,29 +41,6 @@
                                     <p>Price</p>
                                 </div>
                             </div>
-
-                        <!-- <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                            <div class="shows-desc d-flex align-items-center">
-                                <div class="shows-img">
-                                    <img src="/img/bg-img/s1.jpg" alt="">
-                                </div>
-                                <div class="shows-name">
-                                    <h6>{{$beat->author}}</h6>
-                                </div>
-                            </div>
-                            <div class="shows-location">
-                                <p>{{$beat->content}}</p>
-                            </div>
-                            <div class="shows-time">
-                                <p>{{$beat->price}}&#36;</p>
-                            </div>
-                            <div class="buy-tickets">
-                                <a href="#" class="btn try-btn">Try</a>
-                            </div>
-                            <div class="buy-tickets">
-                                <a href="{{ route('order',$beat->id)}}" class="btn musica-btn" data-target="#cart">Add To Cart</a>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

@@ -64,8 +64,6 @@ class BlogController extends Controller
         $blog = Blog::create($request->only('title', 'description', 'content','user_id','author','image'));
         return redirect()->route('admin_blogs.index')
                 ->with('flash_message','Blog successfully added.');
-
-
     }
     public function show($id)
     {
