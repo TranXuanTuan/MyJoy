@@ -30,7 +30,7 @@
 
                         <div class="form-group">
                             <label>Content</label>
-                            <textarea rows="4" name="content" class="form-control" value="{{ old('content') }}"></textarea>
+                            <textarea rows="4" name="content" class="form-control ckeditor" value="{{ old('content') }}"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -46,7 +46,6 @@
                             <select class="form-control" name="user_id">
                                 <option value="" selected>----------Select ID----------</option>
                             @foreach($users as $user)
-
                                 <option value="{{$user->id}}">{{$user->name}}</option>
                             @endforeach  
                             </select>

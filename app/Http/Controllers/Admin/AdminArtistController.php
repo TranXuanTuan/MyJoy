@@ -33,8 +33,8 @@ class AdminArtistController extends Controller
      */
     public function create()
     {
-        $artistcategories = ArtistCategory::all();
-        return view('admin.artists.create',compact('artistcategories'));
+        $categories = ArtistCategory::all();
+        return view('admin.artists.create',compact('categories'));
     }
 
     /**
@@ -62,7 +62,7 @@ class AdminArtistController extends Controller
         $avatar = $request['avatar'];
 
         $artist = Artist::create($request->only('category_id','artist_name','intro','avatar'));
-        return redirect()->route('admin.artists.index')
+        return redirect()->route('admin_artists.index')
                 ->with('flash_message','Artist successfully added.');
     }
 
@@ -85,8 +85,9 @@ class AdminArtistController extends Controller
      */
     public function edit($id)
     {
-        $artistCategory = ArtistCategory::findOrFail($id);
-        return view('admin.artists.edit', compact('artistCategory'));
+        $artist = Artist::findOrFail($id);
+        $categories = ArtistCategory::all();
+        return view('admin.artists.edit', compact('artist','categories'));
     }
 
     /**
@@ -98,13 +99,15 @@ class AdminArtistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $artistCategory = ArtistCategory::findOrFail($id);
-        $artistCategory->category_name = $request['category_name'];
-        
-        $artistCategory->save();
+        $artist = Artist::findOrFail($id);
+        $artist->category_id = $request['category_id'];
+        $artist->artist_name = $request['artist_name'];
+        $artist->intro = $request['intro'];
+        $artist->avatar = $request['avatar'];
+        $artist->save();
 
-        return redirect()->route('artists.index', 
-            $artistCategory->id)->with('flash_message','Artist successfully edited.');
+        return redirect()->route('admin_artists.index', 
+            $artist->id)->with('flash_message','Artist successfully edited.');
     }
 
     /**
@@ -115,10 +118,10 @@ class AdminArtistController extends Controller
      */
     public function destroy($id)
     {
-        $artistCategory = ArtistCategory::findOrFail($id);
-        $artistCategory->delete();
+        $artist = Artist::findOrFail($id);
+        $artist->delete();
 
-        return redirect()->route('artists.index')
+        return redirect()->route('admin_artists.index')
             ->with('flash_message',
              'Artist successfully deleted');
     }

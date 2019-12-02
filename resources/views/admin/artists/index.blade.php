@@ -30,7 +30,7 @@
                 @foreach ($artists as $artist)
                 <tr>
                     <td>{{ $artist->id}}</td>
-                    <td>{{ $artist->category->category_name }}</td>
+                    <td>{{ $artist->category->category_name}}</td>
                     <td>{{ $artist->artist_name }}</td>
                     <td>{{ $artist->intro }}</td>
                     <td>

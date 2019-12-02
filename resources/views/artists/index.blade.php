@@ -13,7 +13,7 @@
     <!-- ##### Album Catagory Area Start ##### -->
     <section class="album-catagory section-padding-100-0">
         <div class="container">
-             @foreach($artist_categories as $artist_category)
+            @foreach($artist_categories as $artist_category)
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
                 <a href="#">{{$artist_category->category_name}}</a>
             </div>
@@ -26,7 +26,7 @@
                         <a href="{{route('artistdetail',$artist->id)}}">
                         <img src="/upload/artists/{{$artist->avatar}}" alt="" height="200px">
                         <div class="album-info">
-                                <h5>{{$artist->artist_name}}</h5>
+                            <h5>{{$artist->artist_name}}</h5>
                         </div>
                         </a>
                     </div>

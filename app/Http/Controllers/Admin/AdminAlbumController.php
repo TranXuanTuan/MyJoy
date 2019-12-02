@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\AlbumCategory;
+use App\Model\Album;
 use Auth;
 use Session;
 
@@ -21,8 +22,8 @@ class AdminAlbumController extends Controller
      */
     public function index()
     {
-        $albumcategories = AlbumCategory::all();
-        return view('admin.admin_albumcategories.index', compact('albumcategories'));
+        $albums = Album::all();
+        return view('admin.albums.index', compact('albums'));
     }
 
     /**
@@ -32,7 +33,8 @@ class AdminAlbumController extends Controller
      */
     public function create()
     {
-        return view('admin.admin_albumcategories.create');
+        $categories = AlbumCategory::all();
+        return view('admin.albums.create',compact('categories'));
     }
 
     /**
@@ -44,15 +46,25 @@ class AdminAlbumController extends Controller
     public function store(Request $request)
     {
         
+        if ($request->hasFile('thumb')) {
+            $ext = $request->file('thumb')->getClientOriginalExtension();
+            $this->album->thumb = $request->file('thumb')->storeAs(
+                'public/albums_images', time() . '.' . $ext
+            );
+        }
         $this->validate($request, [
-            'category_name' => 'required|max:100',
+            'category_id' => 'required',
+            'artist_name' => 'required|max:100',
+            'intro' => 'required|max:100',
             ]);
-        $category_name = $request['category_name'];
-       
+        $category_id = $request['category_id'];
+        $artist_name = $request['artist_name'];
+        $intro = $request['intro'];
+        $avatar = $request['avatar'];
 
-        $albumCategory = AlbumCategory::create($request->only('category_name'));
-        return redirect()->route('admin_albumcategories.index')
-                ->with('flash_message','Album Cateogory successfully added.');
+        $artist = Artist::create($request->only('category_id','artist_name','intro','avatar'));
+        return redirect()->route('admin_artists.index')
+                ->with('flash_message','Artist successfully added.');
     }
 
     /**

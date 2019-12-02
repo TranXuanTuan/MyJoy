@@ -34,8 +34,9 @@
                             </div>
                             <!-- Post Excerpt -->
                             <h4>{{$blog -> description}}</h4>
-                            <p>{{$blog -> content}}</p>
+                            <p>{!!html_entity_decode($blog->content)!!}</p>
                         </div>
+
                     </div>
                     <div class="blog-comment">
                     <div class="section-heading-4 heading-dark">

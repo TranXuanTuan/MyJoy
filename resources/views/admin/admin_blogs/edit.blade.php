@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label>Content</label>
-                            <textarea type="text" name="content" class="form-control">{{ $blog->content }}</textarea>
+                            <textarea rows="4" name="content" class="form-control ckeditor">{{ $blog->content }}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -53,7 +53,7 @@
                             <label>User ID</label>
                             <select class="form-control" name="user_id">
                             @foreach($users as $user)
-                                <option value="{{$user->id}}">{{$user->name}}</option>
+                                <option value="{{$user->id}}" {{ $user->id == $blog->user_id ? 'selected' : ''}}>{{$user->name}}</option>
                             @endforeach  
                             </select>
                         </div>

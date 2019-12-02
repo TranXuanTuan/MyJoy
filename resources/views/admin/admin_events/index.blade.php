@@ -36,7 +36,7 @@
                     <td>{{ $event->title }}</td>
                     <td>{{ $event->event_place }}</td>
                     <td>{{ $event->event_date}}</td>
-                    <td>{{ $event->content}}</td>
+                    <td>{!!html_entity_decode($event->content)!!}</td>
                     <td>{{ $event->author}}</td>
                     <td>
                         @if(!empty($event->image))

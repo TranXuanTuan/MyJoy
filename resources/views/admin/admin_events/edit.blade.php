@@ -41,7 +41,7 @@
 
                         <div class="form-group">
                             <label>Content</label>
-                            <textarea type="text" name="content" class="form-control">{{ $event->content }}</textarea>
+                            <textarea type="text" name="content" class="form-control ckeditor">{{ $event->content }}</textarea>
                         </div>
 
                         <div class="form-group">

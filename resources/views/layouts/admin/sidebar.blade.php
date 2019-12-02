@@ -146,7 +146,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_artistcategories/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_artists/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
                             <p>Artist Add</p>
                         </a>

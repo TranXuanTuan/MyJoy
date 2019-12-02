@@ -38,7 +38,7 @@
                        
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <a href="{{route('blogs.show', $blog -> id)}}" class="post-title">{{$blog -> title}}</a>
+                            <a href="{{route('blogs.show', $blog->id)}}" class="post-title">{{$blog -> title}}</a>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
                                 <p class="post-author">By<a href="#"> {{$blog->author}}</a></p>

@@ -35,7 +35,7 @@
                     <td>{{ $blog->user->name}}</td>
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->description }}</td>
-                    <td>{{ $blog->content}}</td>
+                    <td>{!!html_entity_decode($blog->content)!!}</td>
                     <td>
                         @if(!empty($blog->image))
                             <img src="/upload/blogs/{{$blog->image}}" class="img-fluid">

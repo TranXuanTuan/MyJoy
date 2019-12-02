@@ -48,8 +48,5 @@ class AppServiceProvider extends ServiceProvider
             $view->with('artist_categories' , $artist_categories);
             
         });
-
-
-
     }
 }

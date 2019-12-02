@@ -32,3 +32,5 @@
 {{--<script src="/plugins/lte/dist/js/pages/dashboard.js"></script>--}}
 <!-- AdminLTE for demo purposes -->
 <script src="/plugins/lte/dist/js/demo.js"></script>
+<script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js" ></script>
+

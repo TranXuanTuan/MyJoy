@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label for="customFile">Avatar</label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="avatar">
+                                <input type="file" class="custom-file-input" id="customFile" name="image">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                         </div>
@@ -38,8 +38,8 @@
                             <label>Category ID</label>
                             <select class="form-control" name="category_id">
                                 <option value="" selected>----------Select----------</option>
-                            @foreach($artistcategories as $artistcategory)
-                                <option value="{{$artistcategory->id}}">{{$artistcategory->category_name}}</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->category_name}}</option>
                             @endforeach  
                             </select>
                         </div>

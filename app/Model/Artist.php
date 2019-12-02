@@ -10,7 +10,7 @@ class Artist extends Model
         'category_id', 'artist_name','intro','avatar',
     ];
 
-    public function artistcategory()
+    public function category()
     {
     	return $this->belongsTo('App\Model\ArtistCategory');
     }

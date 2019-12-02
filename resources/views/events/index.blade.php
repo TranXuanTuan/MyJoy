@@ -15,158 +15,23 @@
             <div class="row">
 
                 <!-- Single Event Area -->
+                @foreach($events as $event)
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-event-area mb-30">
                         <div class="event-thumbnail">
-                            <img src="img/bg-img/e1.jpg" alt="">
+                            <img src="/upload/events/{{$event->image}}" alt="">
                         </div>
                         <div class="event-text">
-                            <h4>Dj Night Party</h4>
+                            <h4>{{$event->title}}</h4>
                             <div class="event-meta-data">
-                                <a href="#" class="event-place">VIP Sala</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
+                                <a href="#" class="event-place">{{$event->event_place}}</a>
+                                <a href="#" class="event-date">{{$event->event_date}}</a>
                             </div>
                             <a href="#" class="btn see-more-btn">See Event</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e2.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>The Mission</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Gold Arena</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e3.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>Planet ibiza</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Space Ibiza</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e4.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>Dj Night Party</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">VIP Sala</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e5.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>The Mission</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Gold Arena</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e6.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>Planet ibiza</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Space Ibiza</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e7.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>Dj Night Party</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">VIP Sala</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e8.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>The Mission</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Gold Arena</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Event Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-event-area mb-30">
-                        <div class="event-thumbnail">
-                            <img src="img/bg-img/e9.jpg" alt="">
-                        </div>
-                        <div class="event-text">
-                            <h4>Planet ibiza</h4>
-                            <div class="event-meta-data">
-                                <a href="#" class="event-place">Space Ibiza</a>
-                                <a href="#" class="event-date">June 15, 2018</a>
-                            </div>
-                            <a href="#" class="btn see-more-btn">See Event</a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
             <div class="row">
