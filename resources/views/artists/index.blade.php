@@ -20,7 +20,7 @@
 
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($artists as $artist)
+                @foreach($artist_category->artists as $artist)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
                         <a href="{{route('artistdetail',$artist->id)}}">

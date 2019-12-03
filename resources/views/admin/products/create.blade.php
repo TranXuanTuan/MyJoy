@@ -28,17 +28,17 @@
 
                         <div class="form-group">
                             <label>Unit</label>
-                            <input type="number" name="unit" class="form-control" >
+                            <input type="number" name="unit" class="form-control" value="{{ old('unit') }} >
                         </div>
 
                         <div class="form-group">
                             <label>Price</label>
-                            <input type="number" name="price" class="form-control" >
+                            <input type="number" name="price" class="form-control" value="{{ old('price') }}>
                         </div>
 
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control" name="category_id">
+                            <select class="form-control chosen" name="category_id">
                                 <option value="" selected>----------Select----------</option>
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->product_name}}</option>

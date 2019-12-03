@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             <label>Creator</label>
-                            <select class="form-control" name="user_id">
+                            <select class="form-control chosen" name="user_id">
                                 <option value="" selected>----------Select ID----------</option>
                             @foreach($users as $user)
 

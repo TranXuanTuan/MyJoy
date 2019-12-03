@@ -36,15 +36,15 @@
 
                         <div class="form-group">
                             <label>Category ID</label>
-                            <select class="form-control" name="category_id">
-                                <option value="" selected>----------Select----------</option>
+                            <select class="form-control chosen" name="category_id">
+                                <option value="">--------Select--------</option>
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
                             @endforeach  
                             </select>
                         </div>
                     </div>
-                    <!-- /.card-body -->
+                    
                 </div>
             </div>
             <div class="form-group text-center">

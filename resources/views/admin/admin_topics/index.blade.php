@@ -28,7 +28,7 @@
                     <td>{{ $topic->topic_name}}</td>
                     <td>
                         @if(!empty($topic->picture))
-                            <img src="/upload/topics/{{$topic->picture}}" class="img-fluid">
+                            <img src="/upload/topics/{{$topic->picture}}" class="img-fluid" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif

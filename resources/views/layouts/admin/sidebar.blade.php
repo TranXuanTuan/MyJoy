@@ -163,21 +163,21 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_albums')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
                             <i class="fas fa-copy"></i>
                             <p>Album Category</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_albumcategories')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albums')}}" class="nav-link">
                             <i class="fas fa-list nav-icon"></i>
                             <p>Album List</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('admin/admin_albumcategories/create')}}" class="nav-link">
+                        <a href="{{url('admin/admin_albums/create')}}" class="nav-link">
                             <i class="fas fa-plus-square nav-icon"></i>
-                            <p>Albums Add</p>
+                            <p>Album Add</p>
                         </a>
                     </li>
                 </ul>
@@ -185,7 +185,7 @@
 
              <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                <i class="fas fa-compact-disc"></i>
+                <i class="fab fa-product-hunt"></i>
                     <p>
                         Products 
                         <i class="fas fa-angle-left right"></i>
@@ -215,7 +215,7 @@
 
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                <i class="fas fa-compact-disc"></i>
+                <i class="fas fa-calendar-week"></i>
                     <p>
                         Events 
                         <i class="fas fa-angle-left right"></i>

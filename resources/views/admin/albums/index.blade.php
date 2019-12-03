@@ -34,7 +34,7 @@
                     <td>{{ $album->artist->artist_name }}</td>
                     <td>
                         @if(!empty($album->thumb))
-                            <img src="/upload/albums/{{$album->thumb}}" class="img-fluid">
+                            <img src="/upload/albums/{{$album->thumb}}" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif

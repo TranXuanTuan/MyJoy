@@ -17,8 +17,8 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::paginate(12);
         $album_categories = AlbumCategory::all();
+        $albums = Album::paginate(12);
         return view('albums.index', compact('albums','album_categories'));
     }
 

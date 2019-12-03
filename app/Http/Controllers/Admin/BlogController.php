@@ -67,7 +67,9 @@ class BlogController extends Controller
     }
     public function show($id)
     {
-        return redirect('admin/admin_blogs'); 
+        $blog = Blog::findOrFail($id);
+        $users = User::all();
+        return view('admin.admin_blogs.show', compact('blog','users')); 
     }
     
 

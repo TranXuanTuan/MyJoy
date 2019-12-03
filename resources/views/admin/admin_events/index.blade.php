@@ -19,12 +19,9 @@
                     <th>Id</th>
                     <th>Creator</th>
                     <th>Title</th>
-                    <th>Place</th>
-                    <th>Date</th>
-                    <th>Content</th>
                     <th>Author</th>
                     <th>Image</th>
-                    <th colspan="2">Action</th>
+                    <th colspan="3">Action</th>
                 </tr>
             </thead>
 
@@ -32,21 +29,20 @@
                 @foreach ($events as $event)
                 <tr>
                     <td>{{ $event->id}}</td>
-                    <td>{{ $event->user->name}}</td>
                     <td>{{ $event->title }}</td>
-                    <td>{{ $event->event_place }}</td>
-                    <td>{{ $event->event_date}}</td>
-                    <td>{!!html_entity_decode($event->content)!!}</td>
                     <td>{{ $event->author}}</td>
                     <td>
                         @if(!empty($event->image))
-                            <img src="/upload/events/{{$event->image}}" class="img-fluid">
+                            <img src="/upload/events/{{$event->image}}" class="img-fluid" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
                     </td>
                     <td>
-                    <a href="{{ route('admin_events.edit', $event->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('admin_events.show', $event->id) }}" class="btn btn-primary" >Show</a>                   
+                    </td>
+                    <td>
+                    <a href="{{ route('admin_events.edit', $event->id) }}" class="btn btn-info pull-left" >Edit</a>                   
                     </td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['admin_events.destroy', $event->id] ]) !!}

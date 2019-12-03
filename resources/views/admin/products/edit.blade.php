@@ -45,7 +45,7 @@
 
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control" name="category_id">
+                            <select class="form-control chosen" name="category_id">
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}" {{ $category->id == $product->category_id ? 'selected' : ''}}>{{$category->product_name}}</option>
                             @endforeach  
@@ -54,11 +54,11 @@
 
                         <div class="form-group">
                             <label for="customFile">Picture</label>
-                            @if(!empty($product->avatar) && Storage::disk('local')->exists($product->avatar))
-                                <img src="{{ Storage::disk('local')->url($product->avatar) }}" alt="{{ $product->avatar }}" class="img-fluid">
+                            @if(!empty($product->picture) && Storage::disk('local')->exists($product->picture))
+                                <img src="{{ Storage::disk('local')->url($product->picture) }}" alt="{{ $product->picture }}" class="img-fluid">
                             @endif
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="avatar">
+                                <input type="file" class="custom-file-input" id="customFile" name="picture">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                         </div>

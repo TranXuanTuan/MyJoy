@@ -78,7 +78,9 @@ class AdminEventController extends Controller
      */
     public function show($id)
     {
-        return redirect('admin/admin_events'); 
+        $event = Event::findOrFail($id);
+        $users = User::all();
+        return view('admin.admin_events.show',compact('event','users')); 
     }
 
     /**

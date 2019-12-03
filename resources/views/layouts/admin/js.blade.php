@@ -33,4 +33,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/plugins/lte/dist/js/demo.js"></script>
 <script type="text/javascript" language="javascript" src="/ckeditor/ckeditor.js" ></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+    $(".chosen").chosen();
+</script>    

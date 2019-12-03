@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <label>Artist</label>
-                            <select class="form-control" name="artist_id">
+                            <select class="form-control chosen" name="artist_id">
                             @foreach($artists as $artist)
                                 <option value="{{$artist->id}}" {{ $artist->id == $album->artist_id ? 'selected' : ''}}>{{$artist->artist_name}}</option>
                             @endforeach  

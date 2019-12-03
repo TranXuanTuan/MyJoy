@@ -52,7 +52,7 @@ class AlbumCategoryController extends Controller
 
         $albumCategory = AlbumCategory::create($request->only('category_name'));
         return redirect()->route('admin_albumcategories.index')
-                ->with('flash_message','Album Cateogory successfully added.');
+                ->with('flash_message','Album Category successfully added.');
     }
 
     /**
@@ -94,7 +94,7 @@ class AlbumCategoryController extends Controller
         $albumCategory->save();
 
         return redirect()->route('admin_albumcategories.index', 
-            $albumCategory->id)->with('flash_message','Album successfully edited.');
+            $albumCategory->id)->with('flash_message','Album Category successfully edited.');
     }
 
     /**
@@ -110,6 +110,6 @@ class AlbumCategoryController extends Controller
 
         return redirect()->route('admin_albumcategories.index')
             ->with('flash_message',
-             'Album successfully deleted');
+             'Album Category successfully deleted');
     }
 }

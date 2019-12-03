@@ -20,11 +20,11 @@
             
             <div class="row oneMusic-albums">
                 <!-- Single Album -->
-                @foreach($albums as $album)
+                @foreach($album_category->albums as $album)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
                         <a href="{{route('albumdetail',$album_category->id)}}">
-                        <img src="img/bg-img/a1.jpg" alt="">
+                        <img src="/upload/albums/{{$album->thumb}}" alt="album"">
                         <div class="album-info">
                                 <h5>{{$album->album_name}}</h5>
                         </div>

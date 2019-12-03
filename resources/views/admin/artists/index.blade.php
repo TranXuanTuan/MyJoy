@@ -35,7 +35,7 @@
                     <td>{{ $artist->intro }}</td>
                     <td>
                         @if(!empty($artist->avatar))
-                            <img src="/upload/artists/{{$artist->avatar}}" class="img-fluid">
+                            <img src="/upload/artists/{{$artist->avatar}}" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif

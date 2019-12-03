@@ -28,7 +28,7 @@
                     <td>{{ $productcategory->product_name}}</td>
                     <td>
                         @if(!empty($productcategory->picture))
-                            <img src="/upload/product_category/{{$productcategory->picture}}" class="img-fluid">
+                            <img src="/upload/product_category/{{$productcategory->picture}}" class="img-fluid" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
