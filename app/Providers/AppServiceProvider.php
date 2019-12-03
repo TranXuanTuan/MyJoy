@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use App\Model\Album;
 use App\Model\AlbumCategory;
 use App\Model\Topic;
+use App\Model\Artist;
 use App\Model\ArtistCategory;
 use App\Model\ProductCategory;
 
@@ -33,10 +34,12 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         View::composer('home', function($view) {
-            $albums = Album::orderby('id', 'desc')->paginate(3);
+            $albums = Album::orderby('id', 'desc')->paginate(4);
             $view->with('albums' , $albums);
             $product_categories = ProductCategory::paginate(12);
             $view->with('product_categories' , $product_categories);
+            $artists = Artist::paginate(7);
+            $view->with('artists' , $artists);
         });
 
         View::composer('layouts.front.header', function($view) {

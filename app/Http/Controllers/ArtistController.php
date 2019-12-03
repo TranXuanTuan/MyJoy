@@ -18,8 +18,8 @@ class ArtistController extends Controller
 
     public function show($category)
     {
-        $artist = Artist::where('category_id',$category)->get();
-        return view('artists.show', compact('artist'));
+        $artist_categories = Artist::where('category_id',$category)->get();
+        return view('artists.show', compact('artist_categories'));
     }
 
     public function detail($artist_id)

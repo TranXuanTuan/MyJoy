@@ -10,14 +10,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-9">
-                            <div class="ablums-text text-center mb-70">
-                                <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="row">
                         <div class="col-12">
                             <div class="albums-slideshow owl-carousel">
@@ -25,7 +17,7 @@
                                 @foreach($albums as $album)
                                 <div class="single-album"> 
                                     <a href="{{route('albumdetail',$album->id)}}">
-                                        <img src="img/bg-img/a1.jpg" alt="">
+                                        <img src="/upload/albums/{{$album->thumb}}" alt="">
                                         <div class="album-info">
                                             <h5>{{$album->album_name}}</h5>
                                         </div>
@@ -58,22 +50,14 @@
                         @foreach($product_categories as $product_category) 
                         <div class="col-12 col-sm-6 col-md-4 col-lg-2">                           
                             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
-                                <div class="album-thumb">
-                                    <a href="{{route('products.show',$product_category->id)}}">
-                                    <img src="img/bg-img/b1.jpg" alt="">
-                                    <!-- Album Price -->
-                                    <!-- <div class="album-price">
-                                        <p>$0.90</p>
-                                    </div> -->
-                                    <!-- Play Icon -->
-                                    <!-- <div class="play-icon">
-                                        <a href="#" class="video--play--btn"><span class="icon-play-button"></span></a>
-                                    </div> -->
-                                </div>
-                                <div class="album-info">                                    
-                                    <h5>{{$product_category->product_name}}</h5>                                  
-                                </div>  
-                                    </a>                            
+                                <a href="{{route('products.show',$product_category->id)}}">
+                                    <div class="album-thumb">
+                                        <img src="/upload/product_category/{{$product_category->picture}}" alt="">
+                                    </div>
+                                    <div class="album-info">                                    
+                                        <h5>{{$product_category->product_name}}</h5>                                  
+                                    </div>  
+                                </a>                            
                             </div>                           
                         </div>
                         @endforeach
@@ -92,32 +76,7 @@
             <!-- ##### Featured Artist Area Start ##### -->
             <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
                 <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-12 col-md-5 col-lg-4">
-                            <div class="featured-artist-thumb">
-                                <img src="img/bg-img/fa.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-7 col-lg-8">
-                            <div class="featured-artist-content">
-                                <!-- Section Heading -->
-                                <div class="section-heading white text-left mb-30">
-                                    <p>See what’s new</p>
-                                    <h2>Buy What’s New</h2>
-                                </div>
-                                <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros.</p>
-                                <div class="song-play-area">
-                                    <div class="song-name">
-                                        <p>01. Main Hit Song</p>
-                                    </div>
-                                        <audio preload="auto" controls>
-                                            <source src="/audio/dummy-audio.mp3">
-                                        </audio>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/ryMy77t9f1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
                 <!-- ##### Featured Artist Area End ##### -->
 
@@ -315,77 +274,17 @@
                                                                 <p>See what’s new</p>
                                                                 <h2>Popular Artist</h2>
                                                             </div>
-
                                                             <!-- Single Artist -->
+                                                            @foreach($artists as $artist)
                                                             <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                                                                 <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa1.jpg" alt="">
+                                                                    <img src="/upload/artists/{{$artist->avatar}}" alt="">
                                                                 </div>
                                                                 <div class="content-">
-                                                                    <p>Sam Smith</p>
+                                                                    <p>{{$artist->artist_name}}</p>
                                                                 </div>
                                                             </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="150ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa2.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>William Parker</p>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa3.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>Jessica Walsh</p>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="250ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa4.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>Tha Stoves</p>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="300ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa5.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>DJ Ajay</p>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="350ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa6.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>Radio Vibez</p>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Single Artist -->
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="400ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/pa7.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>Music 4u</p>
-                                                                </div>
-                                                            </div>
-
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>

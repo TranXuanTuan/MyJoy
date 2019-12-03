@@ -5,9 +5,9 @@
         @csrf
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-
         <h1>Create Topic </h1>
         <hr>
+        @include('admin.blocks.errors')
         <div class="form-group">
             <div class="row">
             <div class="col-12">

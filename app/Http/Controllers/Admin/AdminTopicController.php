@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\TopicCreateRequest;
+use App\Http\Requests\Admin\TopicUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Topic;
@@ -41,7 +43,7 @@ class AdminTopicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TopicCreateRequest $request)
     {
         if ($request->hasFile('picture')) {
             $ext = $request->file('picture')->getClientOriginalExtension();
@@ -49,9 +51,7 @@ class AdminTopicController extends Controller
                 'public/topic_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'topic_name' => 'required|max:100',
-            ]);
+        
         $topic_name = $request['topic_name'];
         $picture = $request['picture'];
 
@@ -91,7 +91,7 @@ class AdminTopicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TopicUpdateRequest $request, $id)
     {
         $topic = Topic::findOrFail($id);
         $topic->topic_name = $request['topic_name'];

@@ -22,7 +22,13 @@
                             <!-- Post Title -->
                             <a href="#" class="post-title">{{$blog -> title}}</a>
                             <div class="blog-post-thumb mt-30">
-                                 <a><img src="/upload/blogs/{{$blog->image}}" alt=""></a>
+                                 <a>
+                                    @if(!empty($blog->image))
+                                        <img src="/upload/blogs/{{$blog->image}}" alt="">
+                                    @else
+                                        <img src="/img/bg-img/a1.jpg" alt="">
+                                    @endif
+                                 </a>
                             
                             </div>
                             <!-- Post Meta -->

@@ -19,7 +19,11 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-event-area mb-30">
                         <div class="event-thumbnail">
-                            <img src="/upload/events/{{$event->image}}" alt="">
+                            @if(!empty($event->image))
+                                <img src="/upload/events/{{$event->image}}" alt="">
+                            @else
+                                <img src="/img/bg-img/a1.jpg" alt="">
+                            @endif
                         </div>
                         <div class="event-text">
                             <h4>{{$event->title}}</h4>

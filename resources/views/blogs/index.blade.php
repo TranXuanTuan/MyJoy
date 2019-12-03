@@ -23,7 +23,7 @@
                                 @if(!empty($blog->image))
                                     <img src="/upload/blogs/{{$blog->image}}" alt="">
                                 @else
-                                    <img src="/img/images/no-image.png" alt="no image">
+                                    <img src="/img/bg-img/a1.jpg" alt="">
                                 @endif
                             </a>
                             <!-- Post Date -->

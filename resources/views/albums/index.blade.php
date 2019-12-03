@@ -24,10 +24,7 @@
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
                         <a href="{{route('albumdetail',$album_category->id)}}">
-                        <img src="/upload/albums/{{$album->thumb}}" alt="album"">
-                        <div class="album-info">
-                                <h5>{{$album->album_name}}</h5>
-                        </div>
+                            <img src="/upload/albums/{{$album->thumb}}" alt="">
                         </a>
                     </div>
                 </div>
