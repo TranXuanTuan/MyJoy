@@ -13,6 +13,7 @@
         </div>
     @endif
         <hr>
+        @include('admin.blocks.errors')
             <div class="form-group">
             <div class="row">
             <div class="col-12">

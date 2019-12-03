@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\AdminProductCreateRequest;
+use App\Http\Requests\Admin\AdminProductUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ProductCategory;
@@ -43,7 +45,7 @@ class AdminProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminProductCreateRequest $request)
     {
         if ($request->hasFile('picture')) {
             $ext = $request->file('picture')->getClientOriginalExtension();
@@ -51,13 +53,7 @@ class AdminProductController extends Controller
                 'public/product_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'category_id' => 'required',
-            'unit' => 'required',
-            'description' => 'required|max:300',
-            'name_product' => 'required|max:100',
-            'price' => 'required',
-            ]);
+        
         $category_id = $request['category_id'];
         $unit = $request['unit'];
         $description = $request['description'];
@@ -101,7 +97,7 @@ class AdminProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminProductUpdateRequest $request, $id)
     {
         $product = Product::findOrFail($id);
         $product->category_id = $request['category_id'];
@@ -125,7 +121,7 @@ class AdminProductController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-        $productCategory->delete();
+        $product->delete();
 
         return redirect()->route('admin_products.index')
             ->with('flash_message',

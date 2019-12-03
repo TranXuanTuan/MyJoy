@@ -8,6 +8,7 @@
 
         <h1>Create Album Category</h1>
         <hr>
+        @include('admin.blocks.errors')
         <div class="form-group">
             <div class="row">
             <div class="col-12">

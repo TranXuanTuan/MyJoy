@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\ProductCategoryCreateRequest;
+use App\Http\Requests\Admin\ProductCategoryUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ProductCategory;
@@ -41,7 +43,7 @@ class ProductCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductCategoryCreateRequest $request)
     {
         if ($request->hasFile('picture')) {
             $ext = $request->file('picture')->getClientOriginalExtension();
@@ -49,9 +51,7 @@ class ProductCategoryController extends Controller
                 'public/product_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'product_name' => 'required|max:100',
-            ]);
+        
         $product_name = $request['product_name'];
         $picture = $request['picture'];
 
@@ -90,7 +90,7 @@ class ProductCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductCategoryCreateRequest $request, $id)
     {
         $productCategory = ProductCategory::findOrFail($id);
         $productCategory->product_name = $request['product_name'];

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
+use App\Http\Requests\Admin\BlogCreateRequest;
+use App\Http\Requests\Admin\BlogUpdateRequest;
 use App\Model\Blog;
 use Auth;
 use Illuminate\Http\Request;
@@ -41,7 +44,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogCreateRequest $request)
     {
         if ($request->hasFile('image')) {
             $ext = $request->file('image')->getClientOriginalExtension();
@@ -49,11 +52,7 @@ class BlogController extends Controller
                 'public/blog_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'title' => 'required|max:100',
-            'description' => 'required|max:300',
-            'content' => 'required',
-            ]);
+        
         $title = $request['title'];
         $description = $request['description'];
         $content = $request['content'];
@@ -93,7 +92,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogUpdateRequest $request, $id)
     {
         $blog = Blog::findOrFail($id);
         $blog->title = $request['title'];

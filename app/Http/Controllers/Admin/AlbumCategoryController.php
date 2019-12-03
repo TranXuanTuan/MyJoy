@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\AlbumCategoryCreateRequest;
+use App\Http\Requests\Admin\AlbumCategoryUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\AlbumCategory;
@@ -41,12 +43,10 @@ class AlbumCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlbumCategoryCreateRequest $request)
     {
         
-        $this->validate($request, [
-            'category_name' => 'required|max:100',
-            ]);
+        
         $category_name = $request['category_name'];
        
 
@@ -86,7 +86,7 @@ class AlbumCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlbumCategoryUpdateRequest $request, $id)
     {
         $albumCategory = AlbumCategory::findOrFail($id);
         $albumCategory->category_name = $request['category_name'];

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\ArtistCategoryCreateRequest;
+use App\Http\Requests\Admin\ArtistCategoryUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ArtistCategory;
@@ -42,7 +44,7 @@ class ArtistCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistCategoryCreateRequest $request)
     {
         $this->validate($request, [
             'category_name' => 'required|max:100',
@@ -85,7 +87,7 @@ class ArtistCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArtistCategoryUpdateRequest $request, $id)
     {
         $artistCategory = ArtistCategory::findOrFail($id);
         $artistCategory->category_name = $request['category_name'];
