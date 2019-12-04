@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ArtistCategory;
 use App\Model\Artist;
+use App\Http\Requests\Admin\ArtistCreateRequest;
+use App\Http\Requests\Admin\ArtistUpdateRequest;
 use Auth;
 use Session;
 
@@ -22,7 +24,7 @@ class AdminArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::paginate(3);
+        $artists = Artist::orderby('id', 'desc')->paginate(3);
         return view('admin.artists.index', compact('artists'));
     }
 
@@ -43,7 +45,7 @@ class AdminArtistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArtistCreateRequest $request)
     {
         if ($request->hasFile('avatar')) {
             $ext = $request->file('avatar')->getClientOriginalExtension();
@@ -51,11 +53,7 @@ class AdminArtistController extends Controller
                 'public/artist_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'category_id' => 'required',
-            'artist_name' => 'required|max:100',
-            'intro' => 'required|max:100',
-            ]);
+        
         $category_id = $request['category_id'];
         $artist_name = $request['artist_name'];
         $intro = $request['intro'];
@@ -97,7 +95,7 @@ class AdminArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArtistUpdateRequest $request, $id)
     {
         $artist = Artist::findOrFail($id);
         $artist->category_id = $request['category_id'];

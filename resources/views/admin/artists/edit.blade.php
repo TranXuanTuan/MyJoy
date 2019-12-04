@@ -13,7 +13,8 @@
         <div class="alert alert-success">
             {{session('flash_message')}}
         </div>
-    @endif
+        @endif
+        @include('admin.blocks.errors')
         <hr>
             <div class="form-group">
             <div class="row">

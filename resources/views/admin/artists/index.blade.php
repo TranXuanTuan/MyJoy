@@ -13,7 +13,6 @@
         </div>
     @endif
         <table class="table table-bordered table-striped">
-
             <thead>
                 <tr>
                     <th>Id</th>
@@ -25,7 +24,6 @@
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach ($artists as $artist)
                 <tr>
@@ -51,9 +49,8 @@
                 </tr>
                 @endforeach
             </tbody>
-            {{ $artists->links() }}
         </table>
-       
+        {{ $artists->links() }}
     </div>
 
     <a href="{{ route('admin_artists.create') }}" class="btn btn-success">Add Artist</a>
