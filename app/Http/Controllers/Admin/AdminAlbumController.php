@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Model\AlbumCategory;
 use App\Model\Album;
 use App\Model\Artist;
+use App\Http\Requests\Admin\AlbumCreateRequest;
+use App\Http\Requests\Admin\AlbumUpdateRequest;
 use Auth;
 use Session;
 
@@ -23,7 +25,7 @@ class AdminAlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
+        $albums = Album::orderby('id','desc')->paginate(3);
         return view('admin.albums.index', compact('albums'));
     }
 
@@ -45,7 +47,7 @@ class AdminAlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlbumCreateRequest $request)
     {
         
         if ($request->hasFile('thumb')) {
@@ -54,11 +56,7 @@ class AdminAlbumController extends Controller
                 'public/albums_images', time() . '.' . $ext
             );
         }
-        $this->validate($request, [
-            'category_id' => 'required',
-            'artist_id' => 'required',
-            'album_name' => 'required|max:50',
-            ]);
+        
         $category_id = $request['category_id'];
         $artist_id = $request['artist_id'];
         $thumb = $request['thumb'];
@@ -102,7 +100,7 @@ class AdminAlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AlbumUpdateRequest $request, $id)
     {
         $album = Album::findOrFail($id);
         $album->category_id = $request['category_id'];

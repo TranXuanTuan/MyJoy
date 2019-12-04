@@ -29,7 +29,6 @@ class BlogCreateRequest extends FormRequest
             'content' => 'required',
             'author' => 'required|max:50',
             'user_id' => 'required',
-            'image' => 'required',
         ];
     }
 
@@ -41,7 +40,6 @@ class BlogCreateRequest extends FormRequest
             'content.required' => 'Please Enter Content',
             'author.required' => 'Please Enter Author',
             'user_id.required' => 'Please Choose UserID',
-            'image.required' => 'Please Choose Image',
         ];
     }
 }
