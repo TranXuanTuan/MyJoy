@@ -19,12 +19,11 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Song Name</th>
+                    <th>Name</th>
                     <th>Picture</th>
-                    <th>Artist Name</th>
-                    <th>Link</th>
-
-                    <th colspan="2">Action</th>
+                    <th>Singer</th>
+                    <th>Composer</th>
+                    <th colspan="3">Action</th>
                 </tr>
             </thead>
 
@@ -35,15 +34,18 @@
                     <td>{{ $song->song_name }}</td>
                     <td>
                     	@if(!empty($song->picture))
-                            <img src="/upload/artists/{{$song->picture}}" class="img-fluid">
+                            <img src="/upload/songs/{{$song->picture}}" class="img-fluid" width="50%">
                         @else
                             <img src="/img/images/no-image.png" alt="no image">
                         @endif
                     </td>
-                    <td>{{ $song->artist_name}}</td>
-                    <td>{{ $song->link}}</td>
+                    <td>{{ $song->artist->artist_name}}</td>
+                    <td>{{ $song->composer}}</td>
                     <td>
-                    <a href="{{ route('songs.edit', $song->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('songs.show', $song->id) }}" class="btn btn-primary" >Show</a>                   
+                    </td>
+                    <td>
+                    <a href="{{ route('songs.edit', $song->id) }}" class="btn btn-info pull-left" >Edit</a>                   
                     </td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['songs.destroy', $song->id] ]) !!}
@@ -58,7 +60,7 @@
         {{ $songs->links() }}
     </div>
 
-    <a href="{{ route('songs.create') }}" class="btn btn-success">Add Songs</a>
+    <a href="{{ route('songs.create') }}" class="btn btn-success">Add Song</a>
 
 </div>
 

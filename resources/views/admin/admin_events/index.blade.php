@@ -17,9 +17,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Creator</th>
                     <th>Title</th>
-                    <th>Author</th>
                     <th>Image</th>
                     <th colspan="3">Action</th>
                 </tr>
@@ -30,7 +28,6 @@
                 <tr>
                     <td>{{ $event->id}}</td>
                     <td>{{ $event->title }}</td>
-                    <td>{{ $event->author}}</td>
                     <td>
                         @if(!empty($event->image))
                             <img src="/upload/events/{{$event->image}}" class="img-fluid" width="50%">

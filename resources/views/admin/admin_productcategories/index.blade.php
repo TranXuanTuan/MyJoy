@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-lg-12">
-    <h1><i class="fa fa-file"></i> PRODUCTS </h1>
+    <h1><i class="fa fa-file"></i> Product Category </h1>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">
@@ -52,7 +52,7 @@
         </table>
     </div>
 
-    <a href="{{ route('admin_productcategories.create') }}" class="btn btn-success">Add Product</a>
+    <a href="{{ route('admin_productcategories.create') }}" class="btn btn-success">Add Category</a>
 
 </div>
 

@@ -14,8 +14,8 @@ class AddFkComments extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->foreign('song_id')
-                ->references('id')->on('songs')
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->foreign('blog_id')
             ->references('id')->on('blogs')

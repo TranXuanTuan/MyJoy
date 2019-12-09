@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 use App\Model\Song;
 use App\Model\SongCategory;
 use App\Model\Artist;
+use App\Model\Album;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\SongCreateRequest;
+use App\Http\Requests\Admin\SongUpdateRequest;
 
 class SongController extends Controller
 {
@@ -26,15 +29,31 @@ class SongController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $song = Song::find($id);
+        $artist = Artist::all();
+        $album = Album::all();
+        $songcategories = SongCategory::all();
+        return view('admin.songs.show', compact('song','artist','album','songcategories'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        $songcategories = SongCategory::all();
+        $categories = SongCategory::all();
         $artist = Artist::all();
-        return view('admin.songs.create',compact('songcategories','artist'));
+        $album = Album::all();
+        return view('admin.songs.create',compact('categories','artist','album'));
         
     }
 
@@ -44,12 +63,24 @@ class SongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SongCreateRequest $request)
     {
         if ($request->hasFile('picture')) {
             $ext = $request->file('picture')->getClientOriginalExtension();
             $this->song->picture = $request->file('picture')->storeAs(
                 'public/song_images', time() . '.' . $ext
+            );
+        }
+        if ($request->hasFile('url')) {
+            $ext = $request->file('url')->getClientOriginalExtension();
+            $this->song->url = $request->file('url')->storeAs(
+                'public/url', time() . '.' . $ext
+            );
+        }
+        if ($request->hasFile('mv')) {
+            $ext = $request->file('mv')->getClientOriginalExtension();
+            $this->song->mv = $request->file('mv')->storeAs(
+                'public/mv', time() . '.' . $ext
             );
         }
 
@@ -58,8 +89,11 @@ class SongController extends Controller
         $songs ->picture = $request->picture;
         $songs ->artist_id = $request->artist_id;
         $songs ->category_id = $request->category_id;
-        $songs ->artist_name = $request->artist_name;
-        $songs ->link = $request->link;
+        $songs ->album_id = $request->album_id;
+        $songs ->song_lyric = $request->song_lyric;
+        $songs ->composer = $request->composer;
+        $songs ->url = $request->url;
+        $songs ->mv = $request->mv;
         
         $songs->save();
         return redirect()->route('songs.index') 
@@ -85,8 +119,9 @@ class SongController extends Controller
     {
         $song = Song::find($id);
         $artist = Artist::all();
+        $album = Album::all();
         $songcategories = SongCategory::all();
-        return view('admin.songs.edit',compact('song', 'artist', 'songcategories'));
+        return view('admin.songs.edit',compact('song', 'artist', 'songcategories','album'));
     }
 
     /**
@@ -96,24 +131,18 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SongUpdateRequest $request, $id)
     {
-        // $this->validate($request, [
-        //     'song_name'=>'required|max:100',
-        //     'picture'=>'required',
-        //     'artist_id'=>'required',
-        //     'category_id'=>'required',
-        //     'artist_name'=>'required',
-          
-        // ]);
-
         $song = Song::findOrFail($id);
-        $song->song_name = $request->song_name;
-        $song->picture = $request->picture;
-        $song->artist_id = $request->artist_id;
-        $song->category_id = $request->category_id;
-        $song->artist_name = $request->artist_name;
-        $song->link = $request->link;
+        $songs ->song_name = $request->song_name;
+        $songs ->picture = $request->picture;
+        $songs ->artist_id = $request->artist_id;
+        $songs ->category_id = $request->category_id;
+        $songs ->album_id = $request->album_id;
+        $songs ->song_lyric = $request->song_lyric;
+        $songs ->composer = $request->composer;
+        $songs ->url = $request->url;
+        $songs ->mv = $request->mv;
         $song->save();
 
         return redirect()->route('songs.index', 

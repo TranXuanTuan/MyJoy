@@ -27,7 +27,6 @@ class BlogUpdateRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'content' => 'required',
-            'author' => 'required|max:50',
             'user_id' => 'required',
             'image' => 'required',
         ];
@@ -39,7 +38,6 @@ class BlogUpdateRequest extends FormRequest
             'title.required' => 'Please Enter Title',
             'description.required' => 'Please Enter Description',
             'content.required' => 'Please Enter Content',
-            'author.required' => 'Please Enter Author',
             'user_id.required' => 'Please Choose UserID',
             'image.required' => 'Please Choose Image',
         ];

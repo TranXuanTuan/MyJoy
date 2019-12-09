@@ -20,9 +20,6 @@ class AddFkArtistSong extends Migration
             $table->foreign('album_id')
             ->references('id')->on('albums')
             ->onDelete('cascade');
-            $table->foreign('user_id')
-            ->references('id')->on('users')
-            ->onDelete('cascade');
             $table->foreign('category_id')
             ->references('id')->on('song_categories')
             ->onDelete('cascade');
@@ -37,7 +34,7 @@ class AddFkArtistSong extends Migration
     public function down()
     {
         Schema::table('songs', function (Blueprint $table) {
-            $table->dropForeign(['artist_id'],['album_id'],['user_id'],['category_id']);
+            $table->dropForeign(['artist_id'],['album_id'],['category_id']);
         });
     }
 }
