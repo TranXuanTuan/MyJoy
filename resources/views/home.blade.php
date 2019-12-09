@@ -51,8 +51,8 @@
                         <div class="col-12 col-sm-6 col-md-4 col-lg-2">                           
                             <div class="single-album-area wow fadeInUp" data-wow-delay="100ms">
                                 <a href="{{route('products.show',$product_category->id)}}">
-                                    <div class="album-thumb">
-                                        <img src="/upload/product_category/{{$product_category->picture}}" alt="">
+                                    <div class="album-thumb" >
+                                        <img src="/upload/product_category/{{$product_category->picture}}" alt="" >
                                     </div>
                                     <div class="album-info">                                    
                                         <h5>{{$product_category->product_name}}</h5>                                  
