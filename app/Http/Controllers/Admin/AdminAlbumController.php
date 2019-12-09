@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\Admin\AdminAlbumCreateRequest;
-use App\Http\Requests\Admin\AdminAlbumUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\AlbumCategory;
@@ -49,11 +47,7 @@ class AdminAlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function store(AdminAlbumCreateRequest $request)
-=======
     public function store(AlbumCreateRequest $request)
->>>>>>> f563e50840413e3fec0a553ff453f87a9a9ddd54
     {
         
         if ($request->hasFile('thumb')) {
@@ -106,11 +100,8 @@ class AdminAlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function update(AdminAlbumUpdateRequest $request, $id)
-=======
+
     public function update(AlbumUpdateRequest $request, $id)
->>>>>>> f563e50840413e3fec0a553ff453f87a9a9ddd54
     {
         $album = Album::findOrFail($id);
         $album->category_id = $request['category_id'];
