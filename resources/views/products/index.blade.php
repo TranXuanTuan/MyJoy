@@ -15,7 +15,7 @@
         <div class="container">       
 
             <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
-                        <a href="#">PRODUCT</a>
+                        <a href="#">ALL</a>
             </div>
             
             <div class="row oneMusic-albums">
