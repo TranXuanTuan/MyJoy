@@ -65,6 +65,12 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
+                        <a href="{{route('songcategories.index')}}" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <p>Song Category</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('songs.index')}}" class="nav-link">
                             <i class="fas fa-list"></i>
                             <p>Songs List</p>

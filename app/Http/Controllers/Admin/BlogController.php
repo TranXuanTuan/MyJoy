@@ -57,10 +57,9 @@ class BlogController extends Controller
         $description = $request['description'];
         $content = $request['content'];
         $user_id = $request['user_id'];
-        $author = $request['author'];
         $image = $request['image'];
 
-        $blog = Blog::create($request->only('title', 'description', 'content','user_id','author','image'));
+        $blog = Blog::create($request->only('title', 'description', 'content','user_id','image'));
         return redirect()->route('admin_blogs.index')
                 ->with('flash_message','Blog successfully added.');
     }
@@ -99,7 +98,6 @@ class BlogController extends Controller
         $blog->description = $request['description'];
         $blog->content = $request['content'];
         $blog->user_id = $request['user_id'];
-        $blog->author = $request['author'];
         $blog->image = $request['image'];
         $blog->save();
 

@@ -22,6 +22,7 @@
                     <th>Unit</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th>Picture</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -34,6 +35,7 @@
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->unit }}</td>
                     <td>{{ $product->price }}</td>
+                    <td>{{ $product->category->product_name }}</td>
                     <td>
                         @if(!empty($product->picture))
                             <img src="/upload/products/{{$product->picture}}" class="img-fluid">

@@ -20,7 +20,6 @@ class CreateBlogsTable extends Migration
             $table->string('description');
             $table->text('content');
             $table->string('image')->nullable();
-            $table->string('author');
             $table->timestamps();
         });
     }

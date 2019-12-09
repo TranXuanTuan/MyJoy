@@ -25,7 +25,6 @@ class TopicCreateRequest extends FormRequest
     {
         return [
             'topic_name' => 'required|max:50',
-            'picture' => 'required',
         ];
     }
 
@@ -33,7 +32,6 @@ class TopicCreateRequest extends FormRequest
     {
         return [
             'topic_name.required' => 'Please Enter Topic Name',
-            'picture.required' => 'Please Choose Picture',
         ];
     }
 }

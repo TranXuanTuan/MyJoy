@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogCreateRequest extends FormRequest
+class AlbumCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,20 +24,18 @@ class BlogCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
-            'content' => 'required',
-            'user_id' => 'required',
+            'album_name' => 'required | max:100',
+            'category_id' => 'required',
+            'artist_id' => 'required'
         ];
     }
 
-    public function messages ()
+    public function messages()
     {
         return [
-            'title.required' => 'Please Enter Title',
-            'description.required' => 'Please Enter Description',
-            'content.required' => 'Please Enter Content',
-            'user_id.required' => 'Please Choose UserID',
+            'album_name.required' => 'Please enter album name',
+            'category_id.required' => 'Please choose category',
+            'artist_id.required' => 'Please choose artist',
         ];
     }
 }

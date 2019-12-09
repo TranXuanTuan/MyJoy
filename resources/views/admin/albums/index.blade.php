@@ -50,8 +50,8 @@
                 </tr>
                 @endforeach
             </tbody>
-
         </table>
+        {{ $albums->links() }}
     </div>
 
     <a href="{{ route('admin_albums.create') }}" class="btn btn-success">Add album</a>

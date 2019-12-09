@@ -36,12 +36,12 @@
 
                         <div class="form-group">
                             <label>Unit</label>
-                            <input type="number" name="unit" class="form-control" value="{{ $product->unit }}>
+                            <input type="number" name="unit" class="form-control" value="{{ $product->unit }}">
                         </div>
 
                         <div class="form-group">
                             <label>Price</label>
-                            <input type="number" name="price" class="form-control" value="{{ $product->price }}>
+                            <input type="number" name="price" class="form-control" value="{{ $product->price }}">
                         </div>
 
                         <div class="form-group">

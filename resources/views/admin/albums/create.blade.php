@@ -7,6 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
 
         <h1>Create Album</h1>
+        @include('admin.blocks.errors')
         <hr>
          @include('admin.blocks.errors')
         <div class="form-group">

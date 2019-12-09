@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class SongCategory extends Model
 {
-    public function subject()
+    protected $fillable = [
+        'topic_id', 'category_name',
+    ];
+
+    public function topic()
     {
-    	return $this->belongsTo('App\Model\Subject');
+    	return $this->belongsTo('App\Model\Topic');
     }
 
     public function songs()

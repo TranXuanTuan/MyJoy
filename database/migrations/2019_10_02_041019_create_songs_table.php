@@ -19,12 +19,10 @@ class CreateSongsTable extends Migration
             $table->string('picture')->nullable();
             $table->unsignedBigInteger('artist_id');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('album_id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('singer');
-            $table->string('song_lyric');
+            $table->unsignedBigInteger('album_id')->nullable();
+            $table->text('song_lyric')->nullable();
             $table->string('composer');
-            $table->integer('like')->nullable();
+            $table->string('url');
             $table->string('mv')->nullable();
             $table->timestamps();
         });

@@ -25,7 +25,6 @@ class ProductCategoryCreateRequest extends FormRequest
     {
         return [
             'product_name' => 'required|max:50',
-            'picture' => 'required',
         ];
     }
 
@@ -33,7 +32,6 @@ class ProductCategoryCreateRequest extends FormRequest
     {
         return [
             'product_name.required' => 'Please Enter Product Name',
-            'picture.required' => 'Please Choose Picture',
         ];
     }
 }

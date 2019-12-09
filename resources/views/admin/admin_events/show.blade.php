@@ -1,8 +1,5 @@
 @extends('layouts.admin.content')
 @section('content')
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-        
         <h1>Show Event </h1>
         @if(session('flash_message'))
         <div class="alert alert-success">
@@ -12,7 +9,7 @@
         <hr>
         <div class="form-group">
             <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title"></h3>
@@ -34,11 +31,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Content</label>
-                            <textarea type="text" name="content" class="form-control ckeditor" disabled>{{ $event->content }}</textarea>
-                        </div>
-
-                        <div class="form-group">
                             <label for="customFile">Image</label>
                             @if(!empty($event->image))
                                 <img src="/upload/events/{{$event->image}}" class="img-fluid" width="50%">
@@ -56,11 +48,20 @@
                             </select>
                         </div>
 
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title"></h3>
+                    </div>
+                    <div class="card-body">
                         <div class="form-group">
-                            <label>Author</label>
-                            <input type="text" name="author" class="form-control" value="{{  $event->author }}" disabled>    
+                            <label>Content</label>
+                            <textarea type="text" name="content" class="form-control ckeditor" disabled>{{ $event->content }}</textarea>
                         </div>
-                        
                     </div>
                     <!-- /.card-body -->
                 </div>

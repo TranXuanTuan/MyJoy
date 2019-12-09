@@ -15,39 +15,39 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Song Name</label>
-                            <input type="text" name="song_name" class="form-control" value="{{ $song->song_name }}">
+                            <input type="text" name="song_name" class="form-control" value="{{ $song->song_name }}" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="customFile">Picture</label><br>
-                            @if(!empty($song->picture) && Storage::disk('local')->exists($song->picture))
-                                <img src="{{ Storage::disk('local')->url($song->picture) }}" alt="{{ $song->picture }}" class="img-fluid">
+                            @if(!empty($song->picture))
+                                <img src="/upload/songs/{{$song->picture}}" class="img-fluid">
+                            @else
+                                <img src="/img/images/no-image.png" alt="no image">
                             @endif
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="picture">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="customFile">URL</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="url">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
+                            @if(!empty($song->url))
+                                <input type="text" name="url" class="form-control" value="{{ $song->url }} " disabled>
+                            @else
+                                <img src="/img/images/no-image.png" alt="no image">
+                            @endif
                         </div>
 
                         <div class="form-group">
                             <label for="customFile">MV</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="mv">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
+                            @if(!empty($song->mv))
+                                <input type="text" name="mv" class="form-control" value="{{ $song->mv }} " disabled>
+                            @else
+                                <img src="/img/images/no-image.png" alt="no image">
+                            @endif
                         </div>
 
                         <div class="form-group">
                             <label>Lyric</label>
-                            <textarea rows="4" name="song_lyric" class="form-control">{{ $song->song_lyric }}</textarea>
+                            <textarea rows="4" name="song_lyric" class="form-control" disabled>{{ $song->song_lyric }}</textarea>
                         </div>
                         
                     </div>
@@ -63,12 +63,12 @@
                         
                         <div class="form-group">
                             <label>Composer</label>
-                            <input type="text" name="composer" class="form-control" value="{{ $song->composer }} ">
+                            <input type="text" name="composer" class="form-control" value="{{ $song->composer }} " disabled>
                         </div>
 
                         <div class="form-group">
                             <label>Artist</label>
-                            <select class="form-control chosen" name="artist_id">
+                            <select class="form-control chosen" name="artist_id" disabled>
                             @foreach($artist as $at)
                                 <option value="{{$at->id}}" {{ $at->id == $song->artist_id ? 'selected' : ''}}>{{$at->artist_name}}</option>
                             @endforeach  
@@ -77,7 +77,7 @@
 
                         <div class="form-group">
                             <label>Album</label>
-                            <select class="form-control chosen" name="album_id">
+                            <select class="form-control chosen" name="album_id" disabled>
                             @foreach($album as $ab)
                                 <option value="{{$ab->id}}" {{ $ab->id == $song->album_id ? 'selected' : ''}}>{{$ab->album_name}}</option>
                             @endforeach  
@@ -86,7 +86,7 @@
 
                         <div class="form-group">
                             <label>Category ID</label>
-                            <select class="form-control chosen" name="category_id">
+                            <select class="form-control chosen" name="category_id" disabled>
                                 <option value="" selected>----------Select Category----------</option>
                             @foreach($songcategories as $songcategory)
                                 <option value="{{$songcategory->id}}" {{ $songcategory->id == $song->category_id ? 'selected' : ''}}>{{$songcategory->category_name}}</option>
@@ -101,8 +101,6 @@
 
         <div class="form-group text-center">
             <a href="{{ route('songs.index') }}" class="btn btn-secondary">Song List</a>
-            {{ Form::submit('Update Song', array('class' => 'btn btn-success')) }}
-            {{ Form::close() }}
         </div>
     </form>
 @endsection

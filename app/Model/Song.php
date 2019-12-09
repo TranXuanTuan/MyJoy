@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Song extends Model
 {
+    protected $fillable = [
+        'song_name', 'picture', 'artist_id', 'category_id', 'album_id'
+        , 'song_lyric', 'composer', 'like', 'mv'
+    ];
+
     public function songcategory()
     {
     	return $this->belongsTo('App\Model\SongCategory');
-    }
-
-    public function comments()
-    {
-    	return $this->hasMany('App\Model\Comment');
     }
 
     public function artist()
@@ -31,8 +31,4 @@ class Song extends Model
     	return $this->hasMany('App\Model\PlaylistSong');
     }
 
-    public function user()
-    {
-    	return $this->belongsTo('App\User');
-    }
 }

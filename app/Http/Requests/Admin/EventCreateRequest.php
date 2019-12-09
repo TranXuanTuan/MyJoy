@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogCreateRequest extends FormRequest
+class EventCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,8 @@ class BlogCreateRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'description' => 'required',
+            'event_place' => 'required',
+            'event_date' => 'required',
             'content' => 'required',
             'user_id' => 'required',
         ];
@@ -34,10 +35,11 @@ class BlogCreateRequest extends FormRequest
     public function messages ()
     {
         return [
-            'title.required' => 'Please Enter Title',
-            'description.required' => 'Please Enter Description',
-            'content.required' => 'Please Enter Content',
-            'user_id.required' => 'Please Choose UserID',
+            'title.required' => 'Please Enter title',
+            'event_place.required' => 'Please enter place',
+            'event_date.required' => 'Please choose date',
+            'content.required' => 'Please Enter content',
+            'user_id.required' => 'Please Enter Creator',
         ];
     }
 }

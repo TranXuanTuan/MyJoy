@@ -29,7 +29,6 @@ class AdminProductCreateRequest extends FormRequest
             'category_id' => 'required',
             'unit' => 'required',
             'price' => 'required',
-            'picture' => 'required',
         ];
     }
 
@@ -41,7 +40,6 @@ class AdminProductCreateRequest extends FormRequest
             'unit.required' => 'Please Choose Unit',
             'price.required' => 'Please Enter Price',
             'category_id.required' => 'Please Choose CategoryID',
-            'picture.required' => 'Please Choose Picture',
         ];
     }
 }

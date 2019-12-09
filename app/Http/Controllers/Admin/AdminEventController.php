@@ -6,7 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-
+use App\Http\Requests\Admin\EventCreateRequest;
+use App\Http\Requests\Admin\EventUpdateRequest;
 
 class AdminEventController extends Controller
 {
@@ -42,7 +43,7 @@ class AdminEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventCreateRequest $request)
     {
         if ($request->hasFile('image')) {
             $ext = $request->file('image')->getClientOriginalExtension();
@@ -55,17 +56,15 @@ class AdminEventController extends Controller
             'event_place' => 'required|max:300',
             'event_date'  => 'required',
             'content' => 'required',
-            'author'=>'required',    
             ]);
         $title = $request['title'];
         $event_place = $request['event_place'];
         $event_date = $request['event_date'];
         $content = $request['content'];
         $user_id = $request['user_id'];
-        $author = $request['author'];
         $image = $request['image'];
 
-        $event = Event::create($request->only('title', 'event_place', 'event_date','content','user_id','author','image'));
+        $event = Event::create($request->only('title', 'event_place', 'event_date','content','user_id','image'));
         return redirect()->route('admin_events.index')
                 ->with('flash_message','Event successfully added.');
     }
@@ -103,7 +102,7 @@ class AdminEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EventUpdateRequest $request, $id)
     {
         
         $event = Event::findOrFail($id);
@@ -112,7 +111,6 @@ class AdminEventController extends Controller
         $event->event_date = $request['event_date'];
         $event->content = $request['content'];
         $event->user_id = $request['user_id'];
-        $event->author = $request['author'];
         $event->image = $request['image'];
         $event->save();
 
