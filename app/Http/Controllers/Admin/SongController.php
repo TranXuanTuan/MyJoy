@@ -134,15 +134,15 @@ class SongController extends Controller
     public function update(SongUpdateRequest $request, $id)
     {
         $song = Song::findOrFail($id);
-        $songs ->song_name = $request->song_name;
-        $songs ->picture = $request->picture;
-        $songs ->artist_id = $request->artist_id;
-        $songs ->category_id = $request->category_id;
-        $songs ->album_id = $request->album_id;
-        $songs ->song_lyric = $request->song_lyric;
-        $songs ->composer = $request->composer;
-        $songs ->url = $request->url;
-        $songs ->mv = $request->mv;
+        $song ->song_name = $request->song_name;
+        $song ->picture = $request->picture;
+        $song ->artist_id = $request->artist_id;
+        $song ->category_id = $request->category_id;
+        $song ->album_id = $request->album_id;
+        $song ->song_lyric = $request->song_lyric;
+        $song ->composer = $request->composer;
+        $song ->url = $request->url;
+        $song ->mv = $request->mv;
         $song->save();
 
         return redirect()->route('songs.index', 

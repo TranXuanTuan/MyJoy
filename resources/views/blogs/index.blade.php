@@ -44,7 +44,7 @@
                                 <p class="tags"><a href="#">2 Comments</a></p>
                             </div>
                             <!-- Post Excerpt -->
-                            <h4>{{$blog -> description}}</h4>
+                            <h4>{!!html_entity_decode($blog->description)!!}</h4>
                         </div>
                         @endforeach
                     </div>

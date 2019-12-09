@@ -31,7 +31,7 @@
                     <td>{{ $blog->id}}</td>
                     <td>{{ $blog->user->name}}</td>
                     <td>{{ $blog->title }}</td>
-                    <td>{{ $blog->description }}</td>
+                    <td>{{ $blog->description}}</td>
                     <td>
                         @if(!empty($blog->image))
                             <img src="/upload/blogs/{{$blog->image}}" class="img-fluid">
@@ -40,9 +40,9 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{ route('admin_blogs.show', $blog->id) }}" class="btn btn-primary" ">Show</a>                   
+                        <a href="{{ route('admin_blogs.show', $blog->id) }}" class="btn btn-primary">Show</a>                   
                     <td>
-                        <a href="{{ route('admin_blogs.edit', $blog->id) }}" class="btn btn-info pull-left" ">Edit</a>                   
+                        <a href="{{ route('admin_blogs.edit', $blog->id) }}" class="btn btn-info pull-left" >Edit</a>                   
                     </td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['admin_blogs.destroy', $blog->id] ]) !!}

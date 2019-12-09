@@ -20,7 +20,7 @@
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <!-- Post Title -->
-                            <a href="#" class="post-title">{{$blog -> title}}</a>
+                            <a href="#" class="post-title">{{$blog->title}}</a>
                             <div class="blog-post-thumb mt-30">
                                  <a>
                                     @if(!empty($blog->image))
@@ -36,7 +36,7 @@
                                 <p class="post-author">By<a href="#"> {{$blog->author}}</a></p>                                
                             </div>
                             <!-- Post Excerpt -->
-                            <h4>{{$blog -> description}}</h4>
+                            <h4>{!!html_entity_decode($blog->description)!!}</h4>
                             <p>{!!html_entity_decode($blog->content)!!}</p>
                         </div>
 

@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Album;
 use App\Model\AlbumCategory;
-use Auth;
-use Session;
+
 
 class AlbumController extends Controller
 {

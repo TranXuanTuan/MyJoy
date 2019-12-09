@@ -23,7 +23,7 @@
 
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea rows="4" name="description" class="form-control ckeditor" disabled>{{ $blog->description }}</textarea>
+                            <textarea rows="4" name="description" class="form-control" disabled>{{ $blog->description }}</textarea>
                         </div>
 
                         <div class="form-group">

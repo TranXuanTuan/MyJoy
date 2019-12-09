@@ -22,10 +22,9 @@ class ArtistController extends Controller
         return view('artists.show', compact('artist_categories'));
     }
 
-    public function detail($artist_id)
+    public function detail($id)
     {
-        $artist = Artist::findorfail($artist_id);
-        $songs = Song::where('artist_id',$artist_id)->get();
-        return view('artists.detail', compact('artist','songs'));
+        $artist = Artist::findorfail($id);
+        return view('artists.detail', compact('artist'));
     }
 }

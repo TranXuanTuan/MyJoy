@@ -28,7 +28,7 @@
 
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea name="description" class="form-control ckeditor">{{ $blog->description }}</textarea>
+                            <textarea name="description" class="form-control">{{ $blog->description }}</textarea>
                         </div>
 
                         <div class="form-group">

@@ -29,17 +29,17 @@
 
                             <!-- Single Song Area -->
                             <div class="col-12">
-                                @foreach($songs as $song)
+                                @foreach($artist->songs as $song)
                                 <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                                     <div class="song-thumbnail">
-                                        <img src="/upload/artists/{{$song->picture}}" alt="">
+                                        <img src="/upload/artists/{{$artist->avatar}}" alt="">
                                     </div>
                                     <div class="song-play-area">
                                         <div class="song-name">
                                             <p>{{$song->song_name}}</p>
                                         </div>
                                         <audio preload="auto" controls>
-                                            <source src="/audio/{{$song->link}}">
+                                            <source src="/upload/url/{{$song->url}}">
                                         </audio>
                                     </div>
                                 </div>
