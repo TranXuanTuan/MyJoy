@@ -29,13 +29,7 @@ Route::group(['prefix' => 'artists'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/order/{product_id}', 'OrderController@index')->name('order');
-    Route::group(['prefix' => 'cart', 'as' => 'cart-'], function () {
-        Route::get('/', ' OrderController@cart')->name('index');
-        Route::get('cancel/{id}', 'OrderController@cancel')->name('cancel');
-        Route::get('complete/{id}', 'OrderController@complete')->name('complete');
-        Route::post('complete/{id}', 'OrderController@postComplete');
-    });
+    Route::get('add-to-cart/{id}', 'OrderController@getAddtoCart')->name('addtocart');
 });
 
 Route::resource('products', 'ProductController');
@@ -47,6 +41,9 @@ Route::resource('blogs', 'BlogController');
 Route::resource('contact', 'ContactController');
 
 Route::resource('topics', 'TopicController');
+Route::group(['prefix' => 'artists'], function () {
+    Route::get('detail/{id}','TopicController@detail')->name('topicdetail');
+});
 
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 

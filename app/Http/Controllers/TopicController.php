@@ -86,4 +86,10 @@ class TopicController extends Controller
     {
         //
     }
+
+    // public function detail($id)
+    // {
+    //     $album= Album::findorfail($id);
+    //     return view('albums.detail', compact('album'));
+    // }
 }

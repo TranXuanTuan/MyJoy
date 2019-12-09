@@ -14,7 +14,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Product Name</th>
+                    <th>Name</th>
                     <th>Picture</th>
                     <th>Created at</th>
                     <th colspan="2">Action</th>
@@ -51,7 +51,7 @@
 
         </table>
     </div>
-
+        {{ $productcategories->links() }}
     <a href="{{ route('admin_productcategories.create') }}" class="btn btn-success">Add Category</a>
 
 </div>

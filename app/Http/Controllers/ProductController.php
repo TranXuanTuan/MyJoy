@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $productcategories = ProductCategory::paginate(12);     
+        $productcategories = ProductCategory::orderby('id', 'desc')->paginate(12);     
         return view('products.index', compact('productcategories'));
     }
 
@@ -46,10 +46,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
-        $product = Product::findorfail($id);
-        return view('products.show', compact('product'));
+        $productcategories = Product::where('category_id',$category)->get();
+        return view('products.show', compact('productcategories'));
     }
 
     /**

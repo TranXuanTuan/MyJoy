@@ -108,68 +108,35 @@
                                         <a href="#" class="cart-info">
                                             <i class="icon-shopping-cart"></i>
                                         </a>
+                                        @if(Session::has('cart'))
                                         <div class="cart-items">
+                                            @foreach($product_cart as $product)
                                             <div class="cart-item">
                                                 <div class="cart-img">
                                                     <a href="#">
-                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
+                                                        <img src="/upload/products/{{$product['item']['picture']}}" alt="product" class="img-fluid">
                                                     </a>
                                                 </div>
                                                 <div class="cart-title">
-                                                    <a href="#">Pressure</a>
-                                                    <span>Code: STPT601</span>
+                                                    <a href="#">{{$product['item']['name_product']}}</a>
                                                 </div>
-                                                <div class="cart-quantity">X 1</div>
-                                                <div class="cart-price">$249</div>
+                                                <div class="cart-quantity">{{$product['qty']}}*</div>
+                                                <div class="cart-price">{{number_format($product['item']['price'])}}</div>
                                                 <div class="cart-trash">
                                                     <a href="#">
                                                         <i class="icon-trash"></i>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="cart-item">
-                                                <div class="cart-img">
-                                                    <a href="#">
-                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
-                                                    </a>
-                                                </div>
-                                                <div class="cart-title">
-                                                    <a href="#">Pressure</a>
-                                                    <span>Code: STPT602</span>
-                                                </div>
-                                                <div class="cart-quantity">X 1</div>
-                                                <div class="cart-price">$189</div>
-                                                <div class="cart-trash">
-                                                    <a href="#">
-                                                        <i class="icon-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="cart-item">
-                                                <div class="cart-img">
-                                                    <a href="#">
-                                                        <img src="/upload/products/avttest.jpeg" alt="product" class="img-fluid">
-                                                    </a>
-                                                </div>
-                                                <div class="cart-title">
-                                                    <a href="#">Pressure</a>
-                                                    <span>Code: STPT603</span>
-                                                </div>
-                                                <div class="cart-quantity">X 2</div>
-                                                <div class="cart-price">$379</div>
-                                                <div class="cart-trash">
-                                                    <a href="#">
-                                                        <i class="icon-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                            @endforeach
+                                            <h5>Total:<span>{{number_format(Session('cart')->totalPrice)}}$</span></h5>
                                             <div class="cart-item">
                                                 <div class="cart-btn">
-                                                    <a href="#" class="item-btn">View Cart</a>
                                                     <a href="#" class="item-btn">Checkout</a>
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
                                     </li>
                                     </ul>
                                 </div>

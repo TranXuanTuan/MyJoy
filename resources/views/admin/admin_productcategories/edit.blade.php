@@ -23,7 +23,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Product Name</label>
+                            <label>Category</label>
                             <input type="text" name="product_name" class="form-control" value="{{ $productCategory->product_name }}">
                         </div>
 

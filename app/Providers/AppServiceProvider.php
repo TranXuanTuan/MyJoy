@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\View;
 use App\Model\Album;
 use App\Model\AlbumCategory;
 use App\Model\Topic;
+use App\Model\Cart;
 use App\Model\Artist;
 use App\Model\ArtistCategory;
 use App\Model\ProductCategory;
+use Session;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -49,7 +52,14 @@ class AppServiceProvider extends ServiceProvider
             $view->with('topics' , $topics);
             $artist_categories = ArtistCategory::all();
             $view->with('artist_categories' , $artist_categories);
-            
+        });
+
+        View::composer('layouts.front.header', function($view) {
+            if(Session('cart')){
+                $oldCart = Session::get('cart');
+                $cart = new Cart($oldCart);
+                $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+            }
         });
     }
 }

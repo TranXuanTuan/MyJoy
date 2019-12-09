@@ -1,49 +1,43 @@
 @extends('layouts.front.master')
 @section('content')
-<div class="upcoming-shows-area section-padding-100" style="background-image: url(/img/bg-img/bg-2.jpg);">
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/img/bg-img/breadcumb3.jpg);">
+        <div class="bradcumbContent">
+            <p>See what’s new</p>
+            <h2>Products</h2>
+        </div>
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Album Catagory Area Start ##### -->
+    <section class="album-catagory section-padding-100-0">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h2>Buy Products</h2>
-                    </div>
-                </div>
+            <div class="browse-by-catagories catagory-menu d-flex flex-wrap align-items-center mb-70">          
+                        <a href="#">ALL</a>
             </div>
-            {{--show message success--}}
-            @if(session()->has('success'))
-                <div class="alert alert-success">
-                    {{ session()->get('success') }}
-                </div>
-            @endif
-
-            {{--show message fail--}}
-            @if(session()->has('error'))
-                <div class="alert alert-danger">
-                    {{ session()->get('error') }}
-                </div>
-            @endif
-            <div class="row">
-                <div class="col-12">
-                    <!-- Upcoming Shows Content -->
-                    <div class="upcoming-shows-content" >
-
-                        <!-- Single Upcoming Shows -->
-                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                            <div class="shows-desc d-flex align-items-center">
-                                <div class="shows-name">
-                                    <h6>Author</h6>
-                                </div>
-                            </div>
-                                <div class="shows-location">
-                                    <p>Content</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>Price</p>
-                                </div>
-                            </div>
+            <div class="row oneMusic-albums">
+                <!-- Single Album -->
+                @foreach($productcategories as $cate)  
+                <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
+                    
+                    <div class="single-album">
+                        <a href="{{route('addtocart',$cate->id)}}">
+                        @if(!empty($cate->picture))
+                            <img src="/upload/products/{{$cate->picture}}" class="img-fluid">
+                        @else
+                            <img src="/img/images/no-image.png" alt="no image">
+                        @endif
+                        <div class="album-info">
+                            <h5>{{$cate->name_product}}</h5>
+                            <p><i class="icon-shopping-cart">{{number_format($cate->price)}} $</i></p>
+                            
+                        </div>
+                        </a>
                     </div>
                 </div>
+                @endforeach       
             </div>
         </div>
-    </div>
+    </section>
 @endsection

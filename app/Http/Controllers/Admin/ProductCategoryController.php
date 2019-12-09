@@ -23,7 +23,7 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        $productcategories = ProductCategory::all();
+        $productcategories = ProductCategory::orderby('id', 'desc')->paginate(5);
         return view('admin.admin_productcategories.index', compact('productcategories'));
     }
 

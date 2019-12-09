@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Product Name</label>
+                            <label>Category Name</label>
                             <input type="text" name="product_name" class="form-control" value="{{ old('product_name') }}">
                         </div>
 
