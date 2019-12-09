@@ -6,7 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-
+use App\Http\Requests\Admin\EventCreateRequest;
+use App\Http\Requests\Admin\EventUpdateRequest;
 
 class AdminEventController extends Controller
 {
@@ -42,7 +43,7 @@ class AdminEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventCreateRequest $request)
     {
         if ($request->hasFile('image')) {
             $ext = $request->file('image')->getClientOriginalExtension();
@@ -101,7 +102,7 @@ class AdminEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EventUpdateRequest $request, $id)
     {
         
         $event = Event::findOrFail($id);

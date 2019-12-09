@@ -6,6 +6,7 @@
 <form action="{{route('admin_events.update', $event->id)}}" method="post" >
 <input type="hidden" name="_method" value="PUT">
         @csrf
+        @include('admin.blocks.errors')
         <h1>Edit Event </h1>
         @if(session('flash_message'))
         <div class="alert alert-success">

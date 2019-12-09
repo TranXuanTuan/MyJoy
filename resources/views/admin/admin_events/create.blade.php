@@ -1,10 +1,9 @@
 @extends('layouts.admin.content')
 
-@section('title', '| Create Blogs ')
-
 @section('content')
 <form action="{{route('admin_events.index')}}" method="post" >
         @csrf
+        @include('admin.blocks.errors')
         <h1>Create Event </h1>
         <hr>
         <div class="form-group">
