@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-12 col-md-5 col-lg-4">
                 <div class="featured-artist-thumb">
-                    <img src="/img/bg-img/a1.jpg" alt="">
+                    <img src="/upload/albums/{{$album->thumb}}" alt="">
                 </div>
             </div>
             <div class="col-12 col-md-5 col-lg-8">
@@ -19,7 +19,7 @@
                 <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
                     <div class="song-play-area">
                         <div class="song-name">
-                            <p>{{$song->song_name}}</p>
+                            <p>{{$song->song_name}} - {{$song->artist->artist_name}}</p>
                         </div>
                         <audio preload="auto" controls>
                             <source src="/upload/url/{{$song->url}}">

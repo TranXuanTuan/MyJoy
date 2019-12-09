@@ -23,7 +23,7 @@
                     
                     <div class="single-album">
                         <a href="{{route('albumdetail',$album_category->id)}}">
-                        <img src="/img/bg-img/a1.jpg" alt="">
+                        <img src="/upload/albums/{{$album_category->thumb}}" alt="">
                         <div class="album-info">
                             <h5>{{$album_category->album_name}}</h5>
                         </div>

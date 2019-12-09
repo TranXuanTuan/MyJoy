@@ -40,11 +40,11 @@
                             <a href="{{route('blogs.show', $blog->id)}}" class="post-title">{{$blog -> title}}</a>
                             <!-- Post Meta -->
                             <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> {{$blog->author}}</a></p>
+                                <p class="post-author">By<a href="#"> {{$blog->user->name}}</a></p>
                                 <p class="tags"><a href="#">2 Comments</a></p>
                             </div>
                             <!-- Post Excerpt -->
-                            <h4>{!!html_entity_decode($blog->description)!!}</h4>
+                            <h4>{{$blog->description}}</h4>
                         </div>
                         @endforeach
                     </div>
