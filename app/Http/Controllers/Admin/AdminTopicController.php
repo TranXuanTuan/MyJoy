@@ -115,6 +115,6 @@ class AdminTopicController extends Controller
 
         return redirect()->route('admin_topics.index')
             ->with('flash_message',
-             'Article successfully deleted');
+             'Topic successfully deleted');
     }
 }

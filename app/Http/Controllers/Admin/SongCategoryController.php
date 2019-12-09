@@ -102,6 +102,11 @@ class SongCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = SongCategory::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('songcategories.index')
+            ->with('flash_message',
+             'Song successfully deleted');
     }
 }

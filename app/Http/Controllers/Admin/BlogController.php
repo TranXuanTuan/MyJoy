@@ -118,6 +118,6 @@ class BlogController extends Controller
 
         return redirect()->route('admin_blogs.index')
             ->with('flash_message',
-             'Article successfully deleted');
+             'Blog successfully deleted');
     }
 }
