@@ -7,7 +7,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="{{ url('/') }}" class="nav-brand"><img src="{{ asset('/img/core-img/logo.png')}}" alt=""></a>
+                        <a href="{{ url('/') }}" class="nav-brand"><!-- <img src="{{ asset('/img/core-img/logo.png')}}" alt=""> --></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">

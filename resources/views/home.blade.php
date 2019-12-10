@@ -6,7 +6,7 @@
                         <div class="col-12">
                             <div class="section-heading style-2">
                                 <p>See what’s new</p>
-                                <h2>Latest Albums</h2>
+                                <h2>Albums</h2>
                             </div>
                         </div>
                     </div>
@@ -89,75 +89,21 @@
                                 <div class="weeks-top-area mb-100">
                                     <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
                                         <p>See what’s new</p>
-                                        <h2>This week’s top</h2>
+                                        <h2>Products</h2>
                                     </div>
 
                                     <!-- Single Top Item -->
+                                    @foreach($products as $product)
                                     <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="100ms">
                                         <div class="thumbnail">
-                                            <img src="img/bg-img/wt1.jpg" alt="">
+                                            <img src="/upload/products/{{$product->picture}}" alt="">
                                         </div>
                                         <div class="content-">
-                                            <h6>Sam Smith</h6>
-                                            <p>Underground</p>
+                                            <h6>{{$product->name_product}}</h6>
+                                            <p>{{$product->price}}$</p>
                                         </div>
                                     </div>
-
-                                    <!-- Single Top Item -->
-                                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="150ms">
-                                        <div class="thumbnail">
-                                            <img src="img/bg-img/wt2.jpg" alt="">
-                                        </div>
-                                        <div class="content-">
-                                            <h6>Power Play</h6>
-                                            <p>In my mind</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Top Item -->
-                                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="200ms">
-                                        <div class="thumbnail">
-                                            <img src="img/bg-img/wt3.jpg" alt="">
-                                        </div>
-                                        <div class="content-">
-                                            <h6>Cristinne Smith</h6>
-                                            <p>My Music</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Top Item -->
-                                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="250ms">
-                                        <div class="thumbnail">
-                                            <img src="img/bg-img/wt4.jpg" alt="">
-                                        </div>
-                                        <div class="content-">
-                                            <h6>The Music Band</h6>
-                                            <p>Underground</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Top Item -->
-                                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="300ms">
-                                        <div class="thumbnail">
-                                            <img src="img/bg-img/wt5.jpg" alt="">
-                                        </div>
-                                        <div class="content-">
-                                            <h6>Creative Lyrics</h6>
-                                            <p>Songs and stuff</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Top Item -->
-                                    <div class="single-top-item d-flex wow fadeInUp" data-wow-delay="350ms">
-                                        <div class="thumbnail">
-                                            <img src="img/bg-img/wt6.jpg" alt="">
-                                        </div>
-                                        <div class="content-">
-                                            <h6>The Culture</h6>
-                                            <p>Pop Songs</p>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
 
@@ -170,123 +116,45 @@
                                     </div>
 
                                     <!-- Single Top Item -->
+                                    @foreach($songs as $song)
                                     <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
                                         <div class="first-part d-flex align-items-center">
                                             <div class="thumbnail">
-                                                <img src="img/bg-img/wt7.jpg" alt="">
+                                                <img src="/upload/songs/{{$song->picture}}" alt="">
                                             </div>
                                             <div class="content-">
-                                                <h6>Sam Smith</h6>
-                                                <p>Underground</p>
+                                                <h6>{{$song->artist->artist_name}}</h6>
+                                                <p>{{$song->song_name}}</p>
                                             </div>
                                         </div>
                                         <audio preload="auto" controls>
-                                            <source src="audio/dummy-audio.mp3">
+                                            <source src="/upload/url/{{$song->url}}">
                                         </audio>
                                         </div>
-
-                                        <!-- Single Top Item -->
-                                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="150ms">
-                                            <div class="first-part d-flex align-items-center">
-                                                <div class="thumbnail">
-                                                    <img src="img/bg-img/wt8.jpg" alt="">
-                                                </div>
-                                                <div class="content-">
-                                                    <h6>Power Play</h6>
-                                                    <p>In my mind</p>
-                                                </div>
+                                        @endforeach
                                             </div>
-                                            <audio preload="auto" controls>
-                                                <source src="audio/dummy-audio.mp3">
-                                                </audio>
-                                            </div>
+                                        </div>
 
-                                            <!-- Single Top Item -->
-                                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="200ms">
-                                                <div class="first-part d-flex align-items-center">
+                                        <!-- ***** Popular Artists ***** -->
+                                        <div class="col-12 col-lg-4">
+                                            <div class="popular-artists-area mb-100">
+                                                <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
+                                                    <p>See what’s new</p>
+                                                    <h2>Popular Artist</h2>
+                                                </div>
+                                                <!-- Single Artist -->
+                                                @foreach($artists as $artist)
+                                                <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
                                                     <div class="thumbnail">
-                                                        <img src="img/bg-img/wt9.jpg" alt="">
+                                                        <img src="/upload/artists/{{$artist->avatar}}" alt="">
                                                     </div>
                                                     <div class="content-">
-                                                        <h6>Cristinne Smith</h6>
-                                                        <p>My Music</p>
+                                                        <p>{{$artist->artist_name}}</p>
                                                     </div>
                                                 </div>
-                                                <audio preload="auto" controls>
-                                                    <source src="audio/dummy-audio.mp3">
-                                                    </audio>
-                                                </div>
-
-                                                <!-- Single Top Item -->
-                                                <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="250ms">
-                                                    <div class="first-part d-flex align-items-center">
-                                                        <div class="thumbnail">
-                                                            <img src="img/bg-img/wt10.jpg" alt="">
-                                                        </div>
-                                                        <div class="content-">
-                                                            <h6>The Music Band</h6>
-                                                            <p>Underground</p>
-                                                        </div>
-                                                    </div>
-                                                    <audio preload="auto" controls>
-                                                        <source src="audio/dummy-audio.mp3">
-                                                        </audio>
-                                                    </div>
-
-                                                    <!-- Single Top Item -->
-                                                    <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="300ms">
-                                                        <div class="first-part d-flex align-items-center">
-                                                            <div class="thumbnail">
-                                                                <img src="img/bg-img/wt11.jpg" alt="">
-                                                            </div>
-                                                            <div class="content-">
-                                                                <h6>Creative Lyrics</h6>
-                                                                <p>Songs and stuff</p>
-                                                            </div>
-                                                        </div>
-                                                        <audio preload="auto" controls>
-                                                            <source src="audio/dummy-audio.mp3">
-                                                            </audio>
-                                                        </div>
-
-                                                        <!-- Single Top Item -->
-                                                        <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="350ms">
-                                                            <div class="first-part d-flex align-items-center">
-                                                                <div class="thumbnail">
-                                                                    <img src="img/bg-img/wt12.jpg" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <h6>The Culture</h6>
-                                                                    <p>Pop Songs</p>
-                                                                </div>
-                                                            </div>
-                                                            <audio preload="auto" controls>
-                                                                <source src="audio/dummy-audio.mp3">
-                                                                </audio>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- ***** Popular Artists ***** -->
-                                                    <div class="col-12 col-lg-4">
-                                                        <div class="popular-artists-area mb-100">
-                                                            <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
-                                                                <p>See what’s new</p>
-                                                                <h2>Popular Artist</h2>
-                                                            </div>
-                                                            <!-- Single Artist -->
-                                                            @foreach($artists as $artist)
-                                                            <div class="single-artists d-flex align-items-center wow fadeInUp" data-wow-delay="100ms">
-                                                                <div class="thumbnail">
-                                                                    <img src="/upload/artists/{{$artist->avatar}}" alt="">
-                                                                </div>
-                                                                <div class="content-">
-                                                                    <p>{{$artist->artist_name}}</p>
-                                                                </div>
-                                                            </div>
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                                 </div>
                                             </div>
                                         </section>

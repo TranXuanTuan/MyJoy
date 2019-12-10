@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Model\Album;
+use App\Model\Song;
+use App\Model\Product;
 use App\Model\AlbumCategory;
 use App\Model\Topic;
 use App\Model\Cart;
@@ -43,6 +45,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('product_categories' , $product_categories);
             $artists = Artist::paginate(7);
             $view->with('artists' , $artists);
+            $songs = Song::paginate(7);
+            $view->with('songs' , $songs);
+            $products = Product::paginate(7);
+            $view->with('products' , $products);
         });
 
         View::composer('layouts.front.header', function($view) {

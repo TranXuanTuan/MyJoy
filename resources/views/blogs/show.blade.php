@@ -45,17 +45,17 @@
                         <div class="section-heading-4 heading-dark">
                             <h3 class="item-heading">COMMENTS</h3>
                         </div>
-                        @foreach($comments as $comment)
+                        @foreach($blog->comments as $comment)
                         <div class="media media-none--xs">
                             <img src="/upload/avatar_user/avttest.jpeg" alt="Blog Comments" class="img-fluid media-img-auto">
                             <div class="media-body">
-                                <h4 class="item-title">Jack Sparrow</h4>
+                                <h4 class="item-title">{{$comment->user->name}}</h4>
                                 <div class="item-subtitle">2 Mins Ago</div>
-                                <p>Bmmy text of the printing and typesetting industryorem Ipsum
-                                    has been the industry's standard dummy text ever since the</p>
+                                <p>{{$comment->comment}}</p>
                                 <a href="#" class="item-btn">Reply</a>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                     @if (Auth::check())
                     @if(session('flash_message'))
@@ -67,12 +67,12 @@
                         <div class="section-heading-4 heading-dark">
                             <h3 class="item-heading">WRITE A COMMENT</h3>
                         </div>
-                        <form class="contact-form-box" action="comment/{{$blog->id}}" method="post">
+                        <form class="contact-form-box" action="{{$blog->id}}" method="post">
                             @csrf
                             <div class="row gutters-15">
                                 <div class="col-12 form-group">
                                     <textarea placeholder="Write your comments ..." class="textarea form-control"
-                                        name="message" rows="8" cols="20" data-error="Message field is required"
+                                        name="comment" rows="8" cols="20" data-error="Message field is required"
                                         required></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>

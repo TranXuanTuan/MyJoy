@@ -41,7 +41,7 @@ Route::resource('events', 'EventController');
 
 Route::resource('blogs', 'BlogController');
 
-Route::post('comment/{id}', 'CommentController@postComment');
+Route::post('comment/{id}', 'CommentController@postComment')->name('postcomment');
 
 Route::resource('contact', 'ContactController');
 
