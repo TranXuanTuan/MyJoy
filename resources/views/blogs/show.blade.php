@@ -42,64 +42,48 @@
 
                     </div>
                     <div class="blog-comment">
-                    <div class="section-heading-4 heading-dark">
-                        <h3 class="item-heading">02 COMMENTS</h3>
-                    </div>
-                    <div class="media media-none--xs">
-                        <img src="/upload/avatar_user/avttest.jpeg" alt="Blog Comments" class="img-fluid media-img-auto">
-                        <div class="media-body">
-                            <h4 class="item-title">Jack Sparrow</h4>
-                            <div class="item-subtitle">2 Mins Ago</div>
-                            <p>Bmmy text of the printing and typesetting industryorem Ipsum
-                                has been the industry's standard dummy text ever since the</p>
-                            <a href="#" class="item-btn">Reply</a>
+                        <div class="section-heading-4 heading-dark">
+                            <h3 class="item-heading">COMMENTS</h3>
+                        </div>
+                        @foreach($comments as $comment)
+                        <div class="media media-none--xs">
+                            <img src="/upload/avatar_user/avttest.jpeg" alt="Blog Comments" class="img-fluid media-img-auto">
+                            <div class="media-body">
+                                <h4 class="item-title">Jack Sparrow</h4>
+                                <div class="item-subtitle">2 Mins Ago</div>
+                                <p>Bmmy text of the printing and typesetting industryorem Ipsum
+                                    has been the industry's standard dummy text ever since the</p>
+                                <a href="#" class="item-btn">Reply</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="media media-none--xs">
-                        <img src="/upload/avatar_user/avttest.jpeg" alt="Blog Comments" class="img-fluid media-img-auto">
-                        <div class="media-body">
-                            <h4 class="item-title">Dakcon Nitiya</h4>
-                            <div class="item-subtitle">2 Mins Ago</div>
-                            <p>Bmmy text of the printing and typesetting industryorem Ipsum has
-                                been the industry's standard dummy text ever since the</p>
-                            <a href="#" class="item-btn">Reply</a>
+                    @if (Auth::check())
+                    @if(session('flash_message'))
+                        <div class="alert alert-success">
+                            {{session('flash_message')}}
                         </div>
-                    </div>
-                </div>
-                <div class="blog-form">
-                    <div class="section-heading-4 heading-dark">
-                        <h3 class="item-heading">WRITE A COMMENT</h3>
-                    </div>
-                    <form class="contact-form-box">
-                        <div class="row gutters-15">
-                            <div class="col-md-4 form-group">
-                                <input type="text" placeholder="Name*" class="form-control" name="first_name"
-                                    data-error="Name field is required" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <input type="email" placeholder="E-mail*" class="form-control" name="email"
-                                    data-error="E-mail field is required" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <input type="text" placeholder="Website*" class="form-control" name="website"
-                                    data-error="website field is required" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <textarea placeholder="Write your comments ..." class="textarea form-control"
-                                    name="message" rows="8" cols="20" data-error="Message field is required"
-                                    required></textarea>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <button class="item-btn">POST COMMENT</button>
-                            </div>
+                    @endif
+                    <div class="blog-form">
+                        <div class="section-heading-4 heading-dark">
+                            <h3 class="item-heading">WRITE A COMMENT</h3>
                         </div>
-                        <div class="form-response"></div>
-                    </form>
-                </div>
+                        <form class="contact-form-box" action="comment/{{$blog->id}}" method="post">
+                            @csrf
+                            <div class="row gutters-15">
+                                <div class="col-12 form-group">
+                                    <textarea placeholder="Write your comments ..." class="textarea form-control"
+                                        name="message" rows="8" cols="20" data-error="Message field is required"
+                                        required></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <button class="item-btn">POST COMMENT</button>
+                                </div>
+                            </div>
+                            <div class="form-response"></div>
+                        </form>
+                    </div>
+                    @endif
                 </div>
                 
                 <div class="col-12 col-lg-3">

@@ -63,7 +63,7 @@
                         
                         <div class="form-group">
                             <label>Artist</label>
-                            <select class="form-control" name="artist_id">
+                            <select class="form-control chosen" name="artist_id">
                                 <option value="" selected>----------Select Artist----------</option>
                             @foreach($artist as $at)
 
@@ -74,7 +74,7 @@
 
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control" name="category_id">
+                            <select class="form-control chosen" name="category_id">
                                 <option value="" selected>----------Select Category----------</option>
                             @foreach($categories as $category)
 
@@ -85,7 +85,7 @@
 
                         <div class="form-group">
                             <label>Album</label>
-                            <select class="form-control" name="album_id">
+                            <select class="form-control chosen" name="album_id">
                                 <option value="" selected>----------Select Album----------</option>
                             @foreach($album as $ab)
                                 <option value="{{$ab->id}}">{{$ab->album_name}}</option>

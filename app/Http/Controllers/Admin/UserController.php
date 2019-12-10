@@ -15,21 +15,40 @@ use Session;
 
 class UserController extends Controller
 {
-    public function __construct()
+    protected $user;
+
+    public function __construct(User $user)
     {
         //isAdmin middleware lets only users with a specific permission permission to access these resources
         $this->middleware(['auth', 'isAdmin']);
+        $this->user = $user;
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(5); 
-        return view('admin.users.index')->with('users', $users);
- 
+
+        $users = $this->user;
+
+        // search with user name
+        $search_user_name = null;
+        if ($request->search_user_name) {
+            $search_user_name = $request->search_user_name;
+            $users = $users->where('name', 'like', '%' . $search_user_name . '%');
+        }
+        $data['search_user_name'] = $search_user_name;
+
+        $users = $users
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $data['users'] = $users;
+
+        return view('admin.users.index',$data);
+        
     }
 
     /**

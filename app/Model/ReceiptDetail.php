@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReceiptDetail extends Model
 {
-    public function beat()
+	protected $table = 'receipt_detail';
+
+    public function product()
     {
-    	return $this->belongsTo('App\Model\Beat');
+    	return $this->belongsTo('App\Model\Product');
     }
 
     public function receipt()

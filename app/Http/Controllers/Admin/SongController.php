@@ -13,19 +13,36 @@ use App\Http\Requests\Admin\SongUpdateRequest;
 
 class SongController extends Controller
 {
-    public function __construct()
+    protected $song;
+
+    public function __construct(Song $song)
     {
         $this->middleware(['auth', 'isAdmin']);
+        $this->song = $song;
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $songs = Song::orderby('id', 'desc')->paginate(2);
-        return view('admin.songs.index',compact('songs'));
+        $songs = $this->song;
+
+        // search with song name
+        $search_song_name = null;
+        if ($request->search_song_name) {
+            $search_song_name = $request->search_song_name;
+            $songs = $songs->where('song_name', 'like', '%' . $search_song_name . '%');
+        }
+        $data['search_song_name'] = $search_song_name;
+
+        $songs = $songs
+            ->orderBy('id', 'desc')
+            ->paginate(5);
+        $data['songs'] = $songs;
+
+        return view('admin.songs.index',$data);
     }
 
     /**

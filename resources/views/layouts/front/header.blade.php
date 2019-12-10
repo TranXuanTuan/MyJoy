@@ -123,16 +123,17 @@
                                                 <div class="cart-quantity">{{$product['qty']}}*</div>
                                                 <div class="cart-price">{{number_format($product['item']['price'])}}</div>
                                                 <div class="cart-trash">
-                                                    <a href="#">
+                                                    <a href="{{route('delcart',$product['item']['id'])}}">
                                                         <i class="icon-trash"></i>
                                                     </a>
                                                 </div>
                                             </div>
                                             @endforeach
-                                            <h5>Total:<span>{{number_format(Session('cart')->totalPrice)}}$</span></h5>
+                                            
                                             <div class="cart-item">
+                                                <div>Total:<h5>{{number_format(Session('cart')->totalPrice)}}$</h5></div>
                                                 <div class="cart-btn">
-                                                    <a href="#" class="item-btn">Checkout</a>
+                                                    <a href="{{route('checkout')}}" class="item-btn">Checkout</a>
                                                 </div>
                                             </div>
                                         </div>

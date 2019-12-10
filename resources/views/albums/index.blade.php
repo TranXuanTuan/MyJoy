@@ -23,7 +23,7 @@
                 @foreach($album_category->albums as $album)
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
                     <div class="single-album">
-                        <a href="{{route('albumdetail',$album_category->id)}}">
+                        <a href="{{route('albumdetail',$album->id)}}">
                             <img src="/upload/albums/{{$album->thumb}}" alt="">
                             <div class="album-info">
                                 <h5>{{$album->album_name}}</h5>
@@ -47,6 +47,5 @@
             </div>
             @endforeach
         </div>
-        {!! $albums->links() !!}
     </section>
 @endsection

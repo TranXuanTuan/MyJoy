@@ -1,6 +1,6 @@
 @extends('layouts.admin.content')
 
-@section('title', '| Users')
+@section('title', '| songs')
 
 @section('content')
 
@@ -8,6 +8,21 @@
     <h1><i class="fas fa-music"></i> SONGS 
        
     </h1>
+    <div class="col-9">
+        <form action="{{ route('songs.index') }}" method="get">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Song Name</td>
+                    <td>
+                        <input type="text" name="search_song_name" value="{{ $search_song_name }}"class="form-control">
+                    </td>
+                    <td>
+                        <input type="submit" value="Search" class="btn btn-dark">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">

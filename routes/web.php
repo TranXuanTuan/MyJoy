@@ -30,6 +30,9 @@ Route::group(['prefix' => 'artists'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('add-to-cart/{id}', 'OrderController@getAddtoCart')->name('addtocart');
+    Route::get('del-cart/{id}', 'OrderController@getDelItemCart')->name('delcart');
+    Route::get('checkout', 'OrderController@getCheckOut')->name('checkout');
+    Route::post('checkout', 'OrderController@postCheckOut')->name('checkout');
 });
 
 Route::resource('products', 'ProductController');
@@ -38,10 +41,12 @@ Route::resource('events', 'EventController');
 
 Route::resource('blogs', 'BlogController');
 
+Route::post('comment/{id}', 'CommentController@postComment');
+
 Route::resource('contact', 'ContactController');
 
 Route::resource('topics', 'TopicController');
-Route::group(['prefix' => 'artists'], function () {
+Route::group(['prefix' => 'topics'], function () {
     Route::get('detail/{id}','TopicController@detail')->name('topicdetail');
 });
 

@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('artist_categories' , $artist_categories);
         });
 
-        View::composer('layouts.front.header', function($view) {
+        View::composer(['layouts.front.header','orders.checkout'], function($view) {
             if(Session('cart')){
                 $oldCart = Session::get('cart');
                 $cart = new Cart($oldCart);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Receipt extends Model
 {
-    public function receiptdetails()
+    public function receipt_detail()
     {
     	return $this->hasMany('App\Model\ReceiptDetail');
     }

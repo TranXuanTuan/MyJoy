@@ -18,8 +18,8 @@ class CreateReceiptsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('total');
             $table->string('payment');
-            $table->string('note');
-            $table->string('status');
+            $table->string('note')->nullable();
+            $table->string('status')->nullable();
             $table->dateTime('date_buy');
             $table->timestamps();
         });

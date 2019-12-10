@@ -1,7 +1,4 @@
-{{-- \resources\views\users\index.blade.php --}}
 @extends('layouts.admin.content')
-
-@section('title', '| Users')
 
 @section('content')
 
@@ -9,7 +6,23 @@
     <h1><i class="fa fa-users"></i> User Administration 
         <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
         <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a>
+        
     </h1>
+    <div class="col-9">
+        <form action="{{ route('users.index') }}" method="get">
+            <table class="table table-bordered">
+                <tr>
+                    <td>User Name</td>
+                    <td>
+                        <input type="text" name="search_user_name" value="{{ $search_user_name }}"class="form-control">
+                    </td>
+                    <td>
+                        <input type="submit" value="Search" class="btn btn-dark">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
     <div class="table-responsive">
     @if(session('flash_message'))
         <div class="alert alert-success">
@@ -37,7 +50,7 @@
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
                     <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>                   
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left">Edit</a>                   
                     </td>
                     <td>
                         {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
@@ -47,7 +60,6 @@
                 </tr>
                 @endforeach
             </tbody>
-
         </table>
         {{ $users->links() }}
     </div>
